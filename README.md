@@ -30,18 +30,18 @@ new repository. So let's get started:
 
 ### Theme Slug & Names
 
-- [] Search & Replace `_lhtbp` with your new WordPress theme slug
-- [] Check success in `package.json`, `docker-compose.json` & `bin/install-wordpress.sh`
+- [ ] Search & Replace `_lhtbp` with your new WordPress theme slug
+- [ ] Check success in `package.json`, `docker-compose.json` & `bin/install-wordpress.sh`
 
 ### Test & Run
 
-- [] Type `npm run setup` into the terminal to spin up the docker enviroment
-- [] Open `http://localhost/wp-admin` and log in with `wordpress:wordpress`
-- [] Make sure the theme unit demo content is installed and the theme is active
+- [ ] Type `npm run setup` into the terminal to spin up the docker enviroment
+- [ ] Open `http://localhost/wp-admin` and log in with `wordpress:wordpress`
+- [ ] Make sure the theme unit demo content is installed and the theme is active
 
 ### Finishing touches
 
-- [] Edit the `theme-README.md` with the appropriate text about your theme
-- [] Delete (or rename) the `README.md` (this file)
-- [] Rename the `theme-README.md` to `README.md`
-- [] 🎉  Celebrate!
+- [ ] Edit the `theme-README.md` with the appropriate text about your theme
+- [ ] Delete (or rename) the `README.md` (this file)
+- [ ] Rename the `theme-README.md` to `README.md`
+- [ ] 🎉  Celebrate!

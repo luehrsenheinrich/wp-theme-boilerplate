@@ -1,38 +1,46 @@
-# [ THEME NAME ]
+# Luehrsen // Heinrich Theme Boilerplate for WordPress
 
-[ SHORT THEME DESCRIPTION ]
+There are probably more theme boilerplates than actual themes available for
+bootstrapping your work on an amazing WordPress theme. And that is very much
+okay, because every developer, every agency has their own little flavors in how
+they like to do things.
 
-This theme is made with love and brought to you by the folks of [WP Munich](http://www.wp-munich.de) and [Luehrsen // Heinrich](http://www.luehrsen-heinrich.de)
+That is the reason we made this theme boilerplate. We liked the work of so many
+other developers before us, but we never found the perfect boilerplate that fit
+our style of work. The result is this, a very opinionated theme boilerplate
+based on docker, grunt and less-css.
 
-## Paradigms
+This boilerplate will give you all the tools you need to write, test and publish
+your theme, either for commercial clients or to publish the theme in the
+WordPress.org repository.
 
-### Mobile First
-Designs and styles should be made first for the mobile version. This ensures a seamless experience for the majority of mobile users. [Learn more](https://en.ryte.com/wiki/Mobile_First)
 
-### CSS Grid First
-Contrasting our grid-system-history, this theme should not rely on a traditional grid-system like in [Bootstrap](https://getbootstrap.com/docs/4.0/layout/grid/). While such a 12-col grid is still useful in designing the theme and giving it structure, the resulting CSS code should be declarative and based on [CSS Grid](https://css-tricks.com/snippets/css/complete-guide-grid/).
+## Getting started
 
-### Alignfull First
-This theme will be primarily build for the new block based editor in WordPress. This means, that the 'normal' state of the content is always the alignfull and smaller states should be restricted in width by a `max-width` setting.
+These steps will guide you through the setup process up until you can start
+writing functions, markup and styles for your theme.
 
-### Compatibility
-With a huge blocks ecosystem on the horizon new themes should be compatible with a wide variety of blocks. This means that content styling has to be as abstract as possible and provide a well defined scaffolding to put content into. The goal is less, more elegant code.
+For the sake of scope we will assume, that you know the slug of your theme.
+Please make sure that the slug is unique to the system of the client, our
+projects and the WordPress.org theme repository.
 
-### No pixels
-Using pixel values on the web makes sense. [Until it doesn't](https://engageinteractive.co.uk/blog/em-vs-rem-vs-px). Using `rem` and `em` values is more accessible and reliable. So using a `px` value to determine the size of something should be the absolute exception and very well justified.
+We will also assume, that you have already configured your GitHub repository to
+new repository. So let's get started:
 
-## Documentation
+### Theme Slug & Names
 
-Developer documentation is available in the [Wiki](./../../wiki)
+- [] Search & Replace `_lhtbp` with your new WordPress theme slug
+- [] Check success in `package.json`, `docker-compose.json` & `bin/install-wordpress.sh`
 
-## Contributing
+### Test & Run
 
-Every bit of help is highly appreciated. Even if you don't code you can file an issue and help us find bugs or shape new features. Please see the [CONTRIBUTING.md](./CONTRIBUTING.md) on how to contribute.
+- [] Type `npm run setup` into the terminal to spin up the docker enviroment
+- [] Open `http://localhost/wp-admin` and log in with `wordpress:wordpress`
+- [] Make sure the theme unit demo content is installed and the theme is active
 
-## License
+### Finishing touches
 
-This plugin is licensed under [GNU General Public License v2 (or later)](./LICENSE.md).
-
-## Changelog
-
-Please find the current [changelog here](./../../releases).
+- [] Edit the `theme-README.md` with the appropriate text about your theme
+- [] Delete (or rename) the `README.md` (this file)
+- [] Rename the `theme-README.md` to `README.md`
+- [] 🎉  Celebrate!

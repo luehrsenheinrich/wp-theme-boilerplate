@@ -1,8 +1,8 @@
 {
-  "name": "lh-theme-bloilerplate",
+  "name": "LH Theme Boilerplate",
   "slug": "_lhtbp",
   "version": "1.0.2",
-  "description": "The purpose of this theme is to open an exploration space for experiments and trials leading to our games theme. Results and findings made in this repository will eventually be refactored and transported in it's own, release-ready theme.",
+  "description": "This is the theme boilerplate for WordPress themes by Luehrsen // Heinrich & WP Munich.",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/luehrsenheinrich/games_theme_exploration.git"

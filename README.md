@@ -25,6 +25,7 @@ Please make sure that the slug is unique to the system of the client, our
 projects and the WordPress.org theme repository.
 
 We will also assume, that you have already configured your GitHub repository to
+your liking, downloaded the source of the boilerplate and uploaded it to your
 new repository. So let's get started:
 
 ### Theme Slug & Names

@@ -33,11 +33,19 @@ new repository. So let's get started:
 - [ ] Search & Replace `_lhtbp` with your new WordPress theme slug
 - [ ] Check success in `package.json`, `docker-compose.json` & `bin/install-wordpress.sh`
 
-### Test & Run
+### Running the enviroment
 
 - [ ] Type `npm run setup` into the terminal to spin up the docker enviroment
 - [ ] Open `http://localhost/wp-admin` and log in with `wordpress:wordpress`
 - [ ] Make sure the theme unit demo content is installed and the theme is active
+
+### Test Release
+
+- [ ] If you do not want to use the update server skip this step and remove the GitHub action
+- [ ] Make sure the release workflow on GitHub actions is configured properly
+- [ ] Add the secrets for `FTP_USERNAME` and `FTP_PASSWORD` (ask your sysop)
+- [ ] Add a 0.0.2 release by running `npm run release` in your terminal
+- [ ] Check the server if the theme package has been deployed
 
 ### Finishing touches
 

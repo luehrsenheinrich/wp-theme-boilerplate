@@ -23,7 +23,7 @@ Using pixel values on the web makes sense. [Until it doesn't](https://engageinte
 
 ## Documentation
 
-Developer documentation is available in the [Wiki](./wiki)
+Developer documentation is available in the [Wiki](./../../wiki)
 
 ## Contributing
 
@@ -35,4 +35,4 @@ This plugin is licensed under [GNU General Public License v2 (or later)](./LICEN
 
 ## Changelog
 
-Please find the current [changelog here](./releases).
+Please find the current [changelog here](./../../releases).

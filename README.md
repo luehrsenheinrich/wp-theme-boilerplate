@@ -1,5 +1,7 @@
 # Luehrsen // Heinrich Theme Boilerplate for WordPress
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/luehrsenheinrich/wp-theme-boilerplate.svg)](https://greenkeeper.io/)
+
 There are probably more theme boilerplates than actual themes available for
 bootstrapping your work on an amazing WordPress theme. And that is very much
 okay, because every developer, every agency has their own little flavors in how

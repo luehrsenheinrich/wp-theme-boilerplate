@@ -44,6 +44,7 @@ new repository. So let's get started:
 - [ ] If you do not want to use the update server skip this step and remove the GitHub action
 - [ ] Make sure the release workflow on GitHub actions is configured properly
 - [ ] Add the secrets for `FTP_USERNAME` and `FTP_PASSWORD` (ask your sysop)
+- [ ] Add a GitHub access token to your `.env` file in the root of the repository
 - [ ] Add a 0.0.2 release by running `npm run release` in your terminal
 - [ ] Check the server if the theme package has been deployed
 

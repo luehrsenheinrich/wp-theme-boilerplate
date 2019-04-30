@@ -1,0 +1,26 @@
+/*!
+ * Theme Name: WP Munich Games Theme
+ * Theme URI: http://www.wp-munich.com
+ * Description: <%= pkg.description %>
+ * Author: WP Munich
+ * Author URI: http://www.wp-munich.com
+ * Version: <%= pkg.version %>
+ * Text Domain: _lhtbp
+ * Domain Path: /languages
+ * License: GPL-2.0+
+ * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
+ */
+
+@import (less) "../../node_modules/normalize.css/normalize.css";
+
+// The main file where all basic variables are stored
+@import "variables";
+@import "main";
+@import "blocks";
+
+
+// The scaffolding class for content & blocks
+@import "entry-content";
+
+// The base alignment styles for content & blocks
+@import "modules/alignments";

@@ -1,0 +1,91 @@
+//== Colors
+
+@blue: 		#223976;
+@red:		#E19384;
+@yellow:	#ECC471;
+
+@gray1:		#202020;
+@gray2:		#404040;
+@gray3:		#808080;
+@gray4:		#C0C0C0;
+@gray5:		#E0E0E0;
+
+
+//== Typography
+//
+//## Define the font sizes and line heights at the different break points.
+
+// The default font size for browsers
+@default_font_size: 	16px;
+
+// Vertical Rythm
+@font-size-target-xs: 	18px;
+@scale-factor-xs: 		1.25;
+@base-line-height-xs: 	1.5;
+@line-height-target-xs:	unit( @font-size-target-xs / @default_font_size, rem ) * @base-line-height-xs;
+
+@font-size-target-sm: 	22px;
+@scale-factor-sm: 		1.25;
+@base-line-height-sm: 	1.5;
+@line-height-target-sm:	unit( @font-size-target-sm / @default_font_size, rem ) * @base-line-height-sm;
+
+// Font Families
+@font-family-sans-serif: "LH Fira Sans", Arial, Helvetica, sans-serif;
+@font-family-headlines:  @font-family-sans-serif;
+
+//== Media queries breakpoints - Thanks to Bootstrap
+//
+//## Define the breakpoints at which your layout will change,
+//## adapting to different screen sizes.
+
+// Small screen / tablet
+@screen-sm-min: 48rem; // 768px
+
+// Medium screen / desktop
+@screen-md-min: 62rem; // 992px
+
+// Large screen / wide desktop
+@screen-lg-min: 75rem; // 1200px
+
+// So media queries don't overlap when required, provide a maximum
+@screen-xs-max: calc(@screen-sm-min ~"- 1px");
+@screen-sm-max: calc(@screen-md-min ~"- 1px");
+@screen-md-max: calc(@screen-lg-min ~"- 1px");
+
+//== Grid system
+//
+//## Define your custom responsive grid.
+
+//** Number of columns in the grid.
+@grid-columns:		12;
+//** Padding between columns. Gets divided in half for the left and right.
+@grid-gutter-width:	2rem;
+
+
+//== Container sizes
+//
+//## Define the maximum width of container elements for different screen sizes.
+
+// Small screen / tablet
+@container-tablet:			@screen-sm-min - 2rem;
+//** For `@screen-sm-min` and up.
+@container-sm:				@container-tablet;
+
+// Medium screen / desktop
+@container-desktop:			@screen-md-min - 2rem;
+//** For `@screen-sm-min` and up.
+@container-md:				@container-desktop;
+
+// Large screen / wide desktop
+@container-large-desktop:	@screen-lg-min - 2rem;
+//** For `@screen-lg-min` and up.
+@container-lg:				@container-large-desktop;
+
+
+//== Content width
+//
+//## Define the maximum width of content elements for different screen sizes.
+@content-xs: calc( ~"100% - "@grid-gutter-width);
+@content-sm: @screen-sm-min * 12/12 - @grid-gutter-width;
+@content-md: @screen-md-min * 10/12 - @grid-gutter-width;
+@content-lg: @screen-lg-min * 8/12 - @grid-gutter-width;

@@ -1,0 +1,17 @@
+// Set the box sizing globally for all elements
+* {
+	box-sizing: border-box;
+}
+
+body {
+	position: relative;
+	font-family: @font-family-sans-serif;
+}
+
+article.post {
+	margin-bottom: @line-height-target-xs;
+
+	@media ( min-height: @screen-sm-min ) {
+		margin-bottom: @line-height-target-sm;
+	}
+}

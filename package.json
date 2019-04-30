@@ -1,24 +1,10 @@
 {
   "name": "LH Theme Boilerplate",
   "slug": "_lhtbp",
-  "version": "1.0.2",
+  "version": "0.0.1",
   "description": "This is the theme boilerplate for WordPress themes by Luehrsen // Heinrich & WP Munich.",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/luehrsenheinrich/games_theme_exploration.git"
-  },
   "private": true,
-  "license": "GPLv2",
-  "bugs": {
-    "url": "https://github.com/luehrsenheinrich/games_theme_exploration/issues"
-  },
-  "homepage": "https://github.com/luehrsenheinrich/games_theme_exploration#readme",
-  "scripts": {
-    "setup": "sh bin/setup-local-env.sh",
-    "dev": "sh bin/setup-local-env.sh && grunt watch",
-    "remove": "docker-compose down --volumes --remove-orphans",
-    "release": "env-cmd .env release-it"
-  },
+  "license": "GPLv3",
   "devDependencies": {
     "@babel/core": "^7.4.4",
     "@lodder/grunt-postcss": "^1.0.8",
@@ -56,5 +42,11 @@
     "webpack": "^4.30.0",
     "webpack-cli": "^3.3.1"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "scripts": {
+    "setup": "sh bin/setup-local-env.sh",
+    "dev": "sh bin/setup-local-env.sh && grunt watch",
+    "remove": "docker-compose down --volumes --remove-orphans",
+    "release": "env-cmd .env release-it"
+  }
 }

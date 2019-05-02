@@ -34,6 +34,7 @@ new repository. So let's get started:
 
 - [ ] Search & Replace `_lhtbp` with your new WordPress theme slug
 - [ ] Check success in `package.json`, `docker-compose.json` & `bin/install-wordpress.sh`
+- [ ] Adjust `name` in `package.json` and `Theme Name` in `build/less/style.less`
 
 ### Running the enviroment
 

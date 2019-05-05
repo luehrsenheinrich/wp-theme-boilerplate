@@ -164,7 +164,7 @@ function wpgmt_font_loader() {
 		sprintf(
 			'window._lhtbpWebfontUrl = "%s"; %s',
 			get_template_directory_uri() . '/webfonts.css?ver=<%= pkg.version %>',
-			file_get_contents( get_template_directory_uri() . '/font-loader.min.js' )
+			file_get_contents( get_theme_file_path( '/font-loader.min.js' ) )
 		)
 	);
 

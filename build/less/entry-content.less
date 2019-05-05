@@ -1,8 +1,6 @@
 /**
- * The stylesheet for customizing the styling of default
+ * CONTENT FLOW - The classes for customizing the styling of default
  * content flow in the theme
- *
- * The default styles are the mobile styles.
  */
 .entry-content,
 .entry-summary,
@@ -11,24 +9,24 @@
 	margin: 0 auto;
 }
 
-// Apply a default content flow before we go into any specifics
+/* Apply a default content flow before we go into any specifics */
 .entry-content > *,
 .entry-summary > *,
 .entry-header > *,
 .entry-footer > *, {
-	// The default margin
+
+	/* The default margin */
 	margin-top: @line-height-target-xs;
 	margin-bottom: @line-height-target-xs;
 	margin-left: auto;
 	margin-right: auto;
 
 	/**
-	 * By default, content widthin the container is constraint
+	 * By default, content within the container is constraint
 	 * to the content width.
 	 */
 	max-width: @content-xs;
 
-	// Styles for blocks on small screens
 	@media (min-width: @screen-sm-min) {
 		margin-top: @line-height-target-sm;
 		margin-bottom: @line-height-target-sm;
@@ -37,13 +35,11 @@
 		max-width: @content-sm;
 	}
 
-	// Styles for blocks on medium screens
 	@media (min-width: @screen-md-min) {
 		// The max width a normal item shall have
 		max-width: @content-md;
 	}
 
-	// Styles for blocks on large screens
 	@media (min-width: @screen-lg-min) {
 		// The max width a normal item shall have
 		max-width: @content-lg;
@@ -97,3 +93,5 @@
 		max-width: none;
 	}
 }
+
+/* END CONTENT FLOW */

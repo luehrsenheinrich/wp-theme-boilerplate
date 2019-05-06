@@ -187,8 +187,8 @@ module.exports = function( grunt ) {
 	grunt.registerTask( 'handle_fonts', [ 'less:fonts', 'postcss:fonts' ] );
 
 	// Deployment strategies
-	grunt.registerTask( 'dev_deploy', [ 'newer_handle_css', 'newer_handle_js', 'newer:copy:build' ] );
-	grunt.registerTask( 'deploy', [ 'clean:trunk', 'handle_css', 'handle_js', 'handle_fonts', 'copy:build' ] );
+	grunt.registerTask( 'dev_deploy', [ 'newer_handle_css', 'newer_handle_js', 'newer:copy:build', 'newer:copy:build_stream' ] );
+	grunt.registerTask( 'deploy', [ 'clean:trunk', 'handle_css', 'handle_js', 'handle_fonts', 'copy:build', 'copy:build_stream' ] );
 
 	// Linting
 	grunt.registerTask( 'lint', [ 'shell:lintPHP', 'eslint', 'stylelint' ] );

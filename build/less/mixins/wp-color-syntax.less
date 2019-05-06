@@ -1,0 +1,17 @@
+//
+// This mixin generates needed classes for the color functions in the WordPress
+// Block editor.
+//
+.generate-wp-color-syntax(@name, @color) {
+
+	.has-@{name} {
+
+		&-color {
+			color: @color;
+		}
+
+		&-background-color {
+			background-color: @color;
+		}
+	}
+}

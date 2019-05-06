@@ -23,7 +23,7 @@ get_header();
 				the_post();
 				?>
 
-				<article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
+				<article <?php post_class( 'entry' ); ?> id="post-<?php the_ID(); ?>">
 					<div class="entry-header">
 						<h2 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
 					</div>

@@ -1,11 +1,7 @@
 const path = require( 'path' );
 const webpack = require( 'webpack' );
 const UglifyJsPlugin = require( 'uglifyjs-webpack-plugin' );
-const defaultConfig = require( '@wordpress/scripts/config/webpack.config' );
-
-defaultConfig.externals = defaultConfig.externals.concat( {
-	wp: 'wp',
-} );
+const DependencyExtractionWebpackPlugin = require( '@wordpress/dependency-extraction-webpack-plugin' );
 
 module.exports = {
 	entry: {
@@ -28,8 +24,14 @@ module.exports = {
 		new UglifyJsPlugin( {
 			include: /\.min\.js$/,
 		} ),
+		new DependencyExtractionWebpackPlugin(),
 	],
-	externals: defaultConfig.externals,
+	externals: {
+		jquery: 'jQuery',
+		wp: 'wp',
+		react: 'React',
+		'react-dom': 'ReactDOM',
+	},
 	resolve: {
 		modules: [
 			'node_modules',

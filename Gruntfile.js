@@ -150,29 +150,31 @@ module.exports = function( grunt ) {
 				files: [ 'build/**/*.js', '!build/**/*.min.js', '!build/**/*.bundle.js' ],
 				tasks: [ 'newer_handle_js' ],
 				options: {
-					livereload: true,
 				},
 			},
 			less: {
 				files: [ 'build/**/*.less' ], // which files to watch
 				tasks: [ 'newer_handle_css' ],
 				options: {
-					livereload: true,
 				},
 			},
 			php: {
 				files: [ 'build/**/*.php' ], // which files to watch
 				tasks: [ 'dev_deploy' ],
 				options: {
-					livereload: true,
 				},
 			},
-			livereload: {
+			static: {
 				files: [ 'build/**/*.html', 'build/**/*.txt' ], // Watch all files
 				tasks: [ 'dev_deploy' ],
 				options: {
-					livereload: true,
 				},
+			},
+			livereload: {
+				// Here we watch the files the sass task will compile to
+				// These files are sent to the live reload server after less compiles to them
+				options: { livereload: true },
+				files: [ 'trunk/**/*' ],
 			},
 		},
 	} );

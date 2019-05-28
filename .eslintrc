@@ -7,5 +7,8 @@
   },
   globals: {
     'wp': true,
+  },
+  rules: {
+    '@wordpress/no-base-control-with-label-without-id': 'off',
   }
 }

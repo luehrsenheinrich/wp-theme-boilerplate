@@ -26,6 +26,14 @@ $cg_update_checker = Puc_v4_Factory::buildUpdateChecker(
 );
 
 /**
+ * Load required files for this theme.
+ */
+function _lhtbp_load_required_files() {
+	require_once 'inc/classNames.php';
+}
+add_action( 'init', '_lhtbp_load_required_files' );
+
+/**
  * Sets up theme defaults and registers support for various WordPress features.
  *
  * Note that this function is hooked into the after_setup_theme hook, which

@@ -48,7 +48,7 @@ module.exports = function( grunt ) {
 					},
 					processors: [
 						// add vendor prefixes
-						require( 'autoprefixer' )( { browsers: 'last 12 versions' } ),
+						require( 'autoprefixer' )(),
 						// minify the result
 						require( 'cssnano' )(),
 					],

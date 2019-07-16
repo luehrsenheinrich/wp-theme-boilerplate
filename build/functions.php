@@ -147,7 +147,7 @@ add_action( 'after_setup_theme', '_lhtbp_content_width', 0 );
  * Enqueue scripts and styles.
  */
 function _lhtbp_scripts() {
-	wp_enqueue_style( '_lhtbp-style', get_template_directory_uri() . '/style.css', array(), THEME_VERSION, 'all' );
+	wp_enqueue_style( '_lhtbp-style--base', get_template_directory_uri() . '/css/base.css', array(), THEME_VERSION, 'all' );
 
 	wp_enqueue_script( '_lhtbp-script', get_template_directory_uri() . '/script.min.js', array( 'jquery' ), THEME_VERSION, true );
 

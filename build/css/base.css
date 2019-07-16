@@ -1,9 +1,5 @@
-:root {
-	--primary-color: #f00;
-}
+@import "./src/_vars.css";
 
 body {
 	background-color: var(--primary-color);
 }
-
-/*# sourceMappingURL=../../dist/css/maps/base.css.map */

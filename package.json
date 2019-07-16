@@ -34,6 +34,7 @@
     "npm": "^6.10.1",
     "postcss-base64": "^0.7.1",
     "postcss-import": "^12.0.1",
+    "postcss-normalize": "^8.0.1",
     "postcss-preset-env": "^6.7.0",
     "release-it": "^12.2.1",
     "stylelint": "^10.0.1",

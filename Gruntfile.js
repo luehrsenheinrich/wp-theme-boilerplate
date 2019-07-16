@@ -24,6 +24,9 @@ module.exports = function( grunt ) {
 					processors: [
 						require( 'postcss-preset-env' )(),
 						require( 'postcss-import' )(),
+						require( 'postcss-normalize' )( {
+							forceImport: 'sanitize.css',
+						} ),
 					],
 				},
 				files: [

@@ -195,7 +195,7 @@ module.exports = function( grunt ) {
 	grunt.registerTask( 'deploy', [ 'clean:trunk', 'handle_css', 'handle_js', 'handle_fonts', 'copy:build', 'copy:build_css', 'copy:build_stream' ] );
 
 	// // Linting
-	grunt.registerTask( 'lint', [ 'shell:lintPHP', 'eslint', 'stylelint' ] );
+	grunt.registerTask( 'lint', [ 'shell:lintPHP', 'eslint' ] );
 
 	// // Releasing
 	grunt.registerTask( 'release', [ 'lint', 'deploy', 'compress' ] );

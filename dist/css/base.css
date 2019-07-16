@@ -1,0 +1,9 @@
+:root {
+	--primary-color: #f00;
+}
+
+body {
+	background-color: #f00;
+	background-color: var(--primary-color);
+}
+/*# sourceMappingURL=../maps/base.css.map */

@@ -1,0 +1,9 @@
+:root {
+	--primary-color: #f00;
+}
+
+body {
+	background-color: #f00;
+	background-color: var(--primary-color);
+}
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uL2J1aWxkL2Nzcy9iYXNlLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtDQUNDLHFCQUFxQjtBQUN0Qjs7QUFFQTtDQUNDLHNCQUFzQztDQUF0QyxzQ0FBc0M7QUFDdkMiLCJmaWxlIjoiLi4vLi4vLi4vc3JjIiwic291cmNlc0NvbnRlbnQiOlsiOnJvb3Qge1xuXHQtLXByaW1hcnktY29sb3I6ICNmMDA7XG59XG5cbmJvZHkge1xuXHRiYWNrZ3JvdW5kLWNvbG9yOiB2YXIoLS1wcmltYXJ5LWNvbG9yKTtcbn1cblxuLyojIHNvdXJjZU1hcHBpbmdVUkw9Li4vLi4vZGlzdC9jc3MvbWFwcy9iYXNlLmNzcy5tYXAgKi8iXX0= */

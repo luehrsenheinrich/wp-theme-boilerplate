@@ -20,10 +20,7 @@ module.exports = function( grunt ) {
 		postcss: {
 			default: {
 				options: {
-					map: {
-						inline: false,
-						annotation: 'trunk/maps/',
-					},
+					map: false,
 					processors: [
 						require( 'autoprefixer' )(),
 						require( 'postcss-preset-env' )(),
@@ -41,10 +38,7 @@ module.exports = function( grunt ) {
 			},
 			minify: {
 				options: {
-					map: {
-						inline: false,
-						annotation: 'trunk/maps/',
-					},
+					map: false,
 					processors: [
 						require( 'cssnano' )(),
 					],
@@ -52,7 +46,7 @@ module.exports = function( grunt ) {
 				files: [
 					{
 						expand: true,
-						cwd: 'dist/css',
+						cwd: 'trunk/css',
 						src: '*.css',
 						dest: 'dist/css',
 						ext: '.min.css',

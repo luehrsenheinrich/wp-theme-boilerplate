@@ -22,7 +22,7 @@ module.exports = function( grunt ) {
 				options: {
 					map: {
 						inline: false,
-						annotation: 'dist/maps/',
+						annotation: 'trunk/maps/',
 					},
 					processors: [
 						require( 'autoprefixer' )(),
@@ -35,7 +35,7 @@ module.exports = function( grunt ) {
 						expand: true,
 						cwd: 'build/css',
 						src: '*.css',
-						dest: 'dist/css/',
+						dest: 'trunk/css/',
 					},
 				],
 			},
@@ -43,7 +43,7 @@ module.exports = function( grunt ) {
 				options: {
 					map: {
 						inline: false,
-						annotation: 'dist/maps/',
+						annotation: 'trunk/maps/',
 					},
 					processors: [
 						require( 'cssnano' )(),

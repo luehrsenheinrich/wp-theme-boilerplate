@@ -59,19 +59,19 @@ module.exports = function( grunt ) {
 					},
 				],
 			},
-			// fonts: {
-			// 	src: 'trunk/webfonts.css',
-			// 	options: {
-			// 		map: false, // inline sourcemaps
-			// 		processors: [
-			// 			require( 'postcss-base64' )( {
-			// 				extensions: [ '.woff' ],
-			// 				excludeAtFontFace: false,
-			// 				root: 'build',
-			// 			} ),
-			// 		],
-			// 	},
-			// },
+			fonts: {
+				src: 'trunk/css/webfonts.min.css',
+				options: {
+					map: false, // inline sourcemaps
+					processors: [
+						require( 'postcss-base64' )( {
+							extensions: [ '.woff' ],
+							excludeAtFontFace: false,
+							root: 'build/fonts',
+						} ),
+					],
+				},
+			},
 		},
 
 		// LINT CSS - Lint the css we wrote
@@ -113,10 +113,10 @@ module.exports = function( grunt ) {
 		// CLEAN FOLDERS - Before we compile freshly, we want to delete old folder contents
 		clean: {
 			options: { force: true },
-			dist: {
+			dist_css: {
 				expand: true,
 				force: true,
-				cwd: 'dist/',
+				cwd: 'dist/css/',
 				src: [ '**/*' ],
 			},
 			trunk: {
@@ -149,7 +149,7 @@ module.exports = function( grunt ) {
 		watch: {
 			js: {
 				files: [ 'build/**/*.js', '!build/**/*.min.js', '!build/**/*.bundle.js' ],
-				tasks: [ 'newer_handle_js' ],
+				tasks: [ 'handle_css' ],
 				options: {
 				},
 			},
@@ -181,17 +181,17 @@ module.exports = function( grunt ) {
 	} );
 
 	// Handle certain file groups
-	grunt.registerTask( 'newer_handle_css', [ 'newer:handle:css' ] );
-	grunt.registerTask( 'handle_css', [ 'clean:dist', 'postcss:default', 'postcss:minify' ] );
+	grunt.registerTask( 'newer_handle_css', [ 'newer:postcss:default', 'postcss:minify' ] );
+	grunt.registerTask( 'handle_css', [ 'clean:dist_css', 'postcss:default', 'postcss:minify' ] );
 
 	grunt.registerTask( 'newer_handle_js', [ 'webpack' ] );
 	grunt.registerTask( 'handle_js', [ 'webpack' ] );
 
-	grunt.registerTask( 'handle_fonts', [] );
+	grunt.registerTask( 'handle_fonts', [ 'postcss:fonts' ] );
 
 	// // Deployment strategies
 	grunt.registerTask( 'dev_deploy', [ 'newer_handle_css', 'newer_handle_js', 'newer:copy:build', 'newer:copy:build_css', 'newer:copy:build_stream' ] );
-	grunt.registerTask( 'deploy', [ 'clean:trunk', 'handle_css', 'handle_js', 'handle_fonts', 'copy:build', 'copy:build_css', 'copy:build_stream' ] );
+	grunt.registerTask( 'deploy', [ 'clean:trunk', 'handle_css', 'handle_js', 'copy:build', 'copy:build_css', 'copy:build_stream', 'handle_fonts' ] );
 
 	// // Linting
 	grunt.registerTask( 'lint', [ 'shell:lintPHP', 'eslint', 'stylelint' ] );

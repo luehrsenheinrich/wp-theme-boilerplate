@@ -1,7 +1,10 @@
 :root {
 	--primary-color: #f00;
 }
-
+html,
+body {
+	font-family: "LH Fira Sans", Arial, Helvetica, sans-serif;
+}
 body {
 	background-color: var(--primary-color);
 }

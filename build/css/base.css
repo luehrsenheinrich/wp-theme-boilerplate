@@ -1,4 +1,5 @@
 @import "./src/_vars.css";
+@import "./src/_typography.css";
 
 body {
 	background-color: var(--primary-color);

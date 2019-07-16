@@ -54,7 +54,6 @@
 				// cater for IE8 which does not support addEventListener or attachEvent on XMLHttpRequest
 				xhr.onreadystatechange = function() {
 					if ( xhr.readyState === 4 ) {
-						console.log(xhr.responseText);
 						// once we have the content, quickly inject the css rules
 						injectRawStyle( xhr.responseText );
 						// and cache the text content for further use

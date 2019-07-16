@@ -22,7 +22,6 @@ module.exports = function( grunt ) {
 				options: {
 					map: false,
 					processors: [
-						require( 'autoprefixer' )(),
 						require( 'postcss-preset-env' )(),
 						require( 'postcss-import' )(),
 					],

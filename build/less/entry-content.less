@@ -5,92 +5,102 @@
 .entry-content,
 .entry-summary,
 .entry-footer,
-.entry-header, {
-	margin: 0 auto;
+.entry-header,
+.wp-block-column {
+	.contentFlow();
 }
 
-/* Apply a default content flow before we go into any specifics */
-.entry-content > *,
-.entry-summary > *,
-.entry-header > *,
-.entry-footer > *, {
 
-	/* The default margin */
-	margin-top: @line-height-target-xs;
-	margin-bottom: @line-height-target-xs;
-	margin-left: auto;
-	margin-right: auto;
+.contentFlow() {
+	margin: 0 auto;
 
-	/**
-	 * By default, content within the container is constraint
-	 * to the content width.
-	 */
-	max-width: @content-xs;
-
-	@media (min-width: @screen-sm-min) {
-		margin-top: @line-height-target-sm;
-		margin-bottom: @line-height-target-sm;
-
-		// The max width a normal item shall have
-		max-width: @content-sm;
-	}
-
-	@media (min-width: @screen-md-min) {
-		// The max width a normal item shall have
-		max-width: @content-md;
-	}
-
-	@media (min-width: @screen-lg-min) {
-		// The max width a normal item shall have
-		max-width: @content-lg;
-	}
-
-	&:first-child {
-
-		/**
-		 * The .entry-content element should not have top or bottom margin, so the
-		 * first and last element are getting their top/bottom margin removed as well.
-		 */
-		margin-top: 0;
-	}
-
-	&:last-child {
-		margin-bottom: 0;
-	}
-
-	&.alignwide {
-
-		/**
-		 * Wide alignments take the full width of our breakpoint sizes
-		 */
-		clear: both;
+	& > * + * {
+		margin-top: @line-height-target-xs;
 
 		@media (min-width: @screen-sm-min) {
-			// All blocks should by default just have this width
-			max-width: @container-sm;
-		}
-
-		// Styles for blocks on medium screens
-		@media (min-width: @screen-md-min) {
-			// All blocks should by default just have this width
-			max-width: @container-md;
-		}
-
-		// Styles for blocks on large screens
-		@media (min-width: @screen-lg-min) {
-			// All blocks should by default just have this width
-			max-width: @container-lg;
+			margin-top: @line-height-target-sm;
 		}
 	}
 
-	&.alignfull {
+	& > * {
+
+		/* The default margin */
+		margin-bottom: 0;
+		margin-left: auto;
+		margin-right: auto;
 
 		/**
-		 * Full alignments do not have a max width and take the
-		 * full width of .entry-content
+		 * By default, content within the container is constraint
+		 * to the content width.
 		 */
-		clear: both;
-		max-width: none;
+		max-width: @content-xs;
+
+		@media (min-width: @screen-sm-min) {
+			margin-top: @line-height-target-sm;
+			margin-bottom: @line-height-target-sm;
+
+			// The max width a normal item shall have
+			max-width: @content-sm;
+		}
+
+		@media (min-width: @screen-md-min) {
+			// The max width a normal item shall have
+			max-width: @content-md;
+		}
+
+		@media (min-width: @screen-lg-min) {
+			// The max width a normal item shall have
+			max-width: @content-lg;
+		}
+
+		&:first-child {
+
+			/**
+			 * The .entry-content element should not have top or bottom margin,
+			 * so the first and last element are getting their top/bottom margin
+			 * removed as well.
+			 */
+			margin-top: 0;
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		&.alignwide {
+
+			/**
+			 * Wide alignments take the full width of our breakpoint sizes
+			 */
+			clear: both;
+
+			@media (min-width: @screen-sm-min) {
+				// All blocks should by default just have this width
+				max-width: @container-sm;
+			}
+
+			// Styles for blocks on medium screens
+			@media (min-width: @screen-md-min) {
+				// All blocks should by default just have this width
+				max-width: @container-md;
+			}
+
+			// Styles for blocks on large screens
+			@media (min-width: @screen-lg-min) {
+				// All blocks should by default just have this width
+				max-width: @container-lg;
+			}
+		}
+
+		&.alignfull {
+
+			/**
+			 * Full alignments do not have a max width and take the
+			 * full width of .entry-content
+			 */
+			clear: both;
+			max-width: none;
+		}
 	}
 }
 

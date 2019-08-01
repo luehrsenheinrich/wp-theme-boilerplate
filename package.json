@@ -52,6 +52,6 @@
     "release": "env-cmd .env release-it"
   },
   "browserslist": [
-    "last 12 versions"
+    "last 2 versions"
   ]
 }

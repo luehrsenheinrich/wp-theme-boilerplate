@@ -5,4 +5,5 @@
 body {
 	background-color: var(--primary-color);
 	display: flex;
+	max-width: var(--container-xs);
 }

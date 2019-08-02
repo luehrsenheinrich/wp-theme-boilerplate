@@ -1,5 +1,18 @@
 const webpackConfig = require( './webpack.config' );
 
+const postCssPresetEnvOptions = {
+	stage: 3,
+	features:	{
+		'custom-media-queries': {
+			preserve: false,
+		},
+		'custom-properties': {
+			preserve: true,
+		},
+		'nesting-rules': true,
+	},
+};
+
 module.exports = function( grunt ) {
 	// measures the time each task takes
 	// require( 'time-grunt' )( grunt );
@@ -22,9 +35,9 @@ module.exports = function( grunt ) {
 				options: {
 					map: false,
 					processors: [
-						require( 'postcss-preset-env' )(),
 						require( 'postcss-import' )(),
 						require( 'postcss-normalize' )(),
+						require( 'postcss-preset-env' )( postCssPresetEnvOptions ),
 					],
 				},
 				files: [

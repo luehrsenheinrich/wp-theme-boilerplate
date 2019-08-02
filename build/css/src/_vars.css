@@ -1,7 +1,10 @@
+@import "_custom-media.css";
+
 :root {
 
 	/** Colors **/
 	--primary-color: #f00;
+	--secondary-color: #ff0;
 
 	/** Typography **/
 	--font-family: "LH Fira Sans", "Arial", "Helvetica", sans-serif;
@@ -14,10 +17,4 @@
 	--bp-sm: 48em; /** 768px **/
 	--bp-md: 60em; /** 960px **/
 	--bp-lg: 75em; /** 1200px **/
-
-	/** Container Sizes **/
-	--container-xs: calc(100vh - (var(--grid-gutter-width) * 2));
-	--container-sm: calc(var(--bp-sm) - (var(--grid-gutter-width) * 2));
-	--container-md: calc(var(--bp-md) - (var(--grid-gutter-width) * 2));
-	--container-lg: calc(var(--bp-lg) - (var(--grid-gutter-width) * 2));
 }

@@ -1,0 +1,29 @@
+/*--------------------------------------------------------------
+# Container
+--------------------------------------------------------------*/
+
+.container {
+	margin: 0 auto;
+	max-width: calc(100vh - (var(--grid-gutter-width) * 2));
+}
+
+@media (--sm-query) {
+
+	.container {
+		max-width: calc(var(--bp-sm) - (var(--grid-gutter-width) * 2));
+	}
+}
+
+@media (--md-query) {
+
+	.container {
+		max-width: calc(var(--bp-md) - (var(--grid-gutter-width) * 2));
+	}
+}
+
+@media (--lg-query) {
+
+	.container {
+		max-width: calc(var(--bp-lg) - (var(--grid-gutter-width) * 2));
+	}
+}

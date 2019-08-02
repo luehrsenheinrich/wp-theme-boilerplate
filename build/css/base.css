@@ -1,9 +1,18 @@
-@import "sanitize.css";
+/*@import "sanitize.css";*/
 @import "./src/_vars.css";
 @import "./src/_typography.css";
+@import "./src/_custom-media.css";
+@import "./src/_container.css";
 
 body {
 	background-color: var(--primary-color);
 	display: flex;
 	max-width: var(--container-xs);
+}
+
+@media (--sm-query) {
+
+	body {
+		background-color: var(--secondary-color);
+	}
 }

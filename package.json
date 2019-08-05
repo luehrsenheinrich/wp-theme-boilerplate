@@ -52,7 +52,7 @@
     "release": "env-cmd .env release-it"
   },
   "browserslist": [
-		"> 1%",
+    "> 1%",
     "last 2 versions"
   ]
 }

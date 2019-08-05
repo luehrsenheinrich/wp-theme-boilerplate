@@ -3,6 +3,7 @@
 @import "./src/_typography.css";
 @import "./src/_custom-media.css";
 @import "./src/_container.css";
+@import "./src/_inner-container.css";
 
 body {
 	background-color: var(--primary-color);

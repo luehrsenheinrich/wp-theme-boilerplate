@@ -11,14 +11,17 @@
 	--font-family-headlines: "LH Fira Sans", "Arial", "Helvetica", sans-serif;
 
 	/** Spacing **/
-	--grid-gutter-width: 1rem;
+	--grid-gutter-width: 2rem;
 	--grid-gutter-height: 1.5rem;
 
 	/** Breakpoints **/
-	--bp-sm: 48em; /** 768px **/
-	--bp-md: 60em; /** 960px **/
-	--bp-lg: 75em; /** 1200px **/
+	--bp-sm: 48rem; /** 768px **/
+	--bp-md: 60rem; /** 960px **/
+	--bp-lg: 75rem; /** 1200px **/
 
 	/** Content Widths **/
 	--content-xs: calc(100vw - var(--grid-gutter-width));
+	--content-sm: calc(var(--bp-sm) * 12 / 12 - var(--grid-gutter-width));
+	--content-md: calc(var(--bp-md) * 10 / 12 - var(--grid-gutter-width));
+	--content-lg: calc(var(--bp-lg) * 8 / 12 - var(--grid-gutter-width));
 }

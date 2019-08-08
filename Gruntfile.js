@@ -188,7 +188,7 @@ module.exports = function( grunt ) {
 	} );
 
 	// Handle certain file groups
-	grunt.registerTask( 'newer_handle_css', [ 'newer:postcss:default', 'postcss:minify' ] );
+	grunt.registerTask( 'newer_handle_css', [ 'postcss:default', 'postcss:minify' ] );
 	grunt.registerTask( 'handle_css', [ 'clean:dist_css', 'postcss:default', 'postcss:minify' ] );
 
 	grunt.registerTask( 'newer_handle_js', [ 'webpack' ] );

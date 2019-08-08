@@ -1,14 +1,16 @@
-/*@import "sanitize.css";*/
+@import "normalize.css";
 @import "./src/_vars.css";
 @import "./src/_typography.css";
 @import "./src/_custom-media.css";
 @import "./src/_container.css";
 @import "./src/_inner-container.css";
 
+* {
+	box-sizing: content-box;
+}
+
 body {
 	background-color: var(--primary-color);
-	display: flex;
-	max-width: var(--container-xs);
 }
 
 @media (--sm-query) {

@@ -1,0 +1,19 @@
+/*--------------------------------------------------------------
+## Custom block font sizes.
+--------------------------------------------------------------*/
+
+.has-small-font-size {
+	font-size: var(--font-size-small);
+}
+
+.has-regular-font-size {
+	font-size: var(--font-size-regular);
+}
+
+.has-large-font-size {
+	font-size: var(--font-size-large);
+}
+
+.has-larger-font-size {
+	font-size: var(--font-size-larger);
+}

@@ -1,23 +1,13 @@
-@import "normalize.css";
-@import "./src/_vars.css";
-@import "./src/_reset.css";
 @import "./src/_custom-media.css";
-@import "./src/_a11y.css";
-@import "./src/_container.css";
-@import "./src/_inner-container.css";
-@import "./src/_stack.css";
-@import "./src/_alignment.css";
-@import "./src/_elements.css";
-@import "./src/_typography.css";
-@import "./src/_links.css";
-
-body {
-
-}
-
-@media (--sm-query) {
-
-	body {
-
-	}
-}
+@import "normalize.css";
+@import "./src-base/_vars.css";
+@import "./src-base/_reset.css";
+@import "./src-base/_a11y.css";
+@import "./src-base/_container.css";
+@import "./src-base/_inner-container.css";
+@import "./src-base/_stack.css";
+@import "./src-base/_alignment.css";
+@import "./src-base/_elements.css";
+@import "./src-base/_typography.css";
+@import "./src-base/_links.css";
+@import "./src-base/_custom-font-sizes.css"

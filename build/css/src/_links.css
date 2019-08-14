@@ -1,20 +1,19 @@
 /*--------------------------------------------------------------
 # Links
 --------------------------------------------------------------*/
-/* stylelint-disable */
+
 a {
-	color: var(--color-link);
+	color: var(--primary-color);
 }
-/* stylelint-enable */
 
 a:visited {
-	color: var(--color-link-visited);
+	color: var(--primary-color);
 }
 
 a:hover,
 a:focus,
 a:active {
-	color: var(--color-link-active);
+	color: var(--secondary-color);
 }
 
 a:focus {

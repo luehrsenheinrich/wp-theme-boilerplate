@@ -1,21 +1,23 @@
 @import "normalize.css";
 @import "./src/_vars.css";
-@import "./src/_typography.css";
+@import "./src/_reset.css";
 @import "./src/_custom-media.css";
+@import "./src/_a11y.css";
 @import "./src/_container.css";
 @import "./src/_inner-container.css";
-
-* {
-	box-sizing: content-box;
-}
+@import "./src/_stack.css";
+@import "./src/_alignment.css";
+@import "./src/_elements.css";
+@import "./src/_typography.css";
+@import "./src/_links.css";
 
 body {
-	background-color: var(--primary-color);
+
 }
 
 @media (--sm-query) {
 
 	body {
-		background-color: var(--secondary-color);
+
 	}
 }

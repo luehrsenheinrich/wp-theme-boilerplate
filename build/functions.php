@@ -120,11 +120,21 @@ function _lhtbp_theme_setup() {
 	// Responsive embedded content.
 	add_theme_support( 'responsive-embeds' );
 
-	// Default block styles.
-	add_theme_support( 'wp-block-styles' );
-
 	// Enable support for post thumbnails and featured images.
 	add_theme_support( 'post-thumbnails' );
+
+	// Add support for selective refresh for widgets.
+	add_theme_support( 'customize-selective-refresh-widgets' );
+
+	// Add support for editor styles.
+	add_theme_support( 'editor-styles' );
+
+	// Add support for default block styles.
+	add_theme_support( 'wp-block-styles' );
+
+	// Add support for wide-aligned images.
+	add_theme_support( 'align-wide' );
+
 }
 add_action( 'after_setup_theme', '_lhtbp_theme_setup' );
 

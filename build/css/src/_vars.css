@@ -20,8 +20,8 @@
 	--bp-lg: 75rem; /** 1200px **/
 
 	/** Content Widths **/
-	--content-xs: calc(100vw - var(--grid-gutter-width));
-	--content-sm: calc(var(--bp-sm) * 12 / 12 - var(--grid-gutter-width));
-	--content-md: calc(var(--bp-md) * 10 / 12 - var(--grid-gutter-width));
-	--content-lg: calc(var(--bp-lg) * 8 / 12 - var(--grid-gutter-width));
+	--content-xs: calc(100vw);
+	--content-sm: calc(var(--bp-sm) * 12 / 12);
+	--content-md: calc(var(--bp-md) * 10 / 12);
+	--content-lg: calc(var(--bp-lg) * 8 / 12);
 }

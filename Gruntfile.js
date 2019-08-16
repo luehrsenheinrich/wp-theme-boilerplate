@@ -66,19 +66,6 @@ module.exports = function( grunt ) {
 					},
 				],
 			},
-			fonts: {
-				src: 'trunk/css/webfonts.min.css',
-				options: {
-					map: false, // inline sourcemaps
-					processors: [
-						require( 'postcss-base64' )( {
-							extensions: [ '.woff' ],
-							excludeAtFontFace: false,
-							root: 'build/fonts',
-						} ),
-					],
-				},
-			},
 		},
 
 		// LINT CSS - Lint the css we wrote
@@ -194,11 +181,9 @@ module.exports = function( grunt ) {
 	grunt.registerTask( 'newer_handle_js', [ 'webpack' ] );
 	grunt.registerTask( 'handle_js', [ 'webpack' ] );
 
-	grunt.registerTask( 'handle_fonts', [ 'postcss:fonts' ] );
-
 	// // Deployment strategies
 	grunt.registerTask( 'dev_deploy', [ 'newer_handle_css', 'newer_handle_js', 'newer:copy:build', 'newer:copy:build_css', 'newer:copy:build_stream' ] );
-	grunt.registerTask( 'deploy', [ 'clean:trunk', 'handle_css', 'handle_js', 'copy:build', 'copy:build_css', 'copy:build_stream', 'handle_fonts' ] );
+	grunt.registerTask( 'deploy', [ 'clean:trunk', 'handle_css', 'handle_js', 'copy:build', 'copy:build_css', 'copy:build_stream' ] );
 
 	// // Linting
 	grunt.registerTask( 'lint', [ 'shell:lintPHP', 'eslint', 'stylelint' ] );

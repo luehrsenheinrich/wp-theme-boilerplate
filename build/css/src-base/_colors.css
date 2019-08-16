@@ -1,0 +1,19 @@
+/*--------------------------------------------------------------
+# Color Classes
+--------------------------------------------------------------*/
+
+.has-primary-color {
+	color: var(--primary-color);
+}
+
+.has-primary-background-color {
+	background-color: var(--primary-color);
+}
+
+.has-secondary-color {
+	color: var(--secondary-color);
+}
+
+.has-secondary-background-color {
+	background-color: var(--secondary-color);
+}

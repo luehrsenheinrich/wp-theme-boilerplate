@@ -22,10 +22,6 @@
 		 * to the content width.
 		 */
 		max-width: var(--content-xs);
-
-		& + * {
-			margin-top: var(--grid-gutter-height);
-		}
 	}
 
 	& ul,

@@ -7,7 +7,7 @@
 
 	/** Typography **/
 	--font-family: "Fira Sans", "Arial", "Helvetica", sans-serif;
-	--font-family-headlines: "Droid Sans", "Arial", "Helvetica", sans-serif;
+	--font-family-headlines: "Fira Sans", "Arial", "Helvetica", sans-serif;
 
 	/** Spacing **/
 	--grid-gutter-width: 2rem;

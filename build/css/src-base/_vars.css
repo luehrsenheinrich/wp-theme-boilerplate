@@ -6,8 +6,8 @@
 	--text-color: #333;
 
 	/** Typography **/
-	--font-family: "LH Fira Sans", "Arial", "Helvetica", sans-serif;
-	--font-family-headlines: "LH Fira Sans", "Arial", "Helvetica", sans-serif;
+	--font-family: "Fira Sans", "Arial", "Helvetica", sans-serif;
+	--font-family-headlines: "Droid Sans", "Arial", "Helvetica", sans-serif;
 
 	/** Spacing **/
 	--grid-gutter-width: 2rem;

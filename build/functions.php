@@ -161,6 +161,12 @@ function _lhtbp_scripts() {
 
 	wp_enqueue_script( '_lhtbp-script', get_template_directory_uri() . '/script.min.js', array( 'jquery' ), THEME_VERSION, true );
 
+	$translation_array = array(
+		'themeUrl' => get_template_directory_uri(),
+		'restUrl'  => get_rest_url(),
+	);
+	wp_localize_script( '_lhtbp-script', '_lhtbp', $translation_array );
+
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}

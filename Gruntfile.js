@@ -143,7 +143,7 @@ module.exports = function( grunt ) {
 		watch: {
 			js: {
 				files: [ 'build/**/*.js', '!build/**/*.min.js', '!build/**/*.bundle.js' ],
-				tasks: [ 'handle_css' ],
+				tasks: [ 'handle_js' ],
 				options: {
 				},
 			},

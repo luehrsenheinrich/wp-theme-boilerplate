@@ -1,3 +1,4 @@
 * linguist-vendored
 build/* linguist-vendored=false
 build/puc/* linguist-vendored
+build/fonts/* linguist-vendored

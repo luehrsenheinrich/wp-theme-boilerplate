@@ -166,25 +166,3 @@ function _lhtbp_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', '_lhtbp_scripts' );
-
-/**
- * Embed the fontloader script into the page for faster font loading & rendering.
- *
- * @return void
- */
-function wpgmt_font_loader() {
-
-	wp_register_script( 'font-loader', '', array(), '', false );
-	wp_enqueue_script( 'font-loader' );
-
-	wp_add_inline_script(
-		'font-loader',
-		sprintf(
-			'window._lhtbpWebfontUrl = "%s"; %s',
-			get_template_directory_uri() . '/css/webfonts.min.css?ver=<%= pkg.version %>',
-			file_get_contents( get_theme_file_path( '/font-loader.min.js' ) )
-		)
-	);
-
-}
-add_action( 'init', 'wpgmt_font_loader' );

@@ -1,5 +1,17 @@
 const webpackConfig = require( './webpack.config' );
-const gruntNewerLess = require( 'grunt-newer-less' );
+
+const postCssPresetEnvOptions = {
+	stage: 3,
+	features:	{
+		'custom-media-queries': {
+			preserve: false,
+		},
+		'custom-properties': {
+			preserve: true,
+		},
+		'nesting-rules': true,
+	},
+};
 
 module.exports = function( grunt ) {
 	// measures the time each task takes
@@ -17,65 +29,48 @@ module.exports = function( grunt ) {
 		// Define variables
 		pkg: grunt.file.readJSON( 'package.json' ),
 
-		// LESS TO CSS - Compile the less files to css files
-		less: {
-			options: {
-				optimization: 2,
-				sourceMap: true,
-				sourceMapFileInline: true,
-				process( content ) {
-					return grunt.template.process( content );
-				},
-			},
-			default: {
-				files: {
-					'trunk/style.css': 'build/less/style.less',
-				},
-			},
-			fonts: {
-				files: {
-					'trunk/webfonts.css': 'build/less/webfonts.less',
-				},
-			},
-		},
-
 		// OPTIMIZE CSS - Take the created CSS files and run some plugins on it
 		postcss: {
 			default: {
 				options: {
-					map: {
-						inline: false,
-					},
+					map: false,
 					processors: [
-						// add vendor prefixes
-						require( 'autoprefixer' )( { browsers: 'last 12 versions' } ),
-						// minify the result
+						require( 'postcss-import' )(),
+						require( 'postcss-normalize' )(),
+						require( 'postcss-preset-env' )( postCssPresetEnvOptions ),
+					],
+				},
+				files: [
+					{
+						expand: true,
+						cwd: 'build/css',
+						src: '*.css',
+						dest: 'trunk/css/',
+					},
+				],
+			},
+			minify: {
+				options: {
+					map: false,
+					processors: [
 						require( 'cssnano' )(),
 					],
 				},
-				files: {
-					// The files to be optimised and prefixed
-					'trunk/style.min.css': 'trunk/style.css',
-				},
-			},
-			fonts: {
-				src: 'trunk/webfonts.css',
-				options: {
-					map: false, // inline sourcemaps
-					processors: [
-						require( 'postcss-base64' )( {
-							extensions: [ '.woff' ],
-							excludeAtFontFace: false,
-							root: 'build',
-						} ),
-					],
-				},
+				files: [
+					{
+						expand: true,
+						cwd: 'trunk/css',
+						src: [ '*.css', '!*.min.css' ],
+						dest: 'trunk/css',
+						ext: '.min.css',
+					},
+				],
 			},
 		},
 
-		// LINT LESS - Lint the less we wrote
+		// LINT CSS - Lint the css we wrote
 		stylelint: {
-			all: [ 'build/less/**/*.css', 'build/less/**/*.less' ],
+			all: [ 'build/**/*.css', '!build/puc/**/*.css' ],
 		},
 
 		// PROCESS JS - Use webpack to process the needed js files
@@ -83,12 +78,12 @@ module.exports = function( grunt ) {
 			prod: webpackConfig,
 		},
 
-		// SHELL - Run needed shell commands
+		// // SHELL - Run needed shell commands
 		shell: {
 			lintPHP: 'composer run lint',
 		},
 
-		// ESLINT - Make sure our JS follows coding standards
+		// // ESLINT - Make sure our JS follows coding standards
 		eslint: {
 			target: [ 'build/js/**/*.js' ],
 		},
@@ -104,13 +99,20 @@ module.exports = function( grunt ) {
 					return grunt.template.process( content );
 				},
 			},
-			build: { expand: true, cwd: 'build', src: [ '**/*.txt', '**/*.svg', '**/*.po', '**/*.pot', '**/*.tmpl.html', '**/*.php' ], dest: 'trunk/', filter: 'isFile' },
+			build: { expand: true, cwd: 'build', src: [ 'style.css', '**/*.txt', '**/*.svg', '**/*.po', '**/*.pot', '**/*.tmpl.html', '**/*.php' ], dest: 'trunk/', filter: 'isFile' },
+			build_css: { expand: true, cwd: 'dist/css', src: [ '*.min.css' ], dest: 'trunk/css/', filter: 'isFile' },
 			build_stream: { expand: true, options: { encoding: null }, cwd: 'build', src: [ '**/*.mo', 'img/**/*', 'screenshot.png', 'fonts/**/*' ], dest: 'trunk/', filter: 'isFile' },
 		},
 
 		// CLEAN FOLDERS - Before we compile freshly, we want to delete old folder contents
 		clean: {
 			options: { force: true },
+			dist_css: {
+				expand: true,
+				force: true,
+				cwd: 'dist/css/',
+				src: [ '**/*' ],
+			},
 			trunk: {
 				expand: true,
 				force: true,
@@ -137,23 +139,16 @@ module.exports = function( grunt ) {
 			},
 		},
 
-		// NEWER CACHE - Check which files actually got changed and work only on those
-		newer: {
-			options: {
-				override: gruntNewerLess.overrideLess,
-			},
-		},
-
 		// WATCHER - Watch for changes in files and process those when a change is detected
 		watch: {
 			js: {
 				files: [ 'build/**/*.js', '!build/**/*.min.js', '!build/**/*.bundle.js' ],
-				tasks: [ 'newer_handle_js' ],
+				tasks: [ 'handle_js' ],
 				options: {
 				},
 			},
-			less: {
-				files: [ 'build/**/*.less' ], // which files to watch
+			css: {
+				files: [ 'build/**/*.css' ], // which files to watch
 				tasks: [ 'newer_handle_css' ],
 				options: {
 				},
@@ -180,21 +175,19 @@ module.exports = function( grunt ) {
 	} );
 
 	// Handle certain file groups
-	grunt.registerTask( 'newer_handle_css', [ 'less:default', 'newer:postcss:default' ] );
-	grunt.registerTask( 'handle_css', [ 'less:default', 'postcss:default' ] );
+	grunt.registerTask( 'newer_handle_css', [ 'postcss:default', 'postcss:minify' ] );
+	grunt.registerTask( 'handle_css', [ 'clean:dist_css', 'postcss:default', 'postcss:minify' ] );
 
 	grunt.registerTask( 'newer_handle_js', [ 'webpack' ] );
 	grunt.registerTask( 'handle_js', [ 'webpack' ] );
 
-	grunt.registerTask( 'handle_fonts', [ 'less:fonts', 'postcss:fonts' ] );
+	// // Deployment strategies
+	grunt.registerTask( 'dev_deploy', [ 'newer_handle_css', 'newer_handle_js', 'newer:copy:build', 'newer:copy:build_css', 'newer:copy:build_stream' ] );
+	grunt.registerTask( 'deploy', [ 'clean:trunk', 'handle_css', 'handle_js', 'copy:build', 'copy:build_css', 'copy:build_stream' ] );
 
-	// Deployment strategies
-	grunt.registerTask( 'dev_deploy', [ 'newer_handle_css', 'newer_handle_js', 'newer:copy:build', 'newer:copy:build_stream' ] );
-	grunt.registerTask( 'deploy', [ 'clean:trunk', 'handle_css', 'handle_js', 'handle_fonts', 'copy:build', 'copy:build_stream' ] );
-
-	// Linting
+	// // Linting
 	grunt.registerTask( 'lint', [ 'shell:lintPHP', 'eslint', 'stylelint' ] );
 
-	// Releasing
+	// // Releasing
 	grunt.registerTask( 'release', [ 'lint', 'deploy', 'compress' ] );
 };

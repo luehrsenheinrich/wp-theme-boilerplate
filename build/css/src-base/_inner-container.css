@@ -1,0 +1,70 @@
+/*--------------------------------------------------------------
+# Inner Container
+--------------------------------------------------------------*/
+
+.entry-content,
+.inner-container,
+.wp-block-column,
+[class*="wp-block"] > [class*="__inner-container"] {
+	margin: 0 auto;
+
+	& > * {
+
+		/* The default margin */
+		margin: var(--grid-gutter-height) auto;
+
+		/* The default padding */
+		padding-left: calc(var(--grid-gutter-width) / 2);
+		padding-right: calc(var(--grid-gutter-width) / 2);
+
+		/**
+		 * By default, content within the container is constraint
+		 * to the content width.
+		 */
+		max-width: var(--content-xs);
+	}
+
+	& ul,
+	& ol {
+		padding-left: calc(var(--grid-gutter-width) * 2);
+	}
+}
+
+@media (--sm-query) {
+
+	.entry-content,
+	.inner-container,
+	.wp-block-column,
+	[class*="wp-block"] > [class*="__inner-container"] {
+
+		& > * {
+			max-width: var(--content-sm);
+		}
+	}
+}
+
+@media (--md-query) {
+
+	.entry-content,
+	.inner-container,
+	.wp-block-column,
+	[class*="wp-block"] > [class*="__inner-container"] {
+
+		& > * {
+			max-width: var(--content-md);
+		}
+	}
+}
+
+@media (--lg-query) {
+
+	.entry-content,
+	.inner-container,
+	.wp-block-column,
+	[class*="wp-block"] > [class*="__inner-container"] {
+
+		& > * {
+			max-width: var(--content-lg);
+		}
+	}
+}

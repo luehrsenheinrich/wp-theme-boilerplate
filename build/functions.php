@@ -120,11 +120,21 @@ function _lhtbp_theme_setup() {
 	// Responsive embedded content.
 	add_theme_support( 'responsive-embeds' );
 
-	// Default block styles.
-	add_theme_support( 'wp-block-styles' );
-
 	// Enable support for post thumbnails and featured images.
 	add_theme_support( 'post-thumbnails' );
+
+	// Add support for selective refresh for widgets.
+	add_theme_support( 'customize-selective-refresh-widgets' );
+
+	// Add support for editor styles.
+	add_theme_support( 'editor-styles' );
+
+	// Add support for default block styles.
+	add_theme_support( 'wp-block-styles' );
+
+	// Add support for wide-aligned images.
+	add_theme_support( 'align-wide' );
+
 }
 add_action( 'after_setup_theme', '_lhtbp_theme_setup' );
 
@@ -147,34 +157,19 @@ add_action( 'after_setup_theme', '_lhtbp_content_width', 0 );
  * Enqueue scripts and styles.
  */
 function _lhtbp_scripts() {
-	wp_enqueue_style( '_lhtbp-style', get_template_directory_uri() . '/style.min.css', array(), THEME_VERSION, 'all' );
+	wp_enqueue_style( '_lhtbp-style--base', get_template_directory_uri() . '/css/base.min.css', array(), THEME_VERSION, 'all' );
+	wp_enqueue_style( '_lhtbp-style--blocks', get_template_directory_uri() . '/css/blocks.min.css', array(), THEME_VERSION, 'all' );
 
 	wp_enqueue_script( '_lhtbp-script', get_template_directory_uri() . '/script.min.js', array( 'jquery' ), THEME_VERSION, true );
+
+	$translation_array = array(
+		'themeUrl' => get_template_directory_uri(),
+		'restUrl'  => get_rest_url(),
+	);
+	wp_localize_script( '_lhtbp-script', '_lhtbp', $translation_array );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
 add_action( 'wp_enqueue_scripts', '_lhtbp_scripts' );
-
-/**
- * Embed the fontloader script into the page for faster font loading & rendering.
- *
- * @return void
- */
-function wpgmt_font_loader() {
-
-	wp_register_script( 'font-loader', '', array(), '', false );
-	wp_enqueue_script( 'font-loader' );
-
-	wp_add_inline_script(
-		'font-loader',
-		sprintf(
-			'window._lhtbpWebfontUrl = "%s"; %s',
-			get_template_directory_uri() . '/webfonts.css?ver=<%= pkg.version %>',
-			file_get_contents( get_theme_file_path( '/font-loader.min.js' ) )
-		)
-	);
-
-}
-add_action( 'init', 'wpgmt_font_loader' );

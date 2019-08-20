@@ -1,0 +1,36 @@
+:root {
+
+	/** Colors **/
+	--primary-color: #26303d;
+	--secondary-color: #23ad7b;
+	--text-color: #333;
+
+	/** Typography **/
+	--font-family: "Fira Sans", "Arial", "Helvetica", sans-serif;
+	--font-family-headlines: "Fira Sans", "Arial", "Helvetica", sans-serif;
+
+	/** Spacing **/
+	--grid-gutter-width: 2rem;
+	--grid-gutter-height: 1.5rem;
+
+	/** Breakpoints **/
+	--bp-sm: 48rem; /** 768px **/
+	--bp-md: 60rem; /** 960px **/
+	--bp-lg: 75rem; /** 1200px **/
+
+	/** Content Widths **/
+	--content-xs: calc(100vw);
+	--content-sm: calc(var(--bp-sm) * 12 / 12);
+	--content-md: calc(var(--bp-md) * 10 / 12);
+	--content-lg: calc(var(--bp-lg) * 8 / 12);
+
+	/** Typography **/
+	--global-font-size: 20;
+	--global-font-line-height: 1.4;
+
+	/* Custom editor font sizes */
+	--font-size-small: calc(16 / var(--global-font-size) * 1rem);
+	--font-size-regular: calc(var(--global-font-size) / 16 * 1rem);
+	--font-size-large: calc(36 / var(--global-font-size) * 1rem);
+	--font-size-larger: calc(48 / var(--global-font-size) * 1rem);
+}

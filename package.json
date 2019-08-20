@@ -12,7 +12,7 @@
     "@wordpress/babel-preset-default": "^4.2.0",
     "@wordpress/dependency-extraction-webpack-plugin": "^1.0.1",
     "@wordpress/eslint-plugin": "^2.2.0",
-    "autoprefixer": "^9.5.1",
+    "autoprefixer": "^9.6.1",
     "babel-loader": "^8.0.6",
     "babel-plugin-lodash": "^3.3.4",
     "cssnano": "^4.1.10",
@@ -22,24 +22,26 @@
     "grunt-contrib-clean": "^2.0.0",
     "grunt-contrib-compress": "^1.5.0",
     "grunt-contrib-copy": "^1.0.0",
-    "grunt-contrib-less": "github:luehrsenheinrich/grunt-contrib-less#add/process-option",
     "grunt-contrib-watch": "^1.1.0",
     "grunt-eslint": "^22.0.0",
     "grunt-newer": "^1.3.0",
-    "grunt-newer-less": "^1.0.2",
     "grunt-shell": "^3.0.1",
     "grunt-stylelint": "^0.11.0",
     "grunt-webpack": "^3.1.3",
     "install": "^0.13.0",
     "jit-grunt": "^0.10.0",
     "normalize.css": "^8.0.1",
-    "npm": "^6.9.0",
+    "npm": "^6.10.1",
     "postcss-base64": "^0.7.1",
+    "postcss-import": "^12.0.1",
+    "postcss-normalize": "^8.0.1",
+    "postcss-preset-env": "^6.7.0",
     "release-it": "^12.2.1",
     "stylelint": "^10.0.1",
     "stylelint-config-wordpress": "^14.0.0",
     "time-grunt": "^2.0.0",
     "uglifyjs-webpack-plugin": "^2.1.3",
+    "webfontloader": "^1.6.28",
     "webpack": "^4.32.2",
     "webpack-cli": "^3.3.2"
   },
@@ -49,5 +51,9 @@
     "dev": "sh bin/setup-local-env.sh && grunt watch",
     "remove": "docker-compose down --volumes --remove-orphans",
     "release": "env-cmd .env release-it"
-  }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ]
 }

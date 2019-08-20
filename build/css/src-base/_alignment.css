@@ -1,0 +1,52 @@
+/*--------------------------------------------------------------
+# Alignment
+--------------------------------------------------------------*/
+
+:root .alignleft {
+	float: left;
+	margin-right: calc(var(--grid-gutter-width) / 2);
+}
+
+:root .alignright {
+	float: right;
+	margin-left: calc(var(--grid-gutter-width) / 2);
+}
+
+:root .aligncenter {
+	clear: both;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+:root .alignwide {
+	clear: both;
+	max-width: calc(50% + var(--content-xs) / 2);
+}
+
+:root .alignfull {
+	clear: both;
+	width: auto;
+	max-width: 100%;
+	padding: 0;
+}
+
+@media (--sm-query) {
+
+	:root .alignwide {
+		max-width: calc(var(--bp-sm) - var(--grid-gutter-width));
+	}
+}
+
+@media (--md-query) {
+
+	:root .alignwide {
+		max-width: calc(var(--bp-md) - var(--grid-gutter-width));
+	}
+}
+
+@media (--lg-query) {
+
+	:root .alignwide {
+		max-width: calc(var(--bp-lg) - var(--grid-gutter-width));
+	}
+}

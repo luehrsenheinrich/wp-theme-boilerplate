@@ -7,7 +7,6 @@ module.exports = {
 	entry: {
 		'script.min': path.resolve( __dirname, './build/js/script.js' ),
 		'script.bundle': path.resolve( __dirname, './build/js/script.js' ),
-		'font-loader.min': path.resolve( __dirname, './build/js/font-loader.js' ),
 	},
 	mode: 'none',
 	output: {

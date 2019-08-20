@@ -15,7 +15,6 @@ update
 
 ## CSS
 **/*.min.css
-build/style.css
 
 ## JS
 **/*.min.js

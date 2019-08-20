@@ -16,16 +16,6 @@ if ( ! defined( 'THEME_VERSION' ) ) {
 }
 
 /**
- * Registeres the PLUGIN UPDATE CHECKER for the theme to update from our servers
- */
-require 'puc/plugin-update-checker.php';
-$cg_update_checker = Puc_v4_Factory::buildUpdateChecker(
-	'https://www.luehrsen-heinrich.de/updates/?action=get_metadata&slug=' . THEME_SLUG,
-	__FILE__, // Full path to the main plugin file or functions.php.
-	THEME_SLUG
-);
-
-/**
  * Load required files for this theme.
  */
 function _lhtbp_load_required_files() {

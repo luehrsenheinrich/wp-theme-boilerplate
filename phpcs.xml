@@ -31,7 +31,6 @@
 	<arg name="extensions" value="php"/>
 
 	<file>./build</file>
-	<exclude-pattern>./build/puc</exclude-pattern>
 	<exclude-pattern>./bin-php</exclude-pattern>
 
 	<!-- For CI, don't fail on warnings -->

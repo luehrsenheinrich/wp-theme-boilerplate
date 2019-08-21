@@ -9,7 +9,7 @@
     "@babel/core": "^7.4.5",
     "@lodder/grunt-postcss": "^1.0.8",
     "@wordpress/babel-plugin-import-jsx-pragma": "^2.2.0",
-    "@wordpress/babel-preset-default": "^4.2.0",
+    "@wordpress/babel-preset-default": "^4.4.0",
     "@wordpress/dependency-extraction-webpack-plugin": "^1.0.1",
     "@wordpress/eslint-plugin": "^2.2.0",
     "autoprefixer": "^9.6.1",

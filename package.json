@@ -6,7 +6,7 @@
   "private": true,
   "license": "GPLv3",
   "devDependencies": {
-    "@babel/core": "^7.4.5",
+    "@babel/core": "^7.5.5",
     "@lodder/grunt-postcss": "^1.0.8",
     "@wordpress/babel-plugin-import-jsx-pragma": "^2.3.0",
     "@wordpress/babel-preset-default": "^4.4.0",

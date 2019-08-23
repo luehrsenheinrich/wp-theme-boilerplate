@@ -37,7 +37,7 @@
     "postcss-normalize": "^8.0.1",
     "postcss-preset-env": "^6.7.0",
     "release-it": "^12.3.5",
-    "stylelint": "^10.0.1",
+    "stylelint": "^10.1.0",
     "stylelint-config-wordpress": "^14.0.0",
     "time-grunt": "^2.0.0",
     "uglifyjs-webpack-plugin": "^2.2.0",

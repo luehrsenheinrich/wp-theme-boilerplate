@@ -16,6 +16,47 @@ if ( ! defined( 'THEME_VERSION' ) ) {
 }
 
 /**
+ * Custom autoloader function for theme classes.
+ *
+ * @access private
+ *
+ * @param string $class_name Class name to load.
+ * @return bool True if the class was loaded, false otherwise.
+ */
+function _lhtbp_autoload( $class_name ) {
+	$namespace = '_lhtbp';
+
+	if ( strpos( $class_name, $namespace . '\\' ) !== 0 ) {
+		return false;
+	}
+
+	$parts = explode( '\\', substr( $class_name, strlen( $namespace . '\\' ) ) );
+	$path = get_template_directory() . '/inc';
+
+	foreach ( $parts as $part ) {
+		$path .= '/' . $part;
+	}
+
+	$path .= '.php';
+
+	if ( ! file_exists( $path ) ) {
+		return false;
+
+	}
+
+	require_once $path;
+
+	return true;
+}
+spl_autoload_register( '_lhtbp_autoload' );
+
+// Load the `wp__lhtbp()` entry point function.
+require get_template_directory() . '/inc/functions.php';
+
+// Initialize the theme.
+call_user_func( '_lhtbp\wp__lhtbp' );
+
+/**
  * Load required files for this theme.
  */
 function _lhtbp_load_required_files() {
@@ -56,11 +97,11 @@ function _lhtbp_theme_setup() {
 	add_theme_support( 'post-thumbnails' );
 
 	// This theme uses wp_nav_menu() in one location.
-	register_nav_menus(
-		array(
-			'header' => esc_html__( 'Header', '_lhtbp' ),
-		)
-	);
+	// register_nav_menus(
+	// 	array(
+	// 		'header' => esc_html__( 'Header', '_lhtbp' ),
+	// 	)
+	// );
 
 	/*
 	 * Switch default core markup for search form, comment form, and comments

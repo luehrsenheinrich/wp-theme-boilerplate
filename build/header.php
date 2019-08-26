@@ -9,6 +9,8 @@
  * @package _lhtbp
  */
 
+namespace _lhtbp;
+
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -21,3 +23,5 @@
 
 <body <?php body_class(); ?>>
 <a class="skip-link screen-reader-text" href="#content"><?php esc_attr_e( 'Skip to content', '_lhtbp' ); ?></a>
+
+<?php wp__lhtbp()->display_primary_nav_menu( array( 'menu_class' => 'menu header clearfix', 'container_class' => 'header-menu header-menu--main' ) ); ?>

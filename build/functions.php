@@ -17,9 +17,13 @@ if ( ! defined( 'THEME_VERSION' ) ) {
 
 /**
  * Custom autoloader function for theme classes.
+ * Autoloader and architecture below heavily inspired by WP Rig.
+ * Thank you guys for your awesome work!
+ *
+ * Changes were made to fit the boilerplates needs (e.g. change namespaces and function names).
  *
  * @access private
- *
+ * @see https://github.com/wprig/wprig
  * @param string $class_name Class name to load.
  * @return bool True if the class was loaded, false otherwise.
  */

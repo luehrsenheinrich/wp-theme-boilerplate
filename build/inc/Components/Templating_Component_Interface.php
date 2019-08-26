@@ -4,7 +4,9 @@
  *
  * @package _lhtbp
  */
+
 namespace _lhtbp\Components;
+
 /**
  * Interface for a theme component that exposes template tags.
  */
@@ -16,5 +18,5 @@ interface Templating_Component_Interface {
 	 *               a callable or an array with key 'callable'. This approach is used to reserve the possibility of
 	 *               adding support for further arguments in the future.
 	 */
-	public function template_tags() : array;
+	public function template_tags();
 }

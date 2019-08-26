@@ -35,7 +35,7 @@ function _lhtbp_autoload( $class_name ) {
 	}
 
 	$parts = explode( '\\', substr( $class_name, strlen( $namespace . '\\' ) ) );
-	$path = get_template_directory() . '/inc';
+	$path  = get_template_directory() . '/inc';
 
 	foreach ( $parts as $part ) {
 		$path .= '/' . $part;
@@ -99,13 +99,6 @@ function _lhtbp_theme_setup() {
 	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 	 */
 	add_theme_support( 'post-thumbnails' );
-
-	// This theme uses wp_nav_menu() in one location.
-	// register_nav_menus(
-	// 	array(
-	// 		'header' => esc_html__( 'Header', '_lhtbp' ),
-	// 	)
-	// );
 
 	/*
 	 * Switch default core markup for search form, comment form, and comments

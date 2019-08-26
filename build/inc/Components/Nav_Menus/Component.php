@@ -4,6 +4,7 @@
  *
  * @package _lhtbp
  */
+
 namespace _lhtbp\Components\Nav_Menus;
 use _lhtbp\Components\Component_Interface;
 use _lhtbp\Components\Templating_Component_Interface;
@@ -14,6 +15,7 @@ use function register_nav_menus;
 use function esc_html__;
 use function has_nav_menu;
 use function wp_nav_menu;
+
 /**
  * Class for managing navigation menus.
  *
@@ -32,7 +34,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 	 *
 	 * @return string Component slug.
 	 */
-	public function get_slug() : string {
+	public function get_slug() {
 		return 'nav_menus';
 	}
 
@@ -50,7 +52,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 	 *               a callable or an array with key 'callable'. This approach is used to reserve the possibility of
 	 *               adding support for further arguments in the future.
 	 */
-	public function template_tags() : array {
+	public function template_tags() {
 		return [
 			'is_nav_menu_active' => array( $this, 'is_nav_menu_active' ),
 			'display_nav_menu'   => array( $this, 'display_nav_menu' ),
@@ -67,9 +69,10 @@ class Component implements Component_Interface, Templating_Component_Interface {
 	/**
 	 * Checks whether the primary navigation menu is active.
 	 *
+	 * @param string $slug The slug if the menu.
 	 * @return bool True if the primary navigation menu is active, false otherwise.
 	 */
-	public function is_nav_menu_active( $slug ) : bool {
+	public function is_nav_menu_active( $slug ) {
 		if ( ! isset( static::NAV_MENU_LIST[ $slug ] ) ) {
 			return false;
 		}

@@ -4,7 +4,9 @@
  *
  * @package _lhtbp
  */
+
 namespace _lhtbp\Components;
+
 /**
  * Interface for a theme component.
  */
@@ -14,7 +16,7 @@ interface Component_Interface {
 	 *
 	 * @return string Component slug.
 	 */
-	public function get_slug() : string;
+	public function get_slug();
 	/**
 	 * Adds the action and filter hooks to integrate with WordPress.
 	 */

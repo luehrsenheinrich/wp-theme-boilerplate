@@ -4,10 +4,12 @@
  *
  * @package _lhtbp
  */
+
 namespace _lhtbp;
 use InvalidArgumentException;
 use BadMethodCallException;
 use RuntimeException;
+
 /**
  * Template tags entry point.
  *
@@ -24,7 +26,7 @@ class Template_Tags {
 	 *
 	 * @var array
 	 */
-	protected $template_tags = [];
+	protected $template_tags = array();
 	/**
 	 * Constructor.
 	 *
@@ -64,7 +66,7 @@ class Template_Tags {
 	 *
 	 * @throws BadMethodCallException Thrown if the template tag does not exist.
 	 */
-	public function __call( string $method, array $args ) {
+	public function __call( $method, $args ) {
 		if ( ! isset( $this->template_tags[ $method ] ) ) {
 			throw new BadMethodCallException(
 				sprintf(
@@ -84,7 +86,7 @@ class Template_Tags {
 	 * @throws InvalidArgumentException Thrown when one of the template tags is invalid.
 	 * @throws RuntimeException         Thrown when one of the template tags conflicts with an existing one.
 	 */
-	protected function set_template_tags( Components\Templating_Component_Interface $component ) {
+	protected function set_template_tags( Templating_Component_Interface $component ) {
 		$tags = $component->template_tags();
 		foreach ( $tags as $method_name => $callback ) {
 			if ( is_callable( $callback ) ) {

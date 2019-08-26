@@ -44,6 +44,12 @@ class Component implements Component_Interface, Templating_Component_Interface {
 		);
 	}
 
+	/**
+	 * An PHP implementation of Jed Watsons javascript "classnames" utility.
+	 *
+	 * @see https://github.com/JedWatson/classnames
+	 * @return string String of classnames. Mainly used by dynamic blocks.
+	 */
 	public function class_names() {
 		$args = func_get_args();
 
@@ -70,13 +76,13 @@ class Component implements Component_Interface, Templating_Component_Interface {
 					$return    = $value;
 				}
 
-				$isArray          = is_array( $return );
-				$isObject         = is_object( $return );
-				$isStringableType = ! $isArray && ! $isObject;
+				$is_array           = is_array( $return );
+				$is_object          = is_object( $return );
+				$is_stringable_type = ! $is_array && ! $is_object;
 
-				$isStringableObject = $isObject && method_exists( $return, '__toString' );
+				$is_stringable_object = $is_object && method_exists( $return, '__toString' );
 
-				if ( ! $isStringableType && ! $isStringableObject ) {
+				if ( ! $is_stringable_type && ! $is_stringable_object ) {
 					return null;
 				}
 

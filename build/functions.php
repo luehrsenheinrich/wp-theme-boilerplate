@@ -61,14 +61,6 @@ require get_template_directory() . '/inc/functions.php';
 call_user_func( '_lhtbp\wp__lhtbp' );
 
 /**
- * Load required files for this theme.
- */
-function _lhtbp_load_required_files() {
-	require_once 'inc/classNames.php';
-}
-add_action( 'init', '_lhtbp_load_required_files' );
-
-/**
  * Sets up theme defaults and registers support for various WordPress features.
  *
  * Note that this function is hooked into the after_setup_theme hook, which

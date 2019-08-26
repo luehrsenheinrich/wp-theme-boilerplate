@@ -22,8 +22,16 @@ use function wp_nav_menu;
  * * `wp__lhtbp()->display_nav_menu( array $args = [] )`
  */
 class Component implements Component_Interface, Templating_Component_Interface {
+	/**
+	 * Associative array of theme navigations, keyed by their slug.
+	 *
+	 * @var array
+	 */
 	protected $nav_menu_list = [];
 
+	/**
+	 * Constructor function to populate theme vars.
+	 */
 	public function __construct() {
 		$this->nav_menu_list = array(
 			'header' => esc_html__( 'Header', '_lhtbp' ),

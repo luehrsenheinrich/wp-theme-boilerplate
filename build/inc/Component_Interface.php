@@ -17,6 +17,7 @@ interface Component_Interface {
 	 * @return string Component slug.
 	 */
 	public function get_slug();
+
 	/**
 	 * Adds the action and filter hooks to integrate with WordPress.
 	 */

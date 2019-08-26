@@ -27,6 +27,7 @@ class Template_Tags {
 	 * @var array
 	 */
 	protected $template_tags = array();
+
 	/**
 	 * Constructor.
 	 *
@@ -55,6 +56,7 @@ class Template_Tags {
 			$this->set_template_tags( $component );
 		}
 	}
+
 	/**
 	 * Magic call method.
 	 *
@@ -78,6 +80,7 @@ class Template_Tags {
 		}
 		return call_user_func_array( $this->template_tags[ $method ]['callback'], $args );
 	}
+
 	/**
 	 * Sets template tags for a given theme templating component.
 	 *

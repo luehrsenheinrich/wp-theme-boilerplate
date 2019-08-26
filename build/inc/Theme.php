@@ -20,12 +20,14 @@ class Theme {
 	 * @var array
 	 */
 	protected $components = [];
+
 	/**
 	 * The template tags instance, providing access to all available template tags.
 	 *
 	 * @var Template_Tags
 	 */
 	protected $template_tags;
+
 	/**
 	 * Constructor.
 	 *
@@ -67,6 +69,7 @@ class Theme {
 			)
 		);
 	}
+
 	/**
 	 * Adds the action and filter hooks to integrate with WordPress.
 	 *
@@ -80,6 +83,7 @@ class Theme {
 			}
 		);
 	}
+
 	/**
 	 * Retrieves the template tags instance, the entry point exposing template tag methods.
 	 *
@@ -92,6 +96,7 @@ class Theme {
 	public function template_tags() {
 		return $this->template_tags;
 	}
+
 	/**
 	 * Retrieves the component for a given slug.
 	 *
@@ -114,6 +119,7 @@ class Theme {
 		}
 		return $this->components[ $slug ];
 	}
+
 	/**
 	 * Gets the default theme components.
 	 *

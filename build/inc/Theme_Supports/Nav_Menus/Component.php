@@ -1,13 +1,13 @@
 <?php
 /**
- * _lhtbp\Nav_Menus\Component class
+ * _lhtbp\Theme_Supports\Nav_Menus\Component class
  *
  * @package _lhtbp
  */
 
-namespace _lhtbp\Components\Nav_Menus;
-use _lhtbp\Components\Component_Interface;
-use _lhtbp\Components\Templating_Component_Interface;
+namespace _lhtbp\Theme_Supports\Nav_Menus;
+use _lhtbp\Component_Interface;
+use _lhtbp\Templating_Component_Interface;
 use function add_action;
 use function register_nav_menus;
 use function esc_html__;

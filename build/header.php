@@ -28,4 +28,6 @@ namespace _lhtbp;
 $menu_args = array(
 	'theme_location' => 'header',
 );
-wp__lhtbp()->display_nav_menu( $menu_args ); ?>
+wp__lhtbp()->display_nav_menu( $menu_args );
+
+var_dump( wp__lhtbp()->class_names( 'lorem-ispum', array( 'dolor-sit-amet' => true ) ) );

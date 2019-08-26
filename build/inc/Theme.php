@@ -45,13 +45,13 @@ class Theme {
 		// Set the components.
 		foreach ( $components as $component ) {
 			// Bail if a component is invalid.
-			if ( ! $component instanceof Components\Component_Interface ) {
+			if ( ! $component instanceof Component_Interface ) {
 				throw new InvalidArgumentException(
 					sprintf(
 						/* translators: 1: classname/type of the variable, 2: interface name */
 						__( 'The theme component %1$s does not implement the %2$s interface.', '_lhtbp' ),
 						gettype( $component ),
-						Components\Component_Interface::class
+						Component_Interface::class
 					)
 				);
 			}
@@ -61,8 +61,8 @@ class Theme {
 		$this->template_tags = new Template_Tags(
 			array_filter(
 				$this->components,
-				function( Components\Component_Interface $component ) {
-					return $component instanceof Components\Templating_Component_Interface;
+				function( Component_Interface $component ) {
+					return $component instanceof Templating_Component_Interface;
 				}
 			)
 		);
@@ -75,7 +75,7 @@ class Theme {
 	public function initialize() {
 		array_walk(
 			$this->components,
-			function( Components\Component_Interface $component ) {
+			function( Component_Interface $component ) {
 				$component->initialize();
 			}
 		);
@@ -123,7 +123,8 @@ class Theme {
 	 */
 	protected function get_default_components() {
 		$components = array(
-			new Components\Nav_Menus\Component(),
+			new Functions\Class_Names\Component(),
+			new Theme_Supports\Nav_Menus\Component(),
 		);
 
 		return $components;

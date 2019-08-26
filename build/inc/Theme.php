@@ -39,16 +39,17 @@ class Theme {
 		if ( empty( $components ) ) {
 			$components = $this->get_default_components();
 		}
+
 		// Set the components.
 		foreach ( $components as $component ) {
 			// Bail if a component is invalid.
-			if ( ! $component instanceof Component_Interface ) {
+			if ( ! $component instanceof Components\Component_Interface ) {
 				throw new InvalidArgumentException(
 					sprintf(
 						/* translators: 1: classname/type of the variable, 2: interface name */
 						__( 'The theme component %1$s does not implement the %2$s interface.', '_lhtbp' ),
 						gettype( $component ),
-						Component_Interface::class
+						Components\Component_Interface::class
 					)
 				);
 			}
@@ -58,8 +59,8 @@ class Theme {
 		$this->template_tags = new Template_Tags(
 			array_filter(
 				$this->components,
-				function( Component_Interface $component ) {
-					return $component instanceof Templating_Component_Interface;
+				function( Components\Component_Interface $component ) {
+					return $component instanceof Components\Templating_Component_Interface;
 				}
 			)
 		);
@@ -72,7 +73,7 @@ class Theme {
 	public function initialize() {
 		array_walk(
 			$this->components,
-			function( Component_Interface $component ) {
+			function( Components\Component_Interface $component ) {
 				$component->initialize();
 			}
 		);
@@ -119,7 +120,7 @@ class Theme {
 	 * @return array List of theme components to use by default.
 	 */
 	protected function get_default_components() : array {
-		$components = [
+		$components = array(
 			// new Localization\Component(),
 			// new Base_Support\Component(),
 			// new Editor\Component(),
@@ -129,7 +130,7 @@ class Theme {
 			// new AMP\Component(),
 			// new PWA\Component(),
 			// new Comments\Component(),
-			new Nav_Menus\Component(),
+			new Components\Nav_Menus\Component(),
 			// new Sidebars\Component(),
 			// new Custom_Background\Component(),
 			// new Custom_Header\Component(),
@@ -137,10 +138,8 @@ class Theme {
 			// new Post_Thumbnails\Component(),
 			// new Customizer\Component(),
 			// new Styles\Component(),
-		];
-		if ( defined( 'JETPACK__VERSION' ) ) {
-			$components[] = new Jetpack\Component();
-		}
+		);
+
 		return $components;
 	}
 }

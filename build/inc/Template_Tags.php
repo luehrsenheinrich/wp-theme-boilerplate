@@ -40,13 +40,13 @@ class Template_Tags {
 		// Set the template tags for the components.
 		foreach ( $components as $component ) {
 			// Bail if a templating component is invalid.
-			if ( ! $component instanceof Templating_Component_Interface ) {
+			if ( ! $component instanceof Components\Templating_Component_Interface ) {
 				throw new InvalidArgumentException(
 					sprintf(
 						/* translators: 1: classname/type of the variable, 2: interface name */
 						__( 'The theme templating component %1$s does not implement the %2$s interface.', '_lhtbp' ),
 						gettype( $component ),
-						Templating_Component_Interface::class
+						Components\Templating_Component_Interface::class
 					)
 				);
 			}
@@ -84,7 +84,7 @@ class Template_Tags {
 	 * @throws InvalidArgumentException Thrown when one of the template tags is invalid.
 	 * @throws RuntimeException         Thrown when one of the template tags conflicts with an existing one.
 	 */
-	protected function set_template_tags( Templating_Component_Interface $component ) {
+	protected function set_template_tags( Components\Templating_Component_Interface $component ) {
 		$tags = $component->template_tags();
 		foreach ( $tags as $method_name => $callback ) {
 			if ( is_callable( $callback ) ) {

@@ -4,7 +4,7 @@
  *
  * @package _lhtbp
  */
-namespace _lhtbp;
+namespace _lhtbp\Components;
 /**
  * Interface for a theme component that exposes template tags.
  */

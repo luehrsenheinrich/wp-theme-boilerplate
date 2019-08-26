@@ -8,9 +8,7 @@
 namespace _lhtbp\Components\Nav_Menus;
 use _lhtbp\Components\Component_Interface;
 use _lhtbp\Components\Templating_Component_Interface;
-use WP_Post;
 use function add_action;
-use function add_filter;
 use function register_nav_menus;
 use function esc_html__;
 use function has_nav_menu;
@@ -24,10 +22,14 @@ use function wp_nav_menu;
  * * `wp__lhtbp()->display_nav_menu( array $args = [] )`
  */
 class Component implements Component_Interface, Templating_Component_Interface {
-	const NAV_MENU_LIST = array(
-		'header' => 'Header',
-		'footer' => 'Footer',
-	);
+	protected $nav_menu_list = [];
+
+	public function __construct() {
+		$this->nav_menu_list = array(
+			'header' => esc_html__( 'Header', '_lhtbp' ),
+			'footer' => esc_html__( 'Footer', '_lhtbp' ),
+		);
+	}
 
 	/**
 	 * Gets the unique identifier for the theme component.
@@ -53,17 +55,17 @@ class Component implements Component_Interface, Templating_Component_Interface {
 	 *               adding support for further arguments in the future.
 	 */
 	public function template_tags() {
-		return [
+		return array(
 			'is_nav_menu_active' => array( $this, 'is_nav_menu_active' ),
 			'display_nav_menu'   => array( $this, 'display_nav_menu' ),
-		];
+		);
 	}
 
 	/**
 	 * Registers the navigation menus.
 	 */
 	public function action_register_nav_menus() {
-		register_nav_menus( static::NAV_MENU_LIST );
+		register_nav_menus( $this->nav_menu_list );
 	}
 
 	/**
@@ -73,7 +75,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 	 * @return bool True if the primary navigation menu is active, false otherwise.
 	 */
 	public function is_nav_menu_active( $slug ) {
-		if ( ! isset( static::NAV_MENU_LIST[ $slug ] ) ) {
+		if ( ! isset( $this->nav_menu_list[ $slug ] ) ) {
 			return false;
 		}
 

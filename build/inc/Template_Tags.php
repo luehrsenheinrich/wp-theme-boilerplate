@@ -86,7 +86,7 @@ class Template_Tags {
 	 * @throws InvalidArgumentException Thrown when one of the template tags is invalid.
 	 * @throws RuntimeException         Thrown when one of the template tags conflicts with an existing one.
 	 */
-	protected function set_template_tags( Templating_Component_Interface $component ) {
+	protected function set_template_tags( Components\Templating_Component_Interface $component ) {
 		$tags = $component->template_tags();
 		foreach ( $tags as $method_name => $callback ) {
 			if ( is_callable( $callback ) ) {

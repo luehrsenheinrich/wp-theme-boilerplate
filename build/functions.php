@@ -61,22 +61,6 @@ require get_template_directory() . '/inc/functions.php';
 call_user_func( '_lhtbp\wp__lhtbp' );
 
 /**
- * Sets up theme defaults and registers support for various WordPress features.
- *
- * Note that this function is hooked into the after_setup_theme hook, which
- * runs before the init hook. The init hook is too late for some features, such
- * as indicating support for post thumbnails.
- */
-function _lhtbp_theme_setup() {
-	/*
-	 * Make theme available for translation.
-	 * Translations can be filed in the /languages/ directory.
-	 */
-	load_theme_textdomain( '_lhtbp', get_template_directory() . '/languages' );
-}
-add_action( 'after_setup_theme', '_lhtbp_theme_setup' );
-
-/**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *
  * Priority 0 to make it available to lower priority callbacks.

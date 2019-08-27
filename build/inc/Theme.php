@@ -129,6 +129,7 @@ class Theme {
 	 */
 	protected function get_default_components() {
 		$components = array(
+			new Content_Width\Component(),
 			new Functions\Class_Names\Component(),
 			new i18n\Component(),
 			new Nav_Menus\Component(),

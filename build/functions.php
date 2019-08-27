@@ -61,21 +61,6 @@ require get_template_directory() . '/inc/functions.php';
 call_user_func( '_lhtbp\wp__lhtbp' );
 
 /**
- * Set the content width in pixels, based on the theme's design and stylesheet.
- *
- * Priority 0 to make it available to lower priority callbacks.
- *
- * @global int $content_width
- */
-function _lhtbp_content_width() {
-	// This variable is intended to be overruled from themes.
-	// Open WPCS issue: {@link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/issues/1043}.
-	// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
-	$GLOBALS['content_width'] = 640;
-}
-add_action( 'after_setup_theme', '_lhtbp_content_width', 0 );
-
-/**
  * Enqueue scripts and styles.
  */
 function _lhtbp_scripts() {

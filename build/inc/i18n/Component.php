@@ -31,6 +31,11 @@ class Component implements Component_Interface {
 		add_action( 'after_setup_theme', array( $this, 'load_text_domain' ) );
 	}
 
+	/**
+	 * Load the themes textdomain.
+	 *
+	 * @return void
+	 */
 	public function load_text_domain() {
 		load_theme_textdomain( '_lhtbp', get_template_directory() . '/languages' );
 	}

@@ -25,7 +25,9 @@ namespace _lhtbp;
 <a class="skip-link screen-reader-text" href="#content"><?php esc_attr_e( 'Skip to content', '_lhtbp' ); ?></a>
 
 <?php
-$menu_args = array(
-	'theme_location' => 'header',
-);
-wp__lhtbp()->display_nav_menu( $menu_args );
+if ( wp__lhtbp()->is_nav_menu_active( 'header' ) ) {
+	$menu_args = array(
+		'theme_location' => 'header',
+	);
+	wp__lhtbp()->display_nav_menu( $menu_args );
+}

@@ -1,11 +1,11 @@
 <?php
 /**
- * _lhtbp\Theme_Supports\Nav_Menus\Component class
+ * _lhtbp\Nav_Menus\Component class
  *
  * @package _lhtbp
  */
 
-namespace _lhtbp\Theme_Supports\Nav_Menus;
+namespace _lhtbp\Nav_Menus;
 use _lhtbp\Component_Interface;
 use _lhtbp\Templating_Component_Interface;
 use function add_action;

@@ -130,7 +130,8 @@ class Theme {
 	protected function get_default_components() {
 		$components = array(
 			new Functions\Class_Names\Component(),
-			new Theme_Supports\Nav_Menus\Component(),
+			new Nav_Menus\Component(),
+			new Theme_Supports\Component(),
 		);
 
 		return $components;

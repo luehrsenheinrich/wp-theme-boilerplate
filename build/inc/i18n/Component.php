@@ -27,7 +27,6 @@ class Component implements Component_Interface {
 	 * Adds the action and filter hooks to integrate with WordPress.
 	 */
 	public function initialize() {
-		// Add actions and filter here.
 		add_action( 'after_setup_theme', array( $this, 'load_text_domain' ) );
 	}
 

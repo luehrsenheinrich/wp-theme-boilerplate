@@ -1,14 +1,13 @@
 <?php
 /**
- * _lhtbp\Styles\Styles\Component class
+ * _lhtbp\Styles\Component class
  *
  * @package _lhtbp
  */
 
-namespace _lhtbp\Styles\Styles;
+namespace _lhtbp\Styles;
 use _lhtbp\Component_Interface;
-// use function add_action;
-// use function esc_html__;
+use function add_action;
 
 /**
  * A class to enqueue the needed styles..

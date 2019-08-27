@@ -8,7 +8,6 @@
 namespace _lhtbp\Scripts;
 use _lhtbp\Component_Interface;
 use function add_action;
-// use function esc_html__;
 
 /**
  * A class to enqueue the needed scripts..
@@ -33,6 +32,7 @@ class Component implements Component_Interface {
 
 	/**
 	 * Enqueue needed scripts.
+	 *
 	 * @return void
 	 */
 	public function enqueue_scripts() {

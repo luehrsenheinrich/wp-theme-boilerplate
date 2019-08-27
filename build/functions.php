@@ -59,24 +59,3 @@ require get_template_directory() . '/inc/functions.php';
 
 // Initialize the theme.
 call_user_func( '_lhtbp\wp__lhtbp' );
-
-/**
- * Enqueue scripts and styles.
- */
-function _lhtbp_scripts() {
-	wp_enqueue_style( '_lhtbp-style--base', get_template_directory_uri() . '/css/base.min.css', array(), THEME_VERSION, 'all' );
-	wp_enqueue_style( '_lhtbp-style--blocks', get_template_directory_uri() . '/css/blocks.min.css', array(), THEME_VERSION, 'all' );
-
-	wp_enqueue_script( '_lhtbp-script', get_template_directory_uri() . '/script.min.js', array( 'jquery' ), THEME_VERSION, true );
-
-	$translation_array = array(
-		'themeUrl' => get_template_directory_uri(),
-		'restUrl'  => get_rest_url(),
-	);
-	wp_localize_script( '_lhtbp-script', '_lhtbp', $translation_array );
-
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
-}
-add_action( 'wp_enqueue_scripts', '_lhtbp_scripts' );

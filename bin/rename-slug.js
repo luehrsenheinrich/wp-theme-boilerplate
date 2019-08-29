@@ -1,6 +1,7 @@
 // Include prompt module.
 const prompt = require( 'prompt' );
 const isEmpty = require( 'lodash/isEmpty' );
+const forEach = require( 'lodash/forEach' );
 const replace = require( 'replace-in-file' );
 
 // This json object is used to configure what data will be retrieved from command line.
@@ -45,10 +46,11 @@ prompt.get( prompt_attributes, function ( err, result ) {
 			replaceMap[ fallbackSlug ] = newSlug;
 		}
 
-		let dir = __dirname;
+		const dir = __dirname;
+		const dirBase = dir.substring( 0, dir.length - 4 );
 
 		const options = {
-			files: dir.substring( 0, dir.length - 4 ) + '/**/*.*',
+			files: dirBase + '/**/*.*',
 			from: from,
 			to: newSlug,
 			ignore: [ '**/node_modules/**' ]
@@ -56,6 +58,10 @@ prompt.get( prompt_attributes, function ( err, result ) {
 
 		const results = replace.sync( options );
 
-		console.log( results );
+		forEach( results, (result) => {
+			if ( result.hasChanged ) {
+				console.log( 'changed: ', result.file.replace( dirBase, '' ) );
+			}
+		});
 	}
 });

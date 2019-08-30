@@ -1,10 +1,9 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "hash": "8c8ae7acc376b307f43e73711cd41b49",
     "content-hash": "d14d50f9943424af6134e484e414510e",
     "packages": [],
     "packages-dev": [
@@ -128,7 +127,7 @@
                 "zend",
                 "zikula"
             ],
-            "time": "2019-08-12 15:00:31"
+            "time": "2019-08-12T15:00:31+00:00"
         },
         {
             "name": "dealerdirect/phpcodesniffer-composer-installer",
@@ -194,20 +193,20 @@
                 "stylecheck",
                 "tests"
             ],
-            "time": "2018-10-26 13:21:45"
+            "time": "2018-10-26T13:21:45+00:00"
         },
         {
             "name": "phpcompatibility/php-compatibility",
-            "version": "9.2.0",
+            "version": "9.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHPCompatibility/PHPCompatibility.git",
-                "reference": "3db1bf1e28123fd574a4ae2e9a84072826d51b5e"
+                "reference": "06cc8d2c2ed62a70f52963dbdf5eaa1ec0fe34c5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHPCompatibility/PHPCompatibility/zipball/3db1bf1e28123fd574a4ae2e9a84072826d51b5e",
-                "reference": "3db1bf1e28123fd574a4ae2e9a84072826d51b5e",
+                "url": "https://api.github.com/repos/PHPCompatibility/PHPCompatibility/zipball/06cc8d2c2ed62a70f52963dbdf5eaa1ec0fe34c5",
+                "reference": "06cc8d2c2ed62a70f52963dbdf5eaa1ec0fe34c5",
                 "shasum": ""
             },
             "require": {
@@ -231,10 +230,6 @@
             ],
             "authors": [
                 {
-                    "name": "Contributors",
-                    "homepage": "https://github.com/PHPCompatibility/PHPCompatibility/graphs/contributors"
-                },
-                {
                     "name": "Wim Godden",
                     "role": "lead",
                     "homepage": "https://github.com/wimg"
@@ -243,6 +238,10 @@
                     "name": "Juliette Reinders Folmer",
                     "role": "lead",
                     "homepage": "https://github.com/jrfnl"
+                },
+                {
+                    "name": "Contributors",
+                    "homepage": "https://github.com/PHPCompatibility/PHPCompatibility/graphs/contributors"
                 }
             ],
             "description": "A set of sniffs for PHP_CodeSniffer that checks for PHP cross-version compatibility.",
@@ -252,7 +251,7 @@
                 "phpcs",
                 "standards"
             ],
-            "time": "2019-06-27 19:58:56"
+            "time": "2019-08-28T15:29:06+00:00"
         },
         {
             "name": "phpcompatibility/phpcompatibility-paragonie",
@@ -302,7 +301,7 @@
                 "polyfill",
                 "standards"
             ],
-            "time": "2018-12-16 19:10:44"
+            "time": "2018-12-16T19:10:44+00:00"
         },
         {
             "name": "phpcompatibility/phpcompatibility-wp",
@@ -352,7 +351,7 @@
                 "standards",
                 "wordpress"
             ],
-            "time": "2018-10-07 18:31:37"
+            "time": "2018-10-07T18:31:37+00:00"
         },
         {
             "name": "squizlabs/php_codesniffer",
@@ -403,7 +402,7 @@
                 "phpcs",
                 "standards"
             ],
-            "time": "2019-04-10 23:49:02"
+            "time": "2019-04-10T23:49:02+00:00"
         },
         {
             "name": "wp-coding-standards/wpcs",
@@ -448,7 +447,7 @@
                 "standards",
                 "wordpress"
             ],
-            "time": "2019-05-21 02:50:00"
+            "time": "2019-05-21T02:50:00+00:00"
         },
         {
             "name": "wptrt/wpthemereview",
@@ -518,7 +517,7 @@
                 "themes",
                 "wordpress"
             ],
-            "time": "2019-08-13 13:23:46"
+            "time": "2019-08-13T13:23:46+00:00"
         }
     ],
     "aliases": [],

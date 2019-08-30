@@ -8,7 +8,7 @@ console.log( 'Starting the Luehrsen // Heinrich development enviroment...' );
 
 // Install WPCS
 // . "$(dirname "$0")/install-wpcs.sh"
-// new WPCSInstaller();
+new WPCSInstaller();
 
 // Install wordpress and needed components
 // . "$(dirname "$0")/install-wordpress.sh"

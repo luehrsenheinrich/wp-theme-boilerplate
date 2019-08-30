@@ -4,11 +4,18 @@ const WPCSInstaller = require( './install-wpcs.js' );
 console.log( 'Starting the Luehrsen // Heinrich development enviroment...' );
 
 // Check Docker is installed and running
-//new DockerInstaller();
+new DockerInstaller().init()
+	.then(result => {
+		console.log('done');
+	})
+	.catch(err => {
+		console.error(err);
+	})
+;
 
 // Install WPCS
 // . "$(dirname "$0")/install-wpcs.sh"
-new WPCSInstaller();
+// new WPCSInstaller();
 
 // Install wordpress and needed components
 // . "$(dirname "$0")/install-wordpress.sh"

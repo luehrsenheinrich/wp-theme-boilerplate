@@ -2,52 +2,95 @@ const path = require( 'path' );
 const Docker = require('dockerode');
 const compose = require('docker-compose');
 const docker = new Docker();
+const yml = path.join(__dirname) + '/../';
 
 class DockerInstaller {
 	constructor() {
-		// Check that Docker is installed and running.
-		docker.info()
-			.then( ( resp ) => this.installDocker() )
-			.catch( ( err ) => this.onDockerError( err ) );
+
 	}
 
+	async init() {
+		const result = await this.dockerInfo();
+		return result;
+	}
+
+	/**
+	 * Check that Docker is installed and running.
+	 */
+	async dockerInfo() {
+		return new Promise( ( res ) => {
+			docker.info()
+				.then( async () => {
+					const resp = await this.composeStop();
+					return res( resp );
+				} )
+				.catch( ( err ) => { this.onDockerError( err ) } );
+		} );
+	}
+
+	/**
+	 * Stop existing containers.
+	 * This stops all running containers, including those on port 80.
+	 */
+	async composeStop() {
+		return new Promise( ( res ) => {
+			console.log( 'Stopping Docker containers...' );
+			compose.stop( '>/dev/null 2>&1' ).then( async () => {
+				const resp = await this.composePull();
+				return res( resp );
+			} )
+			.catch( ( err ) => { this.onDockerError( err ) } );;
+		} );
+	}
+
+	/**
+	 * Download image update.
+	 */
+	async composePull() {
+		return new Promise( ( res ) => {
+			console.log( 'Downloading Docker image updates...' );
+			compose.pullAll( { cwd: yml, log: true } ).then( async () => {
+				const resp = await this.composeUp();
+				return res( resp );
+			} )
+			.catch( ( err ) => { this.onDockerError( err ) } );;
+		} );
+	}
+
+	/**
+	 * Starting docker Containers.
+	 */
+	async composeUp() {
+		return new Promise( ( res ) => {
+			console.log( 'Starting Docker containers...' );
+			compose.pullAll( { cwd: yml, log: true } ).then( () => {
+				return res( true );
+			} )
+			.catch( ( err ) => { this.onDockerError( err ) } );;
+		} );
+	}
+
+	/**
+	 * Errorhandling.
+	 */
 	onDockerError( err ) {
-		switch ( err.code ) {
-			case 'ENOENT':
-				// If Docker is not installed.
-				console.error( 'Docker doesn\'t seem to be installed. Please head on over to the Docker site to download it: "https://www.docker.com/community-edition#/download"' );
-				break;
-			case 'ECONNREFUSED':
-				// If Docker is not running.
-				console.error( 'Docker isn\'t running. Please check that you\'ve started your Docker app, and see it in your system tray.' );
-				break;
-			default:
-				console.error( 'Error: ' + err.code );
+		if ( 'undefined' !== typeof err.code ) {
+			switch ( err.code ) {
+				case 'ENOENT':
+					// If Docker is not installed.
+					console.error( 'Docker doesn\'t seem to be installed. Please head on over to the Docker site to download it: "https://www.docker.com/community-edition#/download"' );
+					break;
+				case 'ECONNREFUSED':
+					// If Docker is not running.
+					console.error( 'Docker isn\'t running. Please check that you\'ve started your Docker app, and see it in your system tray.' );
+					break;
+				default:
+					console.error( 'Error: ' + err.code );
+			}
 		}
-	}
 
-	installDocker() {
-		const yml = path.join(__dirname) + '/../';
-
-		// Stop existing containers.
-		// This stops all running containers, including those on port 80.
-		console.log( 'Stopping Docker containers...' );
-		compose.stop( '>/dev/null 2>&1' );
-
-		// Download image update
-		console.log( 'Downloading Docker image updates...' );
-		compose.pullAll({ cwd: yml, log: true }).then(
-			() => {
-				// Starting docker Containers.
-				console.log( 'Starting Docker containers...' );
-				compose.upAll({ cwd: yml, log: true })
-					.then(
-						() => { console.log( 'done' ) },
-						err => { console.log( 'something went wrong:', err.message ) }
-				);
-			},
-			err => { console.log( 'something went wrong:', err.message ) }
-		);
+		console.error( err );
+		process.exit(0);
 	}
 }
 

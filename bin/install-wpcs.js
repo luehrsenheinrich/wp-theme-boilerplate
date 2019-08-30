@@ -1,22 +1,25 @@
 const exec = require( 'child_process' ).exec;
 
 class WPCSInstaller {
-	constructor() {
-		// Make sure npm is up-to-date
+	async init() {
 		console.log( 'Attempting to install WordPress Coding Standards...' );
-		this.runExec( 'composer install' );
+		const result = await this.runExec( 'composer install' );
+		return result;
 	}
 
-	runExec( cmd ) {
-		exec( cmd,
-			( error, stdout, stderr ) => {
-				console.log( stdout );
+	async runExec( cmd ) {
+		return new Promise( ( res ) => {
+			exec( cmd, async ( error, stdout, stderr ) => {
+					console.log( stdout );
+					return res( true );
 
-				if ( error !== null ) {
-					console.error('exec error: ' + error);
+					if ( error !== null ) {
+						console.error('exec error: ' + error);
+						process.exit(0);
+					}
 				}
-			}
-		);
+			);
+		} );
 	}
 }
 

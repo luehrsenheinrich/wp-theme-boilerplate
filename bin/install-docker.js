@@ -5,10 +5,6 @@ const docker = new Docker();
 const yml = path.join(__dirname) + '/../';
 
 class DockerInstaller {
-	constructor() {
-
-	}
-
 	async init() {
 		const result = await this.dockerInfo();
 		return result;

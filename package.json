@@ -48,6 +48,7 @@
     "webpack-cli": "^3.3.7"
   },
   "dependencies": {
+    "child_process": "^1.0.2",
     "docker-compose": "^0.22.0",
     "dockerode": "^2.5.8"
   },

@@ -22,7 +22,7 @@ WordPress.org repository.
 These steps will guide you through the setup process up until you can start
 writing functions, markup and styles for your theme.
 
-For the sake of scope we will assume, that you know the slug of your theme.
+For the sake of scope we will assume that you know the slug of your theme.
 Please make sure that the slug is unique to the system of the client, our
 projects and the WordPress.org theme repository.
 
@@ -44,12 +44,8 @@ new repository. So let's get started:
 
 ### Test Release
 
-- [ ] If you do not want to use the update server skip this step and remove the GitHub action
-- [ ] Make sure the release workflow on GitHub actions is configured properly
-- [ ] Add the secrets for `FTP_USERNAME` and `FTP_PASSWORD` (ask your sysop)
-- [ ] Add a GitHub access token to your `.env` file in the root of the repository
 - [ ] Add a 0.0.2 release by running `npm run release` in your terminal
-- [ ] Check the server if the theme package has been deployed
+- [ ] Check if the release has been created and uploaded in the GitHub release section
 
 ### Finishing touches
 

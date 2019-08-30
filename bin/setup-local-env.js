@@ -1,17 +1,15 @@
-const NPMInstaller = require( './install-npm.js' );
-const DockerInstaller  = require( './install-docker.js' )
+const DockerInstaller = require( './install-docker.js' )
+const WPCSInstaller = require( './install-wpcs.js' );
 
 console.log( 'Starting the Luehrsen // Heinrich development enviroment...' );
 
-// Check Node and NVM are installed
-new NPMInstaller();
-
 // Check Docker is installed and running
-new DockerInstaller();
+//new DockerInstaller();
 
 // Install WPCS
 // . "$(dirname "$0")/install-wpcs.sh"
-//
+// new WPCSInstaller();
+
 // Install wordpress and needed components
 // . "$(dirname "$0")/install-wordpress.sh"
 //

@@ -44,7 +44,7 @@
     "time-grunt": "^2.0.0",
     "uglifyjs-webpack-plugin": "^2.2.0",
     "webfontloader": "^1.6.28",
-    "webpack": "^4.39.2",
+    "webpack": "^4.39.3",
     "webpack-cli": "^3.3.7"
   },
   "dependencies": {},

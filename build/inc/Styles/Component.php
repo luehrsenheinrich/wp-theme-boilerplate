@@ -14,7 +14,7 @@ use function wp_enqueue_style;
 use function wp_register_style;
 
 /**
- * A class to enqueue the needed styles..
+ * A class to enqueue the needed styles.
  */
 class Component implements Component_Interface, Templating_Component_Interface {
 
@@ -33,6 +33,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 	public function initialize() {
 		add_action( 'wp_enqueue_scripts', [ $this, 'action_enqueue_styles' ] );
 		add_action( 'wp_head', [ $this, 'action_preload_styles' ] );
+		add_action( 'wp_footer', [ $this, 'action_print_preloaded_styles' ] );
 	}
 
 	/**
@@ -54,9 +55,11 @@ class Component implements Component_Interface, Templating_Component_Interface {
 	 * @return array Associative array of $handle => $data pairs.
 	 */
 	protected function get_css_files() : array {
+
 		if ( is_array( $this->css_files ) ) {
 			return $this->css_files;
 		}
+
 		$css_files = [
 			'_lhtbp-base'   => [
 				'file'   => 'base.min.css',
@@ -96,6 +99,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 					'global'           => false,
 					'preload_callback' => null,
 					'media'            => 'all',
+					'enqueued'         => false,
 				],
 				$data
 			);
@@ -164,6 +168,11 @@ class Component implements Component_Interface, Templating_Component_Interface {
 		}
 
 		wp_print_styles( $handles );
+
+		/* Mark the printed style as enqueued */
+		foreach ( $handles as $handle ) {
+			$this->css_files[ $handle ]['enqueued'] = true;
+		}
 	}
 
 
@@ -191,6 +200,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 			 */
 			if ( $data['global'] || ! $preloading_styles_enabled && is_callable( $data['preload_callback'] ) && call_user_func( $data['preload_callback'] ) ) {
 				wp_enqueue_style( $handle, $src, [], THEME_VERSION, $data['media'] );
+				$this->css_files[ $handle ]->enqueued = true;
 			} else {
 				wp_register_style( $handle, $src, [], THEME_VERSION, $data['media'] );
 			}
@@ -240,6 +250,27 @@ class Component implements Component_Interface, Templating_Component_Interface {
 
 			echo '<link rel="preload" id="' . esc_attr( $handle ) . '-preload" href="' . esc_url( $preload_uri ) . '" as="style">';
 			echo "\n";
+
+			$this->css_files[ $handle ]['preloaded'] = true;
+		}
+	}
+
+	/**
+	 * Enqueues preloaded stylesheets in the footer, if they have not yet been printed.
+	 */
+	public function action_print_preloaded_styles() {
+
+		$css_uri = get_theme_file_uri( '/css/' );
+
+		$preloading_styles_enabled = $this->preloading_styles_enabled();
+
+		$css_files = $this->get_css_files();
+		foreach ( $css_files as $handle => $data ) {
+			$src = $css_uri . $data['file'];
+
+			if ( ! $data['global'] && $data['preloaded'] && ! $data['enqueued'] ) {
+				wp_enqueue_style( $handle, $src, [], THEME_VERSION, $data['media'] );
+			}
 		}
 	}
 }

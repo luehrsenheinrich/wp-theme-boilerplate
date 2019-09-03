@@ -47,6 +47,12 @@ module.exports = function( grunt ) {
 						src: '*.css',
 						dest: 'trunk/css/',
 					},
+					{
+						expand: true,
+						cwd: 'build/fonts',
+						src: '*.css',
+						dest: 'trunk/fonts/',
+					},
 				],
 			},
 			minify: {
@@ -62,6 +68,13 @@ module.exports = function( grunt ) {
 						cwd: 'trunk/css',
 						src: [ '*.css', '!*.min.css' ],
 						dest: 'trunk/css',
+						ext: '.min.css',
+					},
+					{
+						expand: true,
+						cwd: 'trunk/fonts',
+						src: [ '*.css', '!*.min.css' ],
+						dest: 'trunk/fonts',
 						ext: '.min.css',
 					},
 				],

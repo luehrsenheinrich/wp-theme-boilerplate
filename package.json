@@ -43,7 +43,6 @@
     "stylelint-config-wordpress": "^14.0.0",
     "time-grunt": "^2.0.0",
     "uglifyjs-webpack-plugin": "^2.2.0",
-    "webfontloader": "^1.6.28",
     "webpack": "^4.39.3",
     "webpack-cli": "^3.3.7"
   },
@@ -53,7 +52,7 @@
     "dev": "sh bin/setup-local-env.sh && grunt watch",
     "remove": "docker-compose down --volumes --remove-orphans",
     "release": "env-cmd .env release-it",
-	"rename": "node bin/rename-slug.js"
+    "rename": "node bin/rename-slug.js"
   },
   "browserslist": [
     "> 1%",

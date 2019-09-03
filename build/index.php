@@ -12,10 +12,13 @@
  * @package _lhtbp
  */
 
+namespace _lhtbp;
+
 get_header();
 ?>
 
 <div id="primary" class="content-area">
+	<?php wp__lhtbp()->print_styles( '_lhtbp-blocks' ); ?>
 	<main id="main" class="site-main stack">
 		<?php
 		if ( have_posts() ) :

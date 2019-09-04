@@ -61,8 +61,12 @@ class Component implements Component_Interface, Templating_Component_Interface {
 		}
 
 		$css_files = [
-			'_lhtbp-base'   => [
+			'_lhtbp-base' => [
 				'file'   => 'base.min.css',
+				'global' => true,
+			],
+			'_lhtbp-font-fira-sans' => [
+				'file'   => 'font-fira-sans.min.css',
 				'global' => true,
 			],
 			'_lhtbp-blocks' => [

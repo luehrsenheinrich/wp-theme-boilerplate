@@ -67,9 +67,11 @@ class Component implements Component_Interface, Templating_Component_Interface {
 			],
 			'_lhtbp-blocks' => [
 				'file'             => 'blocks.min.css',
-				'preload_callback' => function() {
-					return true;
-				},
+				'preload_callback' => '__return_true',
+			],
+			'_lhtbp-footer' => [
+				'file'             => 'footer.min.css',
+				'preload_callback' => '__return_true',
 			],
 		];
 

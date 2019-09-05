@@ -7,7 +7,14 @@
  * @package _lhtbp
  */
 
+namespace _lhtbp;
+
+wp__lhtbp()->print_styles( '_lhtbp-footer' );
 ?>
+
+<footer>
+
+</footer>
 
 <?php wp_footer(); ?>
 

@@ -169,9 +169,9 @@
             "authors": [
                 {
                     "name": "Franck Nijhof",
-                    "role": "Developer / IT Manager",
                     "email": "franck.nijhof@dealerdirect.com",
-                    "homepage": "http://www.frenck.nl"
+                    "homepage": "http://www.frenck.nl",
+                    "role": "Developer / IT Manager"
                 }
             ],
             "description": "PHP_CodeSniffer Standards Composer Installer Plugin",
@@ -197,16 +197,16 @@
         },
         {
             "name": "phpcompatibility/php-compatibility",
-            "version": "9.3.0",
+            "version": "9.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHPCompatibility/PHPCompatibility.git",
-                "reference": "06cc8d2c2ed62a70f52963dbdf5eaa1ec0fe34c5"
+                "reference": "9999344e47e7af6b00e1a898eacc4e4368fb7196"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHPCompatibility/PHPCompatibility/zipball/06cc8d2c2ed62a70f52963dbdf5eaa1ec0fe34c5",
-                "reference": "06cc8d2c2ed62a70f52963dbdf5eaa1ec0fe34c5",
+                "url": "https://api.github.com/repos/PHPCompatibility/PHPCompatibility/zipball/9999344e47e7af6b00e1a898eacc4e4368fb7196",
+                "reference": "9999344e47e7af6b00e1a898eacc4e4368fb7196",
                 "shasum": ""
             },
             "require": {
@@ -251,7 +251,7 @@
                 "phpcs",
                 "standards"
             ],
-            "time": "2019-08-28T15:29:06+00:00"
+            "time": "2019-09-05T18:36:49+00:00"
         },
         {
             "name": "phpcompatibility/phpcompatibility-paragonie",
@@ -457,12 +457,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/WPTRT/WPThemeReview.git",
-                "reference": "9247c7616e6c54a6e96885377689948b1c18e195"
+                "reference": "5aea683c1c7a19ef1af10ac72268e10e8fd864d6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WPTRT/WPThemeReview/zipball/9247c7616e6c54a6e96885377689948b1c18e195",
-                "reference": "9247c7616e6c54a6e96885377689948b1c18e195",
+                "url": "https://api.github.com/repos/WPTRT/WPThemeReview/zipball/5aea683c1c7a19ef1af10ac72268e10e8fd864d6",
+                "reference": "5aea683c1c7a19ef1af10ac72268e10e8fd864d6",
                 "shasum": ""
             },
             "require": {
@@ -488,23 +488,23 @@
             "authors": [
                 {
                     "name": "Theme Review Team",
-                    "role": "Strategy and rule setting",
-                    "homepage": "https://make.wordpress.org/themes/handbook/"
+                    "homepage": "https://make.wordpress.org/themes/handbook/",
+                    "role": "Strategy and rule setting"
                 },
                 {
                     "name": "Ulrich Pogson",
-                    "role": "Lead developer",
-                    "homepage": "https://github.com/grappler"
+                    "homepage": "https://github.com/grappler",
+                    "role": "Lead developer"
                 },
                 {
                     "name": "Juliette Reinders Folmer",
-                    "role": "Lead developer",
-                    "homepage": "https://github.com/jrfnl"
+                    "homepage": "https://github.com/jrfnl",
+                    "role": "Lead developer"
                 },
                 {
                     "name": "Denis Žoljom",
-                    "role": "Plugin integration lead",
-                    "homepage": "https://github.com/dingo-d"
+                    "homepage": "https://github.com/dingo-d",
+                    "role": "Plugin integration lead"
                 },
                 {
                     "name": "Contributors",
@@ -519,7 +519,7 @@
                 "themes",
                 "wordpress"
             ],
-            "time": "2019-08-13T13:23:46+00:00"
+            "time": "2019-09-05T07:19:21+00:00"
         }
     ],
     "aliases": [],

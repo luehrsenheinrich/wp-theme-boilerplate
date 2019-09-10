@@ -19,6 +19,13 @@ use function wp_register_style;
 class Component implements Component_Interface, Templating_Component_Interface {
 
 	/**
+	 * The variable where our CSS files are saved.
+	 *
+	 * @var mixed
+	 */
+	protected $css_files = false;
+
+	/**
 	 * Gets the unique identifier for the theme component.
 	 *
 	 * @return string Component slug.
@@ -34,6 +41,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 		add_action( 'wp_enqueue_scripts', [ $this, 'action_enqueue_styles' ] );
 		add_action( 'wp_head', [ $this, 'action_preload_styles' ] );
 		add_action( 'wp_footer', [ $this, 'action_print_preloaded_styles' ] );
+		add_action( 'after_setup_theme', [ $this, 'action_add_editor_styles' ] );
 	}
 
 	/**
@@ -206,7 +214,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 			 */
 			if ( $data['global'] || ! $preloading_styles_enabled && is_callable( $data['preload_callback'] ) && call_user_func( $data['preload_callback'] ) ) {
 				wp_enqueue_style( $handle, $src, [], THEME_VERSION, $data['media'] );
-				$this->css_files[ $handle ]->enqueued = true;
+				$this->css_files[ $handle ]['enqueued'] = true;
 			} else {
 				wp_register_style( $handle, $src, [], THEME_VERSION, $data['media'] );
 			}
@@ -278,5 +286,14 @@ class Component implements Component_Interface, Templating_Component_Interface {
 				wp_enqueue_style( $handle, $src, [], THEME_VERSION, $data['media'] );
 			}
 		}
+	}
+
+	/**
+	 * Enqueues WordPress theme styles for the editor.
+	 */
+	public function action_add_editor_styles() {
+		// Enqueue block editor stylesheet.
+		add_editor_style( 'css/font-fira-sans.min.css' );
+		add_editor_style( 'css/editor-styles.min.css' );
 	}
 }

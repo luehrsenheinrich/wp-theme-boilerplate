@@ -10,7 +10,7 @@
     "@lodder/grunt-postcss": "^1.0.9",
     "@wordpress/babel-plugin-import-jsx-pragma": "^2.3.0",
     "@wordpress/babel-preset-default": "^4.6.0",
-    "@wordpress/dependency-extraction-webpack-plugin": "^1.2.0",
+    "@wordpress/dependency-extraction-webpack-plugin": "^2.0.0",
     "@wordpress/eslint-plugin": "^3.0.0",
     "autoprefixer": "^9.6.1",
     "babel-loader": "^8.0.6",

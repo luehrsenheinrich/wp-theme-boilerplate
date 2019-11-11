@@ -7,7 +7,7 @@
   "license": "GPLv3",
   "devDependencies": {
     "@babel/core": "^7.6.4",
-    "@lodder/grunt-postcss": "^1.0.9",
+    "@lodder/grunt-postcss": "^2.0.0",
     "@wordpress/babel-plugin-import-jsx-pragma": "^2.3.0",
     "@wordpress/babel-preset-default": "^4.6.2",
     "@wordpress/dependency-extraction-webpack-plugin": "^2.0.0",

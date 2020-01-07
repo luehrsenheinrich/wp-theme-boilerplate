@@ -63,7 +63,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 				$carry[] = $arg;
 				return $carry;
 			},
-			[]
+			array()
 		);
 
 		$classes = array_map(

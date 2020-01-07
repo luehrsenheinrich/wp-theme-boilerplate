@@ -38,10 +38,10 @@ class Component implements Component_Interface, Templating_Component_Interface {
 	 * Adds the action and filter hooks to integrate with WordPress.
 	 */
 	public function initialize() {
-		add_action( 'wp_enqueue_scripts', [ $this, 'action_enqueue_styles' ] );
-		add_action( 'wp_head', [ $this, 'action_preload_styles' ] );
-		add_action( 'wp_footer', [ $this, 'action_print_preloaded_styles' ] );
-		add_action( 'after_setup_theme', [ $this, 'action_add_editor_styles' ] );
+		add_action( 'wp_enqueue_scripts', array( $this, 'action_enqueue_styles' ) );
+		add_action( 'wp_head', array( $this, 'action_preload_styles' ) );
+		add_action( 'wp_footer', array( $this, 'action_print_preloaded_styles' ) );
+		add_action( 'after_setup_theme', array( $this, 'action_add_editor_styles' ) );
 	}
 
 	/**
@@ -52,9 +52,9 @@ class Component implements Component_Interface, Templating_Component_Interface {
 	 *               adding support for further arguments in the future.
 	 */
 	public function template_tags() : array {
-		return [
-			'print_styles' => [ $this, 'print_styles' ],
-		];
+		return array(
+			'print_styles' => array( $this, 'print_styles' ),
+		);
 	}
 
 	/**
@@ -68,24 +68,24 @@ class Component implements Component_Interface, Templating_Component_Interface {
 			return $this->css_files;
 		}
 
-		$css_files = [
-			'_lhtbp-base' => [
+		$css_files = array(
+			'_lhtbp-base' => array(
 				'file'   => 'base.min.css',
 				'global' => true,
-			],
-			'_lhtbp-font-fira-sans' => [
+			),
+			'_lhtbp-font-fira-sans' => array(
 				'file'   => 'font-fira-sans.min.css',
 				'global' => true,
-			],
-			'_lhtbp-blocks' => [
+			),
+			'_lhtbp-blocks' => array(
 				'file'             => 'blocks.min.css',
 				'preload_callback' => '__return_true',
-			],
-			'_lhtbp-footer' => [
+			),
+			'_lhtbp-footer' => array(
 				'file'             => 'footer.min.css',
 				'preload_callback' => '__return_true',
-			],
-		];
+			),
+		);
 
 		/**
 		 * Filters default CSS files.
@@ -98,10 +98,10 @@ class Component implements Component_Interface, Templating_Component_Interface {
 		 */
 		$css_files = apply_filters( '_lhtbp_css_files', $css_files );
 
-		$this->css_files = [];
+		$this->css_files = array();
 		foreach ( $css_files as $handle => $data ) {
 			if ( is_string( $data ) ) {
-				$data = [ 'file' => $data ];
+				$data = array( 'file' => $data );
 			}
 
 			if ( empty( $data['file'] ) ) {
@@ -109,12 +109,12 @@ class Component implements Component_Interface, Templating_Component_Interface {
 			}
 
 			$this->css_files[ $handle ] = array_merge(
-				[
+				array(
 					'global'           => false,
 					'preload_callback' => null,
 					'media'            => 'all',
 					'enqueued'         => false,
-				],
+				),
 				$data
 			);
 		}
@@ -213,10 +213,10 @@ class Component implements Component_Interface, Templating_Component_Interface {
 			 * enqueued based on whether they are necessary for the page content).
 			 */
 			if ( $data['global'] || ! $preloading_styles_enabled && is_callable( $data['preload_callback'] ) && call_user_func( $data['preload_callback'] ) ) {
-				wp_enqueue_style( $handle, $src, [], THEME_VERSION, $data['media'] );
+				wp_enqueue_style( $handle, $src, array(), THEME_VERSION, $data['media'] );
 				$this->css_files[ $handle ]['enqueued'] = true;
 			} else {
-				wp_register_style( $handle, $src, [], THEME_VERSION, $data['media'] );
+				wp_register_style( $handle, $src, array(), THEME_VERSION, $data['media'] );
 			}
 
 			wp_style_add_data( $handle, 'precache', true );
@@ -283,7 +283,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 			$src = $css_uri . $data['file'];
 
 			if ( ! $data['global'] && $data['preloaded'] && ! $data['enqueued'] ) {
-				wp_enqueue_style( $handle, $src, [], THEME_VERSION, $data['media'] );
+				wp_enqueue_style( $handle, $src, array(), THEME_VERSION, $data['media'] );
 			}
 		}
 	}

@@ -27,7 +27,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 	 *
 	 * @var array
 	 */
-	protected $nav_menu_list = [];
+	protected $nav_menu_list = array();
 
 	/**
 	 * Constructor function to populate theme vars.
@@ -96,7 +96,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 	 * @param array $args Optional. Array of arguments. See `wp_nav_menu()` documentation for a list of supported
 	 *                    arguments.
 	 */
-	public function display_nav_menu( array $args = [] ) {
+	public function display_nav_menu( array $args = array() ) {
 		// Return if no theme location is defined.
 		if ( ! isset( $args['theme_location'] ) ) {
 			return;

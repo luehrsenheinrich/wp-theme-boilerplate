@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d14d50f9943424af6134e484e414510e",
+    "content-hash": "38ee14c91af3438eb35182b768358a65",
     "packages": [],
     "packages-dev": [
         {
@@ -131,16 +131,16 @@
         },
         {
             "name": "dealerdirect/phpcodesniffer-composer-installer",
-            "version": "v0.5.0",
+            "version": "v0.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Dealerdirect/phpcodesniffer-composer-installer.git",
-                "reference": "e749410375ff6fb7a040a68878c656c2e610b132"
+                "reference": "6589501ebe29091bd46f4c29ca72dce25cca2984"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Dealerdirect/phpcodesniffer-composer-installer/zipball/e749410375ff6fb7a040a68878c656c2e610b132",
-                "reference": "e749410375ff6fb7a040a68878c656c2e610b132",
+                "url": "https://api.github.com/repos/Dealerdirect/phpcodesniffer-composer-installer/zipball/6589501ebe29091bd46f4c29ca72dce25cca2984",
+                "reference": "6589501ebe29091bd46f4c29ca72dce25cca2984",
                 "shasum": ""
             },
             "require": {
@@ -193,7 +193,7 @@
                 "stylecheck",
                 "tests"
             ],
-            "time": "2018-10-26T13:21:45+00:00"
+            "time": "2020-01-19T15:35:03+00:00"
         },
         {
             "name": "phpcompatibility/php-compatibility",
@@ -457,12 +457,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/WPTRT/WPThemeReview.git",
-                "reference": "1aa1ae56d98ca17fffabacde95fe941745cdbfed"
+                "reference": "2c17974aae2ba07242e5d835610874832241e194"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WPTRT/WPThemeReview/zipball/1aa1ae56d98ca17fffabacde95fe941745cdbfed",
-                "reference": "1aa1ae56d98ca17fffabacde95fe941745cdbfed",
+                "url": "https://api.github.com/repos/WPTRT/WPThemeReview/zipball/2c17974aae2ba07242e5d835610874832241e194",
+                "reference": "2c17974aae2ba07242e5d835610874832241e194",
                 "shasum": ""
             },
             "require": {
@@ -472,13 +472,13 @@
                 "wp-coding-standards/wpcs": "^2.2.0"
             },
             "require-dev": {
-                "dealerdirect/phpcodesniffer-composer-installer": "^0.5.0",
+                "dealerdirect/phpcodesniffer-composer-installer": "^0.5 || ^0.6",
                 "phpcompatibility/php-compatibility": "^9.0",
                 "phpunit/phpunit": "^4.0 || ^5.0 || ^6.0 || ^7.0",
                 "roave/security-advisories": "dev-master"
             },
             "suggest": {
-                "dealerdirect/phpcodesniffer-composer-installer": "^0.5.0 || This Composer plugin will sort out the PHPCS 'installed_paths' automatically."
+                "dealerdirect/phpcodesniffer-composer-installer": "^0.6 || This Composer plugin will sort out the PHPCS 'installed_paths' automatically."
             },
             "type": "phpcodesniffer-standard",
             "notification-url": "https://packagist.org/downloads/",
@@ -519,7 +519,7 @@
                 "themes",
                 "wordpress"
             ],
-            "time": "2019-12-08T20:59:03+00:00"
+            "time": "2020-01-19T20:33:18+00:00"
         }
     ],
     "aliases": [],

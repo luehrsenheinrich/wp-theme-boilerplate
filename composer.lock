@@ -357,16 +357,16 @@
         },
         {
             "name": "squizlabs/php_codesniffer",
-            "version": "3.5.3",
+            "version": "3.5.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
-                "reference": "557a1fc7ac702c66b0bbfe16ab3d55839ef724cb"
+                "reference": "dceec07328401de6211037abbb18bda423677e26"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/557a1fc7ac702c66b0bbfe16ab3d55839ef724cb",
-                "reference": "557a1fc7ac702c66b0bbfe16ab3d55839ef724cb",
+                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/dceec07328401de6211037abbb18bda423677e26",
+                "reference": "dceec07328401de6211037abbb18bda423677e26",
                 "shasum": ""
             },
             "require": {
@@ -404,7 +404,7 @@
                 "phpcs",
                 "standards"
             ],
-            "time": "2019-12-04T04:46:47+00:00"
+            "time": "2020-01-30T22:20:29+00:00"
         },
         {
             "name": "wp-coding-standards/wpcs",
@@ -457,12 +457,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/WPTRT/WPThemeReview.git",
-                "reference": "2c17974aae2ba07242e5d835610874832241e194"
+                "reference": "48b3960829b413aef6332392455c15a75b3b2ce7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WPTRT/WPThemeReview/zipball/2c17974aae2ba07242e5d835610874832241e194",
-                "reference": "2c17974aae2ba07242e5d835610874832241e194",
+                "url": "https://api.github.com/repos/WPTRT/WPThemeReview/zipball/48b3960829b413aef6332392455c15a75b3b2ce7",
+                "reference": "48b3960829b413aef6332392455c15a75b3b2ce7",
                 "shasum": ""
             },
             "require": {
@@ -474,6 +474,7 @@
             "require-dev": {
                 "dealerdirect/phpcodesniffer-composer-installer": "^0.5 || ^0.6",
                 "phpcompatibility/php-compatibility": "^9.0",
+                "phpcsstandards/phpcsdevtools": "^1.0",
                 "phpunit/phpunit": "^4.0 || ^5.0 || ^6.0 || ^7.0",
                 "roave/security-advisories": "dev-master"
             },
@@ -519,7 +520,7 @@
                 "themes",
                 "wordpress"
             ],
-            "time": "2020-01-19T20:33:18+00:00"
+            "time": "2020-02-13T08:31:12+00:00"
         }
     ],
     "aliases": [],

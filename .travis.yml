@@ -12,6 +12,7 @@ cache:
 
 install:
   - composer install
+  - nvm install --lts
   - npm install
 
 script:

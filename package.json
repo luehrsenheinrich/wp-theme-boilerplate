@@ -46,7 +46,9 @@
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11"
   },
-  "dependencies": {},
+  "dependencies": {
+    "prettier": "^2.0.4"
+  },
   "scripts": {
     "setup": "sh bin/setup-local-env.sh",
     "dev": "sh bin/setup-local-env.sh && grunt watch",

@@ -44,11 +44,10 @@
     "time-grunt": "^2.0.0",
     "uglifyjs-webpack-plugin": "^2.2.0",
     "webpack": "^4.42.1",
-    "webpack-cli": "^3.3.11"
-  },
-  "dependencies": {
+    "webpack-cli": "^3.3.11",
     "prettier": "^2.0.4"
   },
+  "dependencies": {},
   "scripts": {
     "setup": "sh bin/setup-local-env.sh",
     "dev": "sh bin/setup-local-env.sh && grunt watch",

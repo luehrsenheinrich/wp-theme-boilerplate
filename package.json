@@ -11,7 +11,7 @@
     "@wordpress/babel-plugin-import-jsx-pragma": "^2.5.0",
     "@wordpress/babel-preset-default": "^4.10.0",
     "@wordpress/dependency-extraction-webpack-plugin": "^2.4.0",
-    "@wordpress/eslint-plugin": "^3.3.0",
+    "@wordpress/eslint-plugin": "^4.1.0",
     "autoprefixer": "^9.7.6",
     "babel-loader": "^8.1.0",
     "babel-plugin-lodash": "^3.3.4",

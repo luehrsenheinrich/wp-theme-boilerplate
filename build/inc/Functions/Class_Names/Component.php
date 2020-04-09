@@ -5,9 +5,9 @@
  * @package _lhtbp
  */
 
-namespace _lhtbp\Functions\Class_Names;
-use _lhtbp\Component_Interface;
-use _lhtbp\Templating_Component_Interface;
+namespace WpMunich\_lhtbp\Functions\Class_Names;
+use WpMunich\_lhtbp\Component_Interface;
+use WpMunich\_lhtbp\Templating_Component_Interface;
 
 /**
  * Class for managing navigation menus.

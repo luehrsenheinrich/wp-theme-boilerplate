@@ -19,6 +19,9 @@ if [ -n "$NVM_DIR" ]; then
 	fi
 fi
 
+# Use the latest installed lts version
+nvm use --lts
+
 # Check if the current node version is up to date.
 if [ "$TRAVIS" != "true" ] && [ "$(nvm current)" != "$(nvm version-remote --lts)" ]; then
 	echo $(warning_message "Node version does not match the latest long term support version. Please run this command to install and use it:" )

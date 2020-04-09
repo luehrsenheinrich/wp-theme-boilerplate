@@ -21,4 +21,4 @@ require get_template_directory() . '/vendor/autoload.php';
 require get_template_directory() . '/inc/functions.php';
 
 // Initialize the theme.
-call_user_func( '_lhtbp\wp__lhtbp' );
+call_user_func( 'WpMunich\_lhtbp\wp__lhtbp' );

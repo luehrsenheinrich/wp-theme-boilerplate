@@ -7,7 +7,7 @@
  * @package _lhtbp
  */
 
-namespace _lhtbp;
+namespace WpMunich\_lhtbp;
 
 wp__lhtbp()->print_styles( '_lhtbp-footer' );
 ?>

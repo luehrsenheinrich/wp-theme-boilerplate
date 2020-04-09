@@ -5,7 +5,7 @@
  * @package _lhtbp
  */
 
-namespace _lhtbp;
+namespace WpMunich\_lhtbp;
 
 /**
  * Interface for a theme component.

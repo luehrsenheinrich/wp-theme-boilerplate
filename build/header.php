@@ -9,7 +9,7 @@
  * @package _lhtbp
  */
 
-namespace _lhtbp;
+namespace WpMunich\_lhtbp;
 
 ?>
 <!doctype html>

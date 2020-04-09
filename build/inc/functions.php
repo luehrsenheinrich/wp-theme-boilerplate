@@ -5,7 +5,7 @@
  * @package _lhtbp
  */
 
-namespace _lhtbp;
+namespace WpMunich\_lhtbp;
 
 /**
  * Provides access to all available template tags of the theme.

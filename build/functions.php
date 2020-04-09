@@ -7,12 +7,12 @@
  * @package _lhtbp
  */
 
-if ( ! defined( 'THEME_SLUG' ) ) {
-	define( 'THEME_SLUG', '<%= pkg.slug %>' );
+if ( ! defined( '_LHTBP_SLUG' ) ) {
+	define( '_LHTBP_SLUG', '<%= pkg.slug %>' );
 }
 
-if ( ! defined( 'THEME_VERSION' ) ) {
-	define( 'THEME_VERSION', '<%= pkg.version %>' );
+if ( ! defined( '_LHTBP_VERSION' ) ) {
+	define( '_LHTBP_VERSION', '<%= pkg.version %>' );
 }
 
 /**

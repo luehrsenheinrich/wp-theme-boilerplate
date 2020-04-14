@@ -30,6 +30,7 @@
 
 	<file>./build</file>
 	<exclude-pattern>./bin-php</exclude-pattern>
+	<exclude-pattern>./build/vendor</exclude-pattern>
 
 	<!-- For CI, don't fail on warnings -->
 	<config name="ignore_warnings_on_exit" value="1"/>

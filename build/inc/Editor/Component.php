@@ -5,9 +5,9 @@
  * @package _lhtbp
  */
 
-namespace _lhtbp\Editor;
+namespace WpMunich\_lhtbp\Editor;
 
-use _lhtbp\Component_Interface;
+use WpMunich\_lhtbp\Component_Interface;
 use function add_action;
 use function add_theme_support;
 

@@ -5,8 +5,8 @@
  * @package _lhtbp
  */
 
-namespace _lhtbp\Theme_Supports;
-use _lhtbp\Component_Interface;
+namespace WpMunich\_lhtbp\Theme_Supports;
+use WpMunich\_lhtbp\Component_Interface;
 use function add_action;
 
 /**

@@ -5,7 +5,7 @@
  * @package _lhtbp
  */
 
-namespace _lhtbp;
+namespace WpMunich\_lhtbp;
 use InvalidArgumentException;
 
 /**
@@ -130,8 +130,6 @@ class Theme {
 	protected function get_default_components() {
 		$components = array(
 			new Content_Width\Component(),
-			new Functions\Class_Names\Component(),
-			new Functions\Shorten_Text\Component(),
 			new i18n\Component(),
 			new Nav_Menus\Component(),
 			new Scripts\Component(),

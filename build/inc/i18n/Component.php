@@ -5,8 +5,8 @@
  * @package _lhtbp
  */
 
-namespace _lhtbp\i18n;
-use _lhtbp\Component_Interface;
+namespace WpMunich\_lhtbp\i18n;
+use WpMunich\_lhtbp\Component_Interface;
 use function add_action;
 
 /**

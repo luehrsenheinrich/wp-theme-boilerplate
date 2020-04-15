@@ -12,7 +12,7 @@
  * @package _lhtbp
  */
 
-namespace _lhtbp;
+namespace WpMunich\_lhtbp;
 
 get_header();
 ?>

@@ -5,10 +5,10 @@
  * @package _lhtbp
  */
 
-namespace _lhtbp\Styles;
+namespace WpMunich\_lhtbp\Styles;
 
-use _lhtbp\Component_Interface;
-use _lhtbp\Templating_Component_Interface;
+use WpMunich\_lhtbp\Component_Interface;
+use WpMunich\_lhtbp\Templating_Component_Interface;
 use function add_action;
 use function wp_enqueue_style;
 use function wp_register_style;

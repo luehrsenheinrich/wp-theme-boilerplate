@@ -5,8 +5,8 @@
  * @package _lhtbp
  */
 
-namespace _lhtbp\Content_Width;
-use _lhtbp\Component_Interface;
+namespace WpMunich\_lhtbp\Content_Width;
+use WpMunich\_lhtbp\Component_Interface;
 use function add_action;
 
 /**

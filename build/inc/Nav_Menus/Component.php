@@ -5,9 +5,9 @@
  * @package _lhtbp
  */
 
-namespace _lhtbp\Nav_Menus;
-use _lhtbp\Component_Interface;
-use _lhtbp\Templating_Component_Interface;
+namespace WpMunich\_lhtbp\Nav_Menus;
+use WpMunich\_lhtbp\Component_Interface;
+use WpMunich\_lhtbp\Templating_Component_Interface;
 use function add_action;
 use function register_nav_menus;
 use function esc_html__;

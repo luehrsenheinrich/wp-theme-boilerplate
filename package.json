@@ -37,7 +37,7 @@
     "postcss-normalize": "^9.0.0",
     "postcss-preset-env": "^6.7.0",
     "prompt": "^1.0.0",
-    "release-it": "^13.5.2",
+    "release-it": "^13.5.4",
     "replace-in-file": "^5.0.2",
     "stylelint": "^11.1.1",
     "stylelint-config-wordpress": "^16.0.0",

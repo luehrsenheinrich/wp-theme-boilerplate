@@ -45,7 +45,7 @@
     "uglifyjs-webpack-plugin": "^2.2.0",
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11",
-    "prettier": "^2.0.4"
+    "prettier": "^2.0.5"
   },
   "dependencies": {},
   "scripts": {

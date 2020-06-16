@@ -1,5 +1,5 @@
 {
-	"name": "luehrsenheinrich/games_theme_exploration",
+	"name": "luehrsenheinrich/wp-theme-boilerplate",
 	"type": "wordpress-theme",
 	"license": "GPL-2.0-or-later",
 	"require-dev": {

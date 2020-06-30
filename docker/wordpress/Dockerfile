@@ -2,6 +2,16 @@
 # that contains all moving parts needed to deploy a performant WordPress instance.
 FROM mattrayner/lamp:latest-1804
 
+# load external helper scripts
+COPY docker-php-ext-configure.sh /
+RUN chmod +x /docker-php-ext-configure.sh
+COPY docker-php-ext-enable.sh /
+RUN chmod +x /docker-php-ext-enable.sh
+COPY docker-php-ext-install.sh /
+RUN chmod +x /docker-php-ext-install.sh
+COPY docker-php-source.sh /
+RUN chmod +x /docker-php-source.sh
+
 # persistent dependencies
 RUN set -eux; \
 	apt-get update; \
@@ -11,6 +21,13 @@ RUN set -eux; \
 	; \
 	rm -rf /var/lib/apt/lists/*
 
+# get the PHP source
+RUN set -xe; \
+	mkdir -p /usr/src; \
+	cd /usr/src; \
+	curl -fSL "https://secure.php.net/get/php-7.3.6.tar.xz/from/this/mirror" -o php.tar.xz; \
+	cd ../../
+
 # install the PHP extensions we need (https://make.wordpress.org/hosting/handbook/handbook/server-environment/#php-extensions)
 RUN set -ex; \
 	\
@@ -18,14 +35,17 @@ RUN set -ex; \
 	\
 	apt-get update; \
 	apt-get install -y --no-install-recommends \
+		php7.3-dev \
+		php-bcmath \
+		libzip-dev \
 		libfreetype6-dev \
 		libjpeg-dev \
 		libmagickwand-dev \
 		libpng-dev \
 	; \
 	\
-	docker-php-ext-configure gd --with-freetype-dir=/usr --with-jpeg-dir=/usr --with-png-dir=/usr; \
-	docker-php-ext-install -j "$(nproc)" \
+	/docker-php-ext-configure.sh gd --with-freetype-dir=/usr --with-jpeg-dir=/usr --with-png-dir=/usr; \
+	/docker-php-ext-install.sh -j "$(nproc)" \
 		bcmath \
 		exif \
 		gd \
@@ -33,7 +53,7 @@ RUN set -ex; \
 		zip \
 	; \
 	pecl install imagick-3.4.4; \
-	docker-php-ext-enable imagick; \
+	/docker-php-ext-enable.sh imagick; \
 	\
 # reset apt-mark's "manual" list so that "purge --auto-remove" will remove all build dependencies
 	apt-mark auto '.*' > /dev/null; \
@@ -52,7 +72,7 @@ RUN set -ex; \
 # set recommended PHP.ini settings
 # see https://secure.php.net/manual/en/opcache.installation.php
 RUN set -eux; \
-	docker-php-ext-enable opcache; \
+	/docker-php-ext-enable.sh opcache; \
 	{ \
 		echo 'opcache.memory_consumption=128'; \
 		echo 'opcache.interned_strings_buffer=8'; \

@@ -19,3 +19,7 @@ vendor
 ## JS
 **/*.min.js
 **/*.bundle.js
+
+## Docker
+docker/wordpress/mysql/
+docker/wordpress/app/

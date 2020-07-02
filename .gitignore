@@ -23,3 +23,5 @@ vendor
 ## Docker
 docker/wordpress/mysql/
 docker/wordpress/app/
+docker/wordpress2/mysql/
+docker/wordpress2/wp/

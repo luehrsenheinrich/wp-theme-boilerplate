@@ -17,7 +17,7 @@
     "babel-plugin-lodash": "^3.3.4",
     "cssnano": "^4.1.10",
     "env-cmd": "^10.1.0",
-    "eslint": "^6.8.0",
+    "eslint": "^7.4.0",
     "grunt": "^1.2.1",
     "grunt-contrib-clean": "^2.0.0",
     "grunt-contrib-compress": "^1.6.0",

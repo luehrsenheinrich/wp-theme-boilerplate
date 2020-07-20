@@ -36,8 +36,6 @@ class Component implements Component_Interface {
 	 * @return void
 	 */
 	public function add_theme_supports() {
-		// Add support for wide-aligned images.
-		add_theme_support( 'align-wide' );
 
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
@@ -72,9 +70,6 @@ class Component implements Component_Interface {
 		// Add theme support for selective refresh for widgets.
 		add_theme_support( 'customize-selective-refresh-widgets' );
 
-		// Add support for editor styles.
-		add_theme_support( 'editor-styles' );
-
 		/*
 		 * Switch default core markup for search form, comment form, and comments
 		 * to output valid HTML5.
@@ -107,8 +102,5 @@ class Component implements Component_Interface {
 		 * provide it for us.
 		 */
 		add_theme_support( 'title-tag' );
-
-		// Add support for default block styles.
-		add_theme_support( 'wp-block-styles' );
 	}
 }

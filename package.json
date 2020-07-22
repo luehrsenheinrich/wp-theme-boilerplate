@@ -10,11 +10,13 @@
     "@lodder/grunt-postcss": "^2.0.4",
     "@wordpress/babel-plugin-import-jsx-pragma": "^2.7.0",
     "@wordpress/babel-preset-default": "^4.17.0",
+    "@wordpress/browserslist-config": "^2.7.0",
     "@wordpress/dependency-extraction-webpack-plugin": "^2.8.0",
     "@wordpress/eslint-plugin": "^7.1.0",
     "autoprefixer": "^9.8.5",
     "babel-loader": "^8.1.0",
     "babel-plugin-lodash": "^3.3.4",
+    "browserslist": "^4.13.0",
     "cssnano": "^4.1.10",
     "env-cmd": "^10.1.0",
     "eslint": "^7.5.0",
@@ -56,7 +58,6 @@
     "rename": "node bin/rename-slug.js"
   },
   "browserslist": [
-    "> 1%",
-    "last 2 versions"
+    "extends @wordpress/browserslist-config"
   ]
 }

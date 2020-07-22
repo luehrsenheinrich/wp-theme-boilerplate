@@ -34,6 +34,7 @@
     "jit-grunt": "^0.10.0",
     "normalize.css": "^8.0.1",
     "npm": "^6.14.7",
+    "opn": "^6.0.0",
     "postcss-base64": "^0.7.1",
     "postcss-import": "^12.0.1",
     "postcss-normalize": "^9.0.0",
@@ -55,7 +56,8 @@
     "dev": "sh bin/setup-local-env.sh && grunt watch",
     "remove": "docker-compose down --volumes --remove-orphans",
     "release": "env-cmd .env release-it",
-    "rename": "node bin/rename-slug.js"
+    "rename": "node bin/rename-slug.js",
+		"browserlist-url": "node bin/get-browserlist-link.js"
   },
   "browserslist": [
     "extends @wordpress/browserslist-config"

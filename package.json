@@ -12,12 +12,13 @@
     "@wordpress/babel-preset-default": "^4.17.0",
     "@wordpress/dependency-extraction-webpack-plugin": "^2.8.0",
     "@wordpress/eslint-plugin": "^7.1.0",
+    "@wordpress/prettier-config": "^0.3.0",
     "autoprefixer": "^9.8.5",
     "babel-loader": "^8.1.0",
     "babel-plugin-lodash": "^3.3.4",
     "cssnano": "^4.1.10",
     "env-cmd": "^10.1.0",
-    "eslint": "^7.4.0",
+    "eslint": "^7.5.0",
     "grunt": "^1.2.1",
     "grunt-contrib-clean": "^2.0.0",
     "grunt-contrib-compress": "^1.6.0",
@@ -31,7 +32,7 @@
     "install": "^0.13.0",
     "jit-grunt": "^0.10.0",
     "normalize.css": "^8.0.1",
-    "npm": "^6.14.6",
+    "npm": "^6.14.7",
     "postcss-base64": "^0.7.1",
     "postcss-import": "^12.0.1",
     "postcss-normalize": "^9.0.0",
@@ -58,5 +59,6 @@
   "browserslist": [
     "> 1%",
     "last 2 versions"
-  ]
+  ],
+  "prettier": "@wordpress/prettier-config"
 }

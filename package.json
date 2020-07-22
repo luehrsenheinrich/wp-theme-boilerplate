@@ -13,6 +13,7 @@
     "@wordpress/browserslist-config": "^2.7.0",
     "@wordpress/dependency-extraction-webpack-plugin": "^2.8.0",
     "@wordpress/eslint-plugin": "^7.1.0",
+    "@wordpress/prettier-config": "^0.3.0",
     "autoprefixer": "^9.8.5",
     "babel-loader": "^8.1.0",
     "babel-plugin-lodash": "^3.3.4",
@@ -60,6 +61,8 @@
 		"browserlist-url": "node bin/get-browserlist-link.js"
   },
   "browserslist": [
-    "extends @wordpress/browserslist-config"
-  ]
+    "> 1%",
+    "last 2 versions"
+  ],
+  "prettier": "@wordpress/prettier-config"
 }

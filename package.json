@@ -44,7 +44,7 @@
     "prompt": "^1.0.0",
     "release-it": "^13.7.0",
     "replace-in-file": "^6.1.0",
-    "stylelint": "^13.6.1",
+    "stylelint": "^13.7.0",
     "stylelint-config-wordpress": "^17.0.0",
     "terser-webpack-plugin": "^4.1.0",
     "time-grunt": "^2.0.0",

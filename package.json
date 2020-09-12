@@ -46,7 +46,7 @@
     "replace-in-file": "^6.1.0",
     "stylelint": "^13.7.0",
     "stylelint-config-wordpress": "^17.0.0",
-    "terser-webpack-plugin": "^4.1.0",
+    "terser-webpack-plugin": "^4.2.0",
     "time-grunt": "^2.0.0",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12"

@@ -58,7 +58,7 @@
     "remove": "docker-compose down --volumes --remove-orphans",
     "release": "env-cmd .env release-it",
     "rename": "node bin/rename-slug.js",
-		"browserlist-url": "node bin/get-browserlist-link.js"
+    "browserlist-url": "node bin/get-browserlist-link.js"
   },
   "browserslist": [
     "> 1%",

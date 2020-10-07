@@ -12,6 +12,13 @@ textarea {
 	font-family: var(--font-family);
 	font-size: var(--font-size-regular);
 	line-height: var(--global-font-line-height);
+	letter-spacing: var(--global-letter-spacing);
+	word-wrap: break-word;
+}
+
+b,
+strong {
+	font-weight: 700;
 }
 
 h1,
@@ -20,18 +27,36 @@ h3,
 h4,
 h5,
 h6 {
-	color: var(--secondary-color);
+	color: var(--primary-color);
 	font-family: var(--font-family-headlines);
-	font-stretch: condensed;
+	line-height: var(--global-headline-line-height);
 	clear: both;
+	font-weight: 300;
+	text-transform: uppercase;
 }
 
-.entry-header h1.entry-title,
-.page-header .page-title {
-	font-size: 2.5rem;
-	line-height: 1.4;
-	margin-top: 1em;
-	margin-bottom: 1em;
+h1 {
+	font-size: var(--global-h1-font-size);
+}
+
+h2 {
+	font-size: var(--global-h2-font-size);
+}
+
+h3 {
+	font-size: var(--global-h3-font-size);
+}
+
+h4 {
+	font-size: var(--global-h4-font-size);
+}
+
+h5 {
+	font-size: var(--global-h5-font-size);
+}
+
+h6 {
+	font-size: var(--global-h6-font-size);
 }
 
 dfn,
@@ -49,11 +74,6 @@ q {
 blockquote {
 	border-left: 4px solid var(--color-quote-border);
 	margin: 0;
-}
-
-.entry-content > blockquote {
-	padding-left: 1em;
-	margin-left: 1.5rem;
 }
 
 blockquote cite {
@@ -101,4 +121,26 @@ ins {
 
 big {
 	font-size: 125%;
+}
+
+.has-drop-cap:not(:focus) {
+
+	&.has-background {
+
+		&::after {
+			content: "";
+			display: block;
+			clear: both;
+		}
+	}
+
+	&::first-letter {
+		float: left;
+		font-size: calc(var(--global-h1-font-size) * 2);
+		line-height: 1;
+		font-weight: inherit;
+		margin: 0 calc(var(--grid-gutter-width) / 2) calc(var(--grid-gutter-height) / 4) 0;
+		text-transform: uppercase;
+		font-style: normal;
+	}
 }

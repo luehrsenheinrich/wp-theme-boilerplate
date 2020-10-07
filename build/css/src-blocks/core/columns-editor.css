@@ -1,0 +1,12 @@
+.wp-block-columns {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.wp-block-column {
+	max-width: none;
+
+	&:not(:first-child) {
+		margin-left: 0;
+	}
+}

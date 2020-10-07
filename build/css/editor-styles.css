@@ -8,3 +8,8 @@
 @import "./src-base/_typography.css";
 @import "./src-base/_custom-font-sizes.css";
 @import "./src-base/_colors.css";
+@import "./src-editor-styles/_widths.css";
+@import "./blocks.css";
+
+/* Editor Styles for blocks */
+@import "./src-blocks/core/columns-editor.css";

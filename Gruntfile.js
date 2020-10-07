@@ -107,8 +107,14 @@ module.exports = function (grunt) {
 					'**/*.po',
 					'**/*.pot',
 					'**/*.tmpl.html',
-					'**/*.php',
 				],
+				dest: 'trunk/',
+				filter: 'isFile',
+			},
+			build_php: {
+				expand: true,
+				cwd: 'build',
+				src: ['**/*.php'],
 				dest: 'trunk/',
 				filter: 'isFile',
 			},
@@ -187,7 +193,7 @@ module.exports = function (grunt) {
 			},
 			php: {
 				files: ['build/**/*.php'], // which files to watch
-				tasks: ['dev_deploy'],
+				tasks: ['newer_handle_php'],
 				options: {},
 			},
 			static: {
@@ -218,21 +224,25 @@ module.exports = function (grunt) {
 	grunt.registerTask('newer_handle_js', ['webpack']);
 	grunt.registerTask('handle_js', ['webpack']);
 
+	grunt.registerTask('newer_handle_php', ['newer:copy:build_php']);
+	grunt.registerTask('handle_copy', [
+		'newer_handle_php',
+		'newer:copy:build_php',
+		'newer:copy:build_css',
+		'newer:copy:build_stream',
+	]);
+
 	// // Deployment strategies
 	grunt.registerTask('dev_deploy', [
 		'newer_handle_css',
 		'newer_handle_js',
-		'newer:copy:build',
-		'newer:copy:build_css',
-		'newer:copy:build_stream',
+		'handle_copy',
 	]);
 	grunt.registerTask('deploy', [
 		'clean:trunk',
 		'handle_css',
 		'handle_js',
-		'copy:build',
-		'copy:build_css',
-		'copy:build_stream',
+		'handle_copy',
 	]);
 
 	// // Linting

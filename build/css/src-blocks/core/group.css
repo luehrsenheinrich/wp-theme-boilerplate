@@ -1,0 +1,8 @@
+:root .wp-block-group {
+
+	/**
+	 * The group block does not have own padding.
+	 * A block inside a group would otherwise have double the padding.
+	 */
+	padding: 0;
+}

@@ -1,4 +1,39 @@
-.wp-block-columns {
+:root .wp-block-columns {
 	padding-left: 0;
 	padding-right: 0;
+}
+
+:root .wp-block-column {
+	max-width: none;
+	margin-left: 0;
+	padding: 0;
+
+	& + .wp-block-column {
+		margin-top: var(--grid-gutter-height);
+	}
+}
+
+@media (--sm-query) {
+
+	:root .wp-block-column {
+		margin-left: 0;
+		padding: 0 var(--grid-gutter-width);
+
+		&:first-child {
+			margin-left: 0;
+		}
+
+		& + .wp-block-column {
+			margin-top: 0;
+		}
+	}
+}
+
+/* Retcon gutenberg styles. */
+@media (--xs-query) {
+
+	:root .wp-block-column {
+		flex-basis: 100% !important;
+		flex-grow: 1;
+	}
 }

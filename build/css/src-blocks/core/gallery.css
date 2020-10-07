@@ -1,0 +1,65 @@
+:root .wp-block-gallery {
+	--cols: 3;
+
+	& .blocks-gallery-grid {
+		padding: 0;
+		margin: calc(var(--grid-gutter-height) * -0.5) calc(var(--grid-gutter-width) * -0.5);
+	}
+
+	& .blocks-gallery-item {
+		margin: 0;
+		padding: calc(var(--grid-gutter-height) / 2) calc(var(--grid-gutter-width) / 2);
+		flex-basis: calc(100% / var(--cols));
+		width: auto;
+		min-width: calc(4rem + var(--grid-gutter-width));
+
+		& figure {
+			position: relative;
+		}
+	}
+
+	& .blocks-gallery-item__caption {
+		padding: calc(var(--grid-gutter-height) / 4) calc(var(--grid-gutter-width) / 4);
+		pointer-events: none;
+	}
+
+	&.columns-1 {
+		--cols: 1;
+	}
+
+	&.columns-2 {
+		--cols: 2;
+	}
+
+	&.columns-3 {
+		--cols: 3;
+	}
+
+	&.columns-4 {
+		--cols: 4;
+	}
+
+	&.columns-5 {
+		--cols: 5;
+	}
+
+	&.columns-6 {
+		--cols: 6;
+	}
+
+	&.columns-7 {
+		--cols: 7;
+	}
+
+	&.columns-8 {
+		--cols: 8;
+	}
+
+	&.columns-9 {
+		--cols: 9;
+	}
+
+	&.columns-10 {
+		--cols: 10;
+	}
+}

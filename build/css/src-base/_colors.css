@@ -8,6 +8,10 @@
 
 .has-primary-background-color {
 	background-color: var(--primary-color);
+
+	&.has-background-dim {
+		background-color: var(--primary-color);
+	}
 }
 
 .has-secondary-color {
@@ -16,4 +20,8 @@
 
 .has-secondary-background-color {
 	background-color: var(--secondary-color);
+
+	&.has-background-dim {
+		background-color: var(--secondary-color);
+	}
 }

@@ -12,20 +12,24 @@ hr {
 	background-color: #ccc;
 	border: 0;
 	height: 1px;
-	margin-bottom: 1.5em;
+	margin-bottom: var(--grid-gutter-height);
 }
 
 ul,
 ol {
-	margin: 0 0 1.5em 3em;
+	margin: 0;
 }
 
 ul {
 	list-style: disc;
 }
 
+li {
+	margin-left: var(--grid-gutter-width);
+}
+
 li + li {
-	margin-top: var(--grid-gutter-height);
+	margin-top: calc(var(--grid-gutter-height) / 4);
 }
 
 ol {
@@ -35,7 +39,7 @@ ol {
 li > ul,
 li > ol {
 	margin-bottom: 0;
-	margin-left: 1.5em;
+	margin-top: calc(var(--grid-gutter-height) / 4);
 }
 
 dt {
@@ -43,21 +47,23 @@ dt {
 }
 
 dd {
-	margin: 0 1.5em 1.5em;
+	margin: 0 var(--grid-gutter-width) var(--grid-gutter-height);
 }
 
 img {
 	display: block;
 	height: auto;
 	max-width: 100%;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 /* Extra wide images within figure tags don't overflow the content area. */
 figure {
-	margin: 0.5em 0;
+	margin: calc(var(--grid-gutter-height) / 3) 0;
 }
 
 table {
-	margin: 0 0 1.5em;
+	margin: 0 0 var(--grid-gutter-height);
 	width: 100%;
 }

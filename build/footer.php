@@ -19,3 +19,4 @@ wp__lhtbp()->print_styles( '_lhtbp-footer' );
 <?php wp_footer(); ?>
 
 </body>
+</html>

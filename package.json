@@ -53,16 +53,15 @@
   },
   "dependencies": {},
   "scripts": {
-    "setup": "sh bin/setup-local-env.sh",
+		"setup": "sh bin/setup-local-env.sh",
     "dev": "sh bin/setup-local-env.sh && grunt watch",
     "remove": "docker-compose down --volumes --remove-orphans",
-    "release": "env-cmd .env release-it",
-    "rename": "node bin/rename-slug.js",
-    "browserlist-url": "node bin/get-browserlist-link.js"
+    "release": "env-cmd release-it --only-version && npm run release-git-draft",
+    "release-git-draft": "npx env-cmd release-it --no-increment --no-git --no-github.assets --no-github.draft --ci --no-hooks.after:bump",
+    "rename": "node bin/rename-slug.js"
   },
   "browserslist": [
-    "> 1%",
-    "last 2 versions"
+    "extends @wordpress/browserslist-config"
   ],
   "prettier": "@wordpress/prettier-config"
 }

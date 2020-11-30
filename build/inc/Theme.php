@@ -1,6 +1,6 @@
 <?php
 /**
- * lhtbp\Theme class
+ * LHTBP\Theme class
  *
  * @package lhtbp
  */

@@ -1,6 +1,6 @@
 <?php
 /**
- * lhtbp\Content_Width\Component class
+ * LHTBP\Content_Width\Component class
  *
  * @package lhtbp
  */

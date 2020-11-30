@@ -1,6 +1,6 @@
 <?php
 /**
- * lhtbp\Template_Tags class
+ * LHTBP\Template_Tags class
  *
  * @package lhtbp
  */

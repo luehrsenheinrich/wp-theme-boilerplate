@@ -1,6 +1,6 @@
 <?php
 /**
- * lhtbp\Component_Interface interface
+ * LHTBP\Component_Interface interface
  *
  * @package lhtbp
  */

@@ -1,6 +1,6 @@
 <?php
 /**
- * lhtbp\Nav_Menus\Component class
+ * LHTBP\Nav_Menus\Component class
  *
  * @package lhtbp
  */

@@ -8,11 +8,11 @@
  */
 
 if ( ! defined( 'lhtbp_SLUG' ) ) {
-	define( 'lhtbp_SLUG', '<%= pkg.slug %>' );
+	define( 'LHTBP_SLUG', '<%= pkg.slug %>' );
 }
 
 if ( ! defined( 'lhtbp_VERSION' ) ) {
-	define( 'lhtbp_VERSION', '<%= pkg.version %>' );
+	define( 'LHTBP_VERSION', '<%= pkg.version %>' );
 }
 
 require get_template_directory() . '/vendor/autoload.php';

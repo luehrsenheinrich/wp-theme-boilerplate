@@ -9,16 +9,16 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package _lhtbp
+ * @package lhtbp
  */
 
-namespace WpMunich\_lhtbp;
+namespace WpMunich\lhtbp;
 
 get_header();
 ?>
 
 <div id="primary" class="content-area">
-	<?php wp__lhtbp()->print_styles( '_lhtbp-blocks' ); ?>
+	<?php wp_lhtbp()->print_styles( 'lhtbp-blocks' ); ?>
 	<main id="main" class="site-main stack">
 		<?php
 		if ( have_posts() ) :

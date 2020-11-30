@@ -4,12 +4,12 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package _lhtbp
+ * @package lhtbp
  */
 
-namespace WpMunich\_lhtbp;
+namespace WpMunich\lhtbp;
 
-wp__lhtbp()->print_styles( '_lhtbp-footer' );
+wp_lhtbp()->print_styles( 'lhtbp-footer' );
 ?>
 
 <footer>

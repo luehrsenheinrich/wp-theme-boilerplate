@@ -1,11 +1,11 @@
 <?php
 /**
- * _lhtbp\Theme class
+ * LHTBP\Theme class
  *
- * @package _lhtbp
+ * @package lhtbp
  */
 
-namespace WpMunich\_lhtbp;
+namespace WpMunich\lhtbp;
 use InvalidArgumentException;
 
 /**
@@ -51,7 +51,7 @@ class Theme {
 				throw new InvalidArgumentException(
 					sprintf(
 						/* translators: 1: classname/type of the variable, 2: interface name */
-						__( 'The theme component %1$s does not implement the %2$s interface.', '_lhtbp' ),
+						__( 'The theme component %1$s does not implement the %2$s interface.', 'lhtbp' ),
 						gettype( $component ),
 						Component_Interface::class
 					)
@@ -87,9 +87,9 @@ class Theme {
 	/**
 	 * Retrieves the template tags instance, the entry point exposing template tag methods.
 	 *
-	 * Calling `wp__lhtbp()` is a short-hand for calling this method on the main theme instance. The instance then allows
+	 * Calling `wp_lhtbp()` is a short-hand for calling this method on the main theme instance. The instance then allows
 	 * for actual template tag methods to be called. For example, if there is a template tag called `posted_on`, it can
-	 * be accessed via `wp__lhtbp()->posted_on()`.
+	 * be accessed via `wp_lhtbp()->posted_on()`.
 	 *
 	 * @return Template_Tags Template tags instance.
 	 */
@@ -112,7 +112,7 @@ class Theme {
 			throw new InvalidArgumentException(
 				sprintf(
 					/* translators: %s: slug */
-					__( 'No theme component with the slug %s exists.', '_lhtbp' ),
+					__( 'No theme component with the slug %s exists.', 'lhtbp' ),
 					$slug
 				)
 			);

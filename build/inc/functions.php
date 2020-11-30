@@ -1,11 +1,11 @@
 <?php
 /**
- * The `wp__lhtbp()` function.
+ * The `wp_lhtbp()` function.
  *
- * @package _lhtbp
+ * @package lhtbp
  */
 
-namespace WpMunich\_lhtbp;
+namespace WpMunich\lhtbp;
 
 /**
  * Provides access to all available template tags of the theme.
@@ -14,7 +14,7 @@ namespace WpMunich\_lhtbp;
  *
  * @return Template_Tags Template tags instance exposing template tag methods.
  */
-function wp__lhtbp() {
+function wp_lhtbp() {
 	static $theme = null;
 	if ( null === $theme ) {
 		$theme = new Theme();

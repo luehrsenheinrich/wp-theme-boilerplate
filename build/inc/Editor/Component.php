@@ -2,12 +2,12 @@
 /**
  * WP_Rig\WP_Rig\Editor\Component class
  *
- * @package _lhtbp
+ * @package lhtbp
  */
 
-namespace WpMunich\_lhtbp\Editor;
+namespace WpMunich\lhtbp\Editor;
 
-use WpMunich\_lhtbp\Component_Interface;
+use WpMunich\lhtbp\Component_Interface;
 use function add_action;
 use function add_theme_support;
 
@@ -62,57 +62,57 @@ class Component implements Component_Interface {
 			'editor-color-palette',
 			array(
 				array(
-					'name'  => __( 'Primary', '_lhtbp' ),
+					'name'  => __( 'Primary', 'lhtbp' ),
 					'slug'  => 'theme-primary',
 					'color' => '#e36d60',
 				),
 				array(
-					'name'  => __( 'Secondary', '_lhtbp' ),
+					'name'  => __( 'Secondary', 'lhtbp' ),
 					'slug'  => 'theme-secondary',
 					'color' => '#41848f',
 				),
 				array(
-					'name'  => __( 'Red', '_lhtbp' ),
+					'name'  => __( 'Red', 'lhtbp' ),
 					'slug'  => 'theme-red',
 					'color' => '#C0392B',
 				),
 				array(
-					'name'  => __( 'Green', '_lhtbp' ),
+					'name'  => __( 'Green', 'lhtbp' ),
 					'slug'  => 'theme-green',
 					'color' => '#27AE60',
 				),
 				array(
-					'name'  => __( 'Blue', '_lhtbp' ),
+					'name'  => __( 'Blue', 'lhtbp' ),
 					'slug'  => 'theme-blue',
 					'color' => '#2980B9',
 				),
 				array(
-					'name'  => __( 'Yellow', '_lhtbp' ),
+					'name'  => __( 'Yellow', 'lhtbp' ),
 					'slug'  => 'theme-yellow',
 					'color' => '#F1C40F',
 				),
 				array(
-					'name'  => __( 'Black', '_lhtbp' ),
+					'name'  => __( 'Black', 'lhtbp' ),
 					'slug'  => 'theme-black',
 					'color' => '#1C2833',
 				),
 				array(
-					'name'  => __( 'Grey', '_lhtbp' ),
+					'name'  => __( 'Grey', 'lhtbp' ),
 					'slug'  => 'theme-grey',
 					'color' => '#95A5A6',
 				),
 				array(
-					'name'  => __( 'White', '_lhtbp' ),
+					'name'  => __( 'White', 'lhtbp' ),
 					'slug'  => 'theme-white',
 					'color' => '#ECF0F1',
 				),
 				array(
-					'name'  => __( 'Dusty daylight', '_lhtbp' ),
+					'name'  => __( 'Dusty daylight', 'lhtbp' ),
 					'slug'  => 'custom-daylight',
 					'color' => '#97c0b7',
 				),
 				array(
-					'name'  => __( 'Dusty sun', '_lhtbp' ),
+					'name'  => __( 'Dusty sun', 'lhtbp' ),
 					'slug'  => 'custom-sun',
 					'color' => '#eee9d1',
 				),
@@ -129,26 +129,26 @@ class Component implements Component_Interface {
 			'editor-font-sizes',
 			array(
 				array(
-					'name'      => __( 'Small', '_lhtbp' ),
-					'shortName' => __( 'S', '_lhtbp' ),
+					'name'      => __( 'Small', 'lhtbp' ),
+					'shortName' => __( 'S', 'lhtbp' ),
 					'size'      => 16,
 					'slug'      => 'small',
 				),
 				array(
-					'name'      => __( 'Medium', '_lhtbp' ),
-					'shortName' => __( 'M', '_lhtbp' ),
+					'name'      => __( 'Medium', 'lhtbp' ),
+					'shortName' => __( 'M', 'lhtbp' ),
 					'size'      => 25,
 					'slug'      => 'medium',
 				),
 				array(
-					'name'      => __( 'Large', '_lhtbp' ),
-					'shortName' => __( 'L', '_lhtbp' ),
+					'name'      => __( 'Large', 'lhtbp' ),
+					'shortName' => __( 'L', 'lhtbp' ),
 					'size'      => 31,
 					'slug'      => 'large',
 				),
 				array(
-					'name'      => __( 'Larger', '_lhtbp' ),
-					'shortName' => __( 'XL', '_lhtbp' ),
+					'name'      => __( 'Larger', 'lhtbp' ),
+					'shortName' => __( 'XL', 'lhtbp' ),
 					'size'      => 39,
 					'slug'      => 'larger',
 				),

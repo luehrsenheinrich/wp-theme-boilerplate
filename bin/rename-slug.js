@@ -10,7 +10,7 @@ var prompt_attributes = [
 		name: 'oldSlug',
 		type: 'string',
 		hidden: false,
-		default: '_lhtbp',
+		default: 'lhtbp',
 	},
 	{
 		name: 'newSlug',

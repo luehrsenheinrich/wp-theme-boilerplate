@@ -1,10 +1,10 @@
 {
-  "name": "luehrsenheinrich/_lhtbp",
+  "name": "luehrsenheinrich/lhtbp",
   "type": "wordpress-theme",
   "require": {},
   "autoload": {
     "psr-4": {
-      "WpMunich\\_lhtbp\\": "inc/"
+      "WpMunich\\lhtbp\\": "inc/"
     }
   }
 }

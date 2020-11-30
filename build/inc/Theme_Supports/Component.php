@@ -1,12 +1,12 @@
 <?php
 /**
- * _lhtbp\Theme_Supports\Component class
+ * lhtbp\Theme_Supports\Component class
  *
- * @package _lhtbp
+ * @package lhtbp
  */
 
-namespace WpMunich\_lhtbp\Theme_Supports;
-use WpMunich\_lhtbp\Component_Interface;
+namespace WpMunich\lhtbp\Theme_Supports;
+use WpMunich\lhtbp\Component_Interface;
 use function add_action;
 
 /**
@@ -44,7 +44,7 @@ class Component implements Component_Interface {
 		add_theme_support(
 			'custom-background',
 			apply_filters(
-				'_lhtbp_custom_background_args',
+				'lhtbp_custom_background_args',
 				array(
 					'default-color' => 'ffffff',
 					'default-image' => '',

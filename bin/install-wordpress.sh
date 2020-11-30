@@ -39,7 +39,7 @@ if ! $(${WP_CLI} wp core is-installed); then
 	${WP_CLI} wp core update
 
 	# Activate Agncy
-	${WP_CLI} wp theme activate _lhtbp
+	${WP_CLI} wp theme activate lhtbp
 
 	# Import and activate needed plugins
 	${WP_CLI} wp plugin install gutenberg wordpress-importer query-monitor debug-bar theme-check wp-munich-blocks --activate

@@ -1,13 +1,13 @@
 <?php
 /**
- * _lhtbp\Nav_Menus\Component class
+ * lhtbp\Nav_Menus\Component class
  *
- * @package _lhtbp
+ * @package lhtbp
  */
 
-namespace WpMunich\_lhtbp\Nav_Menus;
-use WpMunich\_lhtbp\Component_Interface;
-use WpMunich\_lhtbp\Templating_Component_Interface;
+namespace WpMunich\lhtbp\Nav_Menus;
+use WpMunich\lhtbp\Component_Interface;
+use WpMunich\lhtbp\Templating_Component_Interface;
 use function add_action;
 use function register_nav_menus;
 use function esc_html__;
@@ -18,8 +18,8 @@ use function wp_nav_menu;
  * Class for managing navigation menus.
  *
  * Exposes template tags:
- * * `wp__lhtbp()->is_nav_menu_active( string $slug )`
- * * `wp__lhtbp()->display_nav_menu( array $args = [] )`
+ * * `wp_lhtbp()->is_nav_menu_active( string $slug )`
+ * * `wp_lhtbp()->display_nav_menu( array $args = [] )`
  */
 class Component implements Component_Interface, Templating_Component_Interface {
 	/**
@@ -34,8 +34,8 @@ class Component implements Component_Interface, Templating_Component_Interface {
 	 */
 	public function __construct() {
 		$this->nav_menu_list = array(
-			'header' => esc_html__( 'Header', '_lhtbp' ),
-			'footer' => esc_html__( 'Footer', '_lhtbp' ),
+			'header' => esc_html__( 'Header', 'lhtbp' ),
+			'footer' => esc_html__( 'Footer', 'lhtbp' ),
 		);
 	}
 
@@ -56,7 +56,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 	}
 
 	/**
-	 * Gets template tags to expose as methods on the Template_Tags class instance, accessible through `wp__lhtbp()`.
+	 * Gets template tags to expose as methods on the Template_Tags class instance, accessible through `wp_lhtbp()`.
 	 *
 	 * @return array Associative array of $method_name => $callback_info pairs. Each $callback_info must either be
 	 *               a callable or an array with key 'callable'. This approach is used to reserve the possibility of

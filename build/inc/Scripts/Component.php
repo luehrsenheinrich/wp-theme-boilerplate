@@ -1,12 +1,12 @@
 <?php
 /**
- * _lhtbp\Scripts\Component class
+ * lhtbp\Scripts\Component class
  *
- * @package _lhtbp
+ * @package lhtbp
  */
 
-namespace WpMunich\_lhtbp\Scripts;
-use WpMunich\_lhtbp\Component_Interface;
+namespace WpMunich\lhtbp\Scripts;
+use WpMunich\lhtbp\Component_Interface;
 use function add_action;
 
 /**
@@ -36,13 +36,13 @@ class Component implements Component_Interface {
 	 * @return void
 	 */
 	public function enqueue_scripts() {
-		wp_enqueue_script( '_lhtbp-script', get_template_directory_uri() . '/script.min.js', array( 'jquery' ), THEME_VERSION, true );
+		wp_enqueue_script( 'lhtbp-script', get_template_directory_uri() . '/script.min.js', array( 'jquery' ), THEME_VERSION, true );
 
 		$translation_array = array(
 			'themeUrl' => get_template_directory_uri(),
 			'restUrl'  => get_rest_url(),
 		);
-		wp_localize_script( '_lhtbp-script', '_lhtbp', $translation_array );
+		wp_localize_script( 'lhtbp-script', 'lhtbp', $translation_array );
 
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 			wp_enqueue_script( 'comment-reply' );

@@ -1,12 +1,12 @@
 <?php
 /**
- * _lhtbp\i18n\Component class
+ * lhtbp\i18n\Component class
  *
- * @package _lhtbp
+ * @package lhtbp
  */
 
-namespace WpMunich\_lhtbp\i18n;
-use WpMunich\_lhtbp\Component_Interface;
+namespace WpMunich\lhtbp\i18n;
+use WpMunich\lhtbp\Component_Interface;
 use function add_action;
 
 /**
@@ -36,6 +36,6 @@ class Component implements Component_Interface {
 	 * @return void
 	 */
 	public function load_text_domain() {
-		load_theme_textdomain( '_lhtbp', get_template_directory() . '/languages' );
+		load_theme_textdomain( 'lhtbp', get_template_directory() . '/languages' );
 	}
 }

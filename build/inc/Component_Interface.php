@@ -1,11 +1,11 @@
 <?php
 /**
- * _lhtbp\Component_Interface interface
+ * lhtbp\Component_Interface interface
  *
- * @package _lhtbp
+ * @package lhtbp
  */
 
-namespace WpMunich\_lhtbp;
+namespace WpMunich\lhtbp;
 
 /**
  * Interface for a theme component.

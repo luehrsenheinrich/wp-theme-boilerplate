@@ -37,7 +37,7 @@
 
 	<rule ref="WordPress.WP.I18n">
 		<properties>
-			<property name="text_domain" value="_lhtbp" />
+			<property name="text_domain" value="lhtbp" />
 		</properties>
 	</rule>
 

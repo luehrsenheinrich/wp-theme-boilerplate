@@ -42,7 +42,7 @@ if ! $(${WP_CLI} wp core is-installed); then
 	${WP_CLI} wp theme activate lhtbp
 
 	# Import and activate needed plugins
-	${WP_CLI} wp plugin install gutenberg wordpress-importer query-monitor debug-bar theme-check wp-munich-blocks --activate
+	${WP_CLI} wp plugin install gutenberg wordpress-importer query-monitor debug-bar theme-check --activate
 
 	echo $(status_message "Downloading WordPress theme unit test data...")
 	${WP_CLI} curl -O https://raw.githubusercontent.com/WPTRT/theme-unit-test/master/themeunittestdata.wordpress.xml >/dev/null 2>&1

@@ -53,7 +53,7 @@
   },
   "dependencies": {},
   "scripts": {
-		"setup": "sh bin/setup-local-env.sh",
+    "setup": "sh bin/setup-local-env.sh",
     "dev": "sh bin/setup-local-env.sh && grunt watch",
     "remove": "docker-compose down --volumes --remove-orphans",
     "release": "env-cmd release-it --only-version && npm run release-git-draft",

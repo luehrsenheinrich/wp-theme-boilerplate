@@ -15,7 +15,7 @@ const postCssPresetEnvOptions = {
 
 module.exports = function (grunt) {
 	// measures the time each task takes
-	// require( 'time-grunt' )( grunt );
+	require('time-grunt')(grunt);
 
 	// Get the needed modules just in time
 	require('jit-grunt')(grunt, {
@@ -37,7 +37,6 @@ module.exports = function (grunt) {
 						require('postcss-import')(),
 						require('postcss-normalize')(),
 						require('postcss-preset-env')(postCssPresetEnvOptions),
-						require('autoprefixer')(),
 					],
 				},
 				files: [
@@ -45,6 +44,18 @@ module.exports = function (grunt) {
 						expand: true,
 						cwd: 'build/css',
 						src: '*.css',
+						dest: 'trunk/css/',
+					},
+					{
+						expand: true,
+						cwd: 'build/blocks',
+						src: 'blocks.css',
+						dest: 'trunk/css/',
+					},
+					{
+						expand: true,
+						cwd: 'build/blocks',
+						src: 'blocks-editor.css',
 						dest: 'trunk/css/',
 					},
 				],
@@ -68,7 +79,7 @@ module.exports = function (grunt) {
 
 		// LINT CSS - Lint the css we wrote
 		stylelint: {
-			all: ['build/**/*.css', '!build/puc/**/*.css'],
+			all: ['build/**/*.css', '!build/vendor/**/*.css'],
 		},
 
 		// PROCESS JS - Use webpack to process the needed js files
@@ -83,7 +94,7 @@ module.exports = function (grunt) {
 
 		// // ESLINT - Make sure our JS follows coding standards
 		eslint: {
-			target: ['build/js/**/*.js'],
+			target: ['build/**/*.js', '!build/vendor/**/*.js'],
 		},
 
 		// COPY FILES - Copy needed files from build to trunk
@@ -93,7 +104,6 @@ module.exports = function (grunt) {
 					if (typeof content !== 'string') {
 						return content;
 					}
-
 					return grunt.template.process(content);
 				},
 			},
@@ -107,14 +117,8 @@ module.exports = function (grunt) {
 					'**/*.po',
 					'**/*.pot',
 					'**/*.tmpl.html',
+					'**/*.php',
 				],
-				dest: 'trunk/',
-				filter: 'isFile',
-			},
-			build_php: {
-				expand: true,
-				cwd: 'build',
-				src: ['**/*.php'],
 				dest: 'trunk/',
 				filter: 'isFile',
 			},
@@ -180,32 +184,27 @@ module.exports = function (grunt) {
 			js: {
 				files: [
 					'build/**/*.js',
+					'build/**/*.json',
 					'!build/**/*.min.js',
 					'!build/**/*.bundle.js',
 				],
 				tasks: ['handle_js'],
-				options: {},
+				options: { livereload: true },
 			},
 			css: {
 				files: ['build/**/*.css'], // which files to watch
 				tasks: ['newer_handle_css'],
-				options: {},
+				options: { livereload: true },
 			},
 			php: {
 				files: ['build/**/*.php'], // which files to watch
-				tasks: ['newer_handle_php'],
-				options: {},
+				tasks: ['newer_handle_static'],
+				options: { livereload: true },
 			},
 			static: {
 				files: ['build/**/*.html', 'build/**/*.txt'], // Watch all files
-				tasks: ['dev_deploy'],
-				options: {},
-			},
-			livereload: {
-				// Here we watch the files the sass task will compile to
-				// These files are sent to the live reload server after less compiles to them
+				tasks: ['newer_handle_static'],
 				options: { livereload: true },
-				files: ['trunk/**/*'],
 			},
 		},
 	});
@@ -215,39 +214,44 @@ module.exports = function (grunt) {
 		'postcss:default',
 		'postcss:minify',
 	]);
+
 	grunt.registerTask('handle_css', [
 		'clean:dist_css',
 		'postcss:default',
 		'postcss:minify',
 	]);
 
-	grunt.registerTask('newer_handle_js', ['webpack']);
 	grunt.registerTask('handle_js', ['webpack']);
 
-	grunt.registerTask('newer_handle_php', ['newer:copy:build_php']);
-	grunt.registerTask('handle_copy', [
-		'newer_handle_php',
-		'newer:copy:build_php',
+	grunt.registerTask('newer_handle_static', [
+		'newer:copy:build',
 		'newer:copy:build_css',
 		'newer:copy:build_stream',
 	]);
 
-	// // Deployment strategies
+	grunt.registerTask('handle_static', [
+		'copy:build',
+		'copy:build_css',
+		'copy:build_stream',
+	]);
+
+	// Deployment strategies
 	grunt.registerTask('dev_deploy', [
 		'newer_handle_css',
-		'newer_handle_js',
-		'handle_copy',
+		'handle_js',
+		'newer_handle_static',
 	]);
+
 	grunt.registerTask('deploy', [
 		'clean:trunk',
 		'handle_css',
 		'handle_js',
-		'handle_copy',
+		'handle_static',
 	]);
 
-	// // Linting
+	// Linting
 	grunt.registerTask('lint', ['shell:lintPHP', 'eslint', 'stylelint']);
 
-	// // Releasing
+	// Releasing
 	grunt.registerTask('release', ['lint', 'deploy', 'compress']);
 };

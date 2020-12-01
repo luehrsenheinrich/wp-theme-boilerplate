@@ -120,6 +120,7 @@ module.exports = function (grunt) {
 					'**/*.pot',
 					'**/*.tmpl.html',
 					'**/*.php',
+					'**/*.json',
 				],
 				dest: 'trunk/',
 				filter: 'isFile',
@@ -138,6 +139,12 @@ module.exports = function (grunt) {
 				src: ['**/*.mo', 'img/**/*', 'screenshot.png', 'fonts/**/*'],
 				dest: 'trunk/',
 				filter: 'isFile',
+			},
+			update_acf_json: {
+				expand: true,
+				cwd: 'trunk',
+				src: ['acf-json/*.json'],
+				dest: 'build/',
 			},
 		},
 
@@ -161,6 +168,12 @@ module.exports = function (grunt) {
 				force: true,
 				cwd: '<%= pkg.slug %>/',
 				src: ['**/*'],
+			},
+			acf: {
+				expand: true,
+				force: true,
+				cwd: 'build/acf-json',
+				src: ['*.json'],
 			},
 		},
 
@@ -207,6 +220,10 @@ module.exports = function (grunt) {
 				files: ['build/**/*.html', 'build/**/*.txt'], // Watch all files
 				tasks: ['newer_handle_static'],
 				options: { livereload: true },
+			},
+			acf: {
+				files: ['trunk/acf-json/*.json'],
+				tasks: ['clean:acf', 'copy:update_acf_json'],
 			},
 		},
 	});

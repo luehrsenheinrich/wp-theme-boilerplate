@@ -135,6 +135,7 @@ class Theme {
 			new Scripts\Component(),
 			new Styles\Component(),
 			new Theme_Supports\Component(),
+			new ACF\Component(),
 		);
 
 		return $components;

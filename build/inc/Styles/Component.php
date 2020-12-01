@@ -213,10 +213,10 @@ class Component implements Component_Interface, Templating_Component_Interface {
 			 * enqueued based on whether they are necessary for the page content).
 			 */
 			if ( $data['global'] || ! $preloading_styles_enabled && is_callable( $data['preload_callback'] ) && call_user_func( $data['preload_callback'] ) ) {
-				wp_enqueue_style( $handle, $src, array(), THEME_VERSION, $data['media'] );
+				wp_enqueue_style( $handle, $src, array(), LHTBP_VERSION, $data['media'] );
 				$this->css_files[ $handle ]['enqueued'] = true;
 			} else {
-				wp_register_style( $handle, $src, array(), THEME_VERSION, $data['media'] );
+				wp_register_style( $handle, $src, array(), LHTBP_VERSION, $data['media'] );
 			}
 
 			wp_style_add_data( $handle, 'precache', true );
@@ -283,7 +283,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 			$src = $css_uri . $data['file'];
 
 			if ( ! $data['global'] && $data['preloaded'] && ! $data['enqueued'] ) {
-				wp_enqueue_style( $handle, $src, array(), THEME_VERSION, $data['media'] );
+				wp_enqueue_style( $handle, $src, array(), LHTBP_VERSION, $data['media'] );
 			}
 		}
 	}

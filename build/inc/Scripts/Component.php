@@ -36,7 +36,7 @@ class Component implements Component_Interface {
 	 * @return void
 	 */
 	public function enqueue_scripts() {
-		wp_enqueue_script( 'lhtbp-script', get_template_directory_uri() . '/script.min.js', array( 'jquery' ), THEME_VERSION, true );
+		wp_enqueue_script( 'lhtbp-script', get_template_directory_uri() . '/script.min.js', array( 'jquery' ), LHTBP_VERSION, true );
 
 		$translation_array = array(
 			'themeUrl' => get_template_directory_uri(),

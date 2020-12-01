@@ -1,13 +1,15 @@
 const webpackConfig = require('./webpack.config');
 
 const postCssPresetEnvOptions = {
-	stage: 3,
+	stage: 4,
 	features: {
 		'custom-media-queries': {
 			preserve: false,
+			importFrom: './build/css/src/_custom-media.css',
 		},
 		'custom-properties': {
 			preserve: true,
+			importFrom: './build/css/src-base/_vars.css',
 		},
 		'nesting-rules': true,
 	},

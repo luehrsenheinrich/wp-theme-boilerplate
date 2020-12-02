@@ -7,11 +7,11 @@
  * @package lhtbp
  */
 
-if ( ! defined( 'lhtbp_SLUG' ) ) {
+if ( ! defined( 'LHTBP_SLUG' ) ) {
 	define( 'LHTBP_SLUG', '<%= pkg.slug %>' );
 }
 
-if ( ! defined( 'lhtbp_VERSION' ) ) {
+if ( ! defined( 'LHTBP_VERSION' ) ) {
 	define( 'LHTBP_VERSION', '<%= pkg.version %>' );
 }
 

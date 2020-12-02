@@ -196,10 +196,12 @@ module.exports = function (grunt) {
 
 		// WATCHER - Watch for changes in files and process those when a change is detected
 		watch: {
+			options: {
+				event: ['changed', 'added', 'deleted'],
+			},
 			js: {
 				files: [
 					'build/**/*.js',
-					'build/**/*.json',
 					'!build/**/*.min.js',
 					'!build/**/*.bundle.js',
 				],

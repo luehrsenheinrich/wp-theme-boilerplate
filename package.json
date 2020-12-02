@@ -1,10 +1,15 @@
 {
-  "name": "lh-theme-boilerplate",
+	"version": "0.0.1",
+  "title": "lhtbp",
+  "name": "lhtbp",
   "slug": "lhtbp",
-  "version": "0.0.1",
-  "description": "This is the theme boilerplate for WordPress themes by Luehrsen // Heinrich & WP Munich.",
+  "author": "Luehrsen // Heinrich",
+  "authorUrl": "https://www.luehrsen-heinrich.de",
+  "description": "This is the wp-theme-boilerplate Theme for WordPress by Luehrsen // Heinrich.",
   "private": true,
   "license": "GPLv3",
+  "minWpReq": "5.0",
+  "testedWp": "5.2",
   "devDependencies": {
     "@babel/core": "^7.12.9",
     "@lodder/grunt-postcss": "^2.0.4",

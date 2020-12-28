@@ -17,7 +17,7 @@
     "@wordpress/babel-preset-default": "^4.19.0",
     "@wordpress/browserslist-config": "^2.7.0",
     "@wordpress/dependency-extraction-webpack-plugin": "^2.8.0",
-    "@wordpress/eslint-plugin": "^7.3.0",
+    "@wordpress/eslint-plugin": "^7.4.0",
     "@wordpress/prettier-config": "^0.4.0",
     "autoprefixer": "^9.8.6",
     "babel-loader": "^8.2.2",

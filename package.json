@@ -14,7 +14,7 @@
     "@babel/core": "^7.12.9",
     "@lodder/grunt-postcss": "^2.0.4",
     "@wordpress/babel-plugin-import-jsx-pragma": "^2.7.0",
-    "@wordpress/babel-preset-default": "^4.19.0",
+    "@wordpress/babel-preset-default": "^4.20.0",
     "@wordpress/browserslist-config": "^2.7.0",
     "@wordpress/dependency-extraction-webpack-plugin": "^2.8.0",
     "@wordpress/eslint-plugin": "^7.3.0",

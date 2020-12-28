@@ -59,7 +59,7 @@
   "scripts": {
     "setup": "sh bin/setup-local-env.sh",
     "dev": "sh bin/setup-local-env.sh && grunt watch",
-    "remove": "docker-compose down --volumes --remove-orphans",
+    "remove": "docker-compose down --volumes --remove-orphans"
   },
   "browserslist": [
     "extends @wordpress/browserslist-config"

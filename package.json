@@ -47,7 +47,6 @@
     "postcss-preset-env": "^6.7.0",
     "prettier": "^2.2.1",
     "prompt": "^1.0.0",
-    "release-it": "^14.2.2",
     "replace-in-file": "^6.1.0",
     "stylelint": "^13.8.0",
     "stylelint-config-wordpress": "^17.0.0",
@@ -60,10 +59,7 @@
   "scripts": {
     "setup": "sh bin/setup-local-env.sh",
     "dev": "sh bin/setup-local-env.sh && grunt watch",
-    "remove": "docker-compose down --volumes --remove-orphans",
-    "release": "env-cmd release-it --only-version && npm run release-git-draft",
-    "release-git-draft": "npx env-cmd release-it --no-increment --no-git --no-github.assets --no-github.draft --ci --no-hooks.after:bump",
-    "rename": "node bin/rename-slug.js"
+    "remove": "docker-compose down --volumes --remove-orphans"
   },
   "browserslist": [
     "extends @wordpress/browserslist-config"

@@ -67,7 +67,7 @@ jobs:
         run: npx grunt release
 
       - name: 🚢 Deploy to Devserv
-        if: ${{ github.event_name == 'push' && secrets.devservFtpHost != null && success() }}
+        if: ${{ github.event_name == 'push' && ${{ secrets.devservFtpHost }} != null && success() }}
         uses: SamKirkland/FTP-Deploy-Action@4.0.0
         with:
           server: ${{ secrets.devservFtpHost }}

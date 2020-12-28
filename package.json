@@ -46,7 +46,7 @@
     "postcss-normalize": "^9.0.0",
     "postcss-preset-env": "^6.7.0",
     "prettier": "^2.2.1",
-    "prompt": "^1.0.0",
+    "prompt": "^1.1.0",
     "replace-in-file": "^6.1.0",
     "stylelint": "^13.8.0",
     "stylelint-config-wordpress": "^17.0.0",

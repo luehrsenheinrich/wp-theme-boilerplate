@@ -94,6 +94,8 @@ jobs:
       - name: Push the version to git
         run: |
             git push && git push --tags
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
       - name: 🚀 Create Release
         id: create_release

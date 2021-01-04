@@ -66,12 +66,12 @@ jobs:
       - name: 🏗 Build Release
         run: npx grunt release
 
-      - name: 🚢 Deploy to Devserv
-        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' && success() }}
-        uses: SamKirkland/FTP-Deploy-Action@4.0.0
-        with:
-          server: ${{ secrets.devservFtpHost }}
-          username: ${{ secrets.devservFtpUser }}
-          password: ${{ secrets.devservFtpPassword }}
-          local-dir: ./trunk/
-          log-level: verbose
+#      - name: 🚢 Deploy to Devserv
+#        if: ${{ github.event_name == 'push' && success() }}
+#        uses: SamKirkland/FTP-Deploy-Action@4.0.0
+#        with:
+#          server: ${{ secrets.devservFtpHost }}
+#          username: ${{ secrets.devservFtpUser }}
+#          password: ${{ secrets.devservFtpPassword }}
+#          local-dir: ./trunk/
+#          log-level: verbose

@@ -37,7 +37,6 @@ module.exports = function (grunt) {
 					map: false,
 					processors: [
 						require('postcss-import')(),
-						require('postcss-normalize')(),
 						require('postcss-preset-env')(postCssPresetEnvOptions),
 					],
 				},

@@ -36,7 +36,8 @@ class Component implements Component_Interface {
 	 * @return void
 	 */
 	public function enqueue_scripts() {
-		wp_enqueue_script( 'lhtbp-script', get_template_directory_uri() . '/script.min.js', array( 'jquery' ), LHTBP_VERSION, true );
+		$lhtbp_script_assets = include( get_template_directory() . '/js/script.min.asset.php' ); //phpcs:ignore
+		wp_enqueue_script( 'lhtbp-script', get_template_directory_uri() . '/js/script.min.js', array_merge( array( 'jquery' ), $lhtbp_script_assets['dependencies'] ), $lhtbp_script_assets['version'], true );
 
 		$translation_array = array(
 			'themeUrl' => get_template_directory_uri(),

@@ -123,10 +123,11 @@ jobs:
           asset_content_type: application/zip
 
       - name: 🚢 Deploy to Update Server
-        if: ${{ github.event_name == 'release' && success() }}
+        if: ${{ success() }}
         uses: SamKirkland/FTP-Deploy-Action@4.0.0
         with:
           server: ${{ secrets.UPDATE_SERVER_HOST }}
           username: ${{ secrets.UPDATE_SERVER_USER }}
           password: ${{ secrets.UPDATE_SERVER_PASSWORD }}
           local-dir: ./update/
+          state-name: .${{ steps.package.outputs.slug }}-sync-state.json

@@ -43,7 +43,7 @@
     "terser-webpack-plugin": "^4.2.3",
     "time-grunt": "^2.0.0",
     "webpack": "^4.44.2",
-    "webpack-cli": "^4.2.0"
+    "webpack-cli": "^4.3.1"
   },
   "dependencies": {},
   "scripts": {

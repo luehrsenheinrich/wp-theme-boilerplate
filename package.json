@@ -47,9 +47,13 @@
     "webpack-cli": "^4.3.1"
   },
   "scripts": {
-    "setup": "sh bin/setup-local-env.sh",
-    "dev": "sh bin/setup-local-env.sh && grunt watch",
-    "remove": "docker-compose down --volumes --remove-orphans"
+    "setup": "npm run start",
+    "dev": "npm run start && grunt watch",
+    "remove": "npx wp-env destroy",
+    "prestart": "npm install && composer install && npx grunt deploy",
+    "start": "npx wp-env start --update",
+    "stop": "npx wp-env stop",
+    "clean": "npx wp-env clean all"
   },
   "browserslist": [
     "extends @wordpress/browserslist-config"

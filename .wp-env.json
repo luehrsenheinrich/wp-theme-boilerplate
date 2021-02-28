@@ -7,5 +7,14 @@
 		"https://downloads.wordpress.org/plugin/query-monitor.zip",
 		"https://downloads.wordpress.org/plugin/debug-bar.zip"
 	],
-	"debug": true
+	"env": {
+		"development": {
+			"port": 80,
+			"config": {
+				"WP_DEBUG": true,
+				"WP_ENVIRONMENT_TYPE": "development",
+				"LH_CURRENTLY_EDITING": "lhtbp"
+			}
+		}
+	}
 }

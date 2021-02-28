@@ -49,11 +49,11 @@
   "scripts": {
     "setup": "npm run start",
     "dev": "npm run start && grunt watch",
-    "remove": "npx wp-env destroy",
+    "remove": "wp-env destroy",
     "prestart": "npm install && composer install && npx grunt deploy",
-    "start": "npx wp-env start --update",
-    "stop": "npx wp-env stop",
-    "clean": "npx wp-env clean all"
+    "start": "wp-env start --update",
+    "stop": "wp-env stop",
+    "clean": "wp-env clean all"
   },
   "browserslist": [
     "extends @wordpress/browserslist-config"

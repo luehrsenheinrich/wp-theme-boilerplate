@@ -64,10 +64,8 @@ For example, add/gallery-block means you're working on adding a new gallery bloc
 
 ## Releasing Updates
 
-The release workflow is more or less automated. A npm workflow takes the code, runs the tests and builds it into a release-ready zip. This zip is then attached to a GitHub release, from where it is then pushed to our own update server.
+The release workflow is more or less automated. A github workflow takes the code, runs the tests and builds it into a release-ready zip. This zip is then attached to a GitHub release, from where it is then pushed to our own update server. To create a release refer to the [`Create Release`-Action](./actions/workflows/release.yml), trigger it with the `Run Workflow` button and define the specifics of the new version.
+
+Please refer to the documentation of [npm version](https://docs.npmjs.com/cli/v7/commands/npm-version) to learn more about how to set the version. In determining which version should be the next one we try to follow the SemVer Specification. Read [more about that here](https://semver.org/).
 
 While theoretically everyone with write access to the repository has the ability to push a release, the release should only be done by one person, either the *build master* or the *project manager*.
-
-*Important*: The GitHub release is added as a draft and has to be published manually.
-
-To create a release just run `npm run release`. The perquisites for this are write access to the repository and a GitHub token in the `.env` file.

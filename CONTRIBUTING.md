@@ -16,11 +16,11 @@ Every theme is just as good as the documentation. In this repository we offer [c
 
 ## Setting up the dev environment
 
-If you want to contribute code to the theme you have to set up the environment locally. Make sure that you have `node`, `docker` and `grunt` installed.
+If you want to contribute code to the theme you have to set up the environment locally. Make sure that you have `node`, `npm`, `docker` and `grunt` installed.
 
 The working directory is the `build` directory. If you change something in another location of the repository the pull request  will be ignored.
 
-The development server and all dependencies are handled by docker, node and composer. Make sure you have [docker-compose installed](https://docs.docker.com/compose/install/) and run `npm run setup` in the directory. Your spawned WordPress instance will be available under `http://localhost` with the account `wordpress:wordpress`.
+The development server and all dependencies are handled by docker, node and composer. Make sure you have [docker-compose installed](https://docs.docker.com/compose/install/) and run `npm start` in the directory. Your spawned WordPress instance will be available under `http://localhost` with the account `admin:password`.
 
 Please be aware, that you should usually not write code directly on the master branch.
 
@@ -29,6 +29,8 @@ Start the grunt watcher with the terminal command `grunt watch`. Grunt will make
 Before committing execute the command `grunt lint` to test if your code follows the general coding standards.
 
 *IMPORTANT*: Edits outside the `build` directory will be overwritten by the grunt tasks. Make sure you don't work within the `trunk` folder or your work will be lost.
+
+This project uses the `wp-env` package to provide the development server. Please refer to the [`wp-env`-documentation](https://github.com/WordPress/gutenberg/tree/master/packages/env) for more details.
 
 ## I'm stuck, what do I do?
 
@@ -62,10 +64,8 @@ For example, add/gallery-block means you're working on adding a new gallery bloc
 
 ## Releasing Updates
 
-The release workflow is more or less automated. A npm workflow takes the code, runs the tests and builds it into a release-ready zip. This zip is then attached to a GitHub release, from where it is then pushed to our own update server.
+The release workflow is more or less automated. A github workflow takes the code, runs the tests and builds it into a release-ready zip. This zip is then attached to a GitHub release, from where it is then pushed to our own update server. To create a release refer to the [`Create Release`-Action](./actions/workflows/release.yml), trigger it with the `Run Workflow` button and define the specifics of the new version.
+
+Please refer to the documentation of [npm version](https://docs.npmjs.com/cli/v7/commands/npm-version) to learn more about how to set the version. In determining which version should be the next one we try to follow the SemVer Specification. Read [more about that here](https://semver.org/).
 
 While theoretically everyone with write access to the repository has the ability to push a release, the release should only be done by one person, either the *build master* or the *project manager*.
-
-*Important*: The GitHub release is added as a draft and has to be published manually.
-
-To create a release just run `npm run release`. The perquisites for this are write access to the repository and a GitHub token in the `.env` file.

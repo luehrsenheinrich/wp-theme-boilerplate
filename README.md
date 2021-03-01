@@ -32,22 +32,19 @@ new repository. So let's get started:
 
 ### Theme Slug & Names
 
-- [ ] Search & Replace `lhtbp` with your new WordPress theme slug
 - [ ] Search & Replace (case sensitive) `lhtbp` with your new WordPress theme slug
-- [ ] Search & Replace (case sensitive) `jslhtbp` with your new WordPress theme slug in camelcase
-- [ ] Search & Replace (case sensitive) `lhtbp` with your new WordPress theme slug in uppercase
+- [ ] Search & Replace (case sensitive) `_LHTBP` with your new WordPress theme slug in uppercase
 - [ ] Check success in `package.json`, `docker-compose.json` & `bin/install-wordpress.sh`
 - [ ] Adjust `name` in `package.json` and `Theme Name` in `build/less/style.less`
 
 ### Running the enviroment
 
-- [ ] Type `npm run setup` into the terminal to spin up the docker enviroment
-- [ ] Open `http://localhost/wp-admin` and log in with `wordpress:wordpress`
-- [ ] Make sure the theme unit demo content is installed and the theme is active
+- [ ] Type `npm start` into the terminal to spin up the docker enviroment
+- [ ] Open `http://localhost/wp-admin` and log in with `admin:password`
 
 ### Test Release
 
-- [ ] Add a 0.0.2 release by running `npm run release` in your terminal
+- [ ] Create a patch release with the github action
 - [ ] Check if the release has been created and uploaded in the GitHub release section
 
 ### Finishing touches

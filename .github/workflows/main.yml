@@ -74,4 +74,3 @@ jobs:
 #          username: ${{ secrets.devservFtpUser }}
 #          password: ${{ secrets.devservFtpPassword }}
 #          local-dir: ./trunk/
-#          server-dir: ./wp-content/themes/gbtheme/

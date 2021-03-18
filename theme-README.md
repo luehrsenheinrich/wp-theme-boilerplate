@@ -1,5 +1,7 @@
 # [ THEME NAME ]
 
+[![🏗 Build & Deploy](../../actions/workflows/main.yml/badge.svg)](../../actions/workflows/main.yml)
+
 [ SHORT THEME DESCRIPTION ]
 
 This theme is made with love and brought to you by the folks of [WP Munich](http://www.wp-munich.de) and [Luehrsen // Heinrich](http://www.luehrsen-heinrich.de).

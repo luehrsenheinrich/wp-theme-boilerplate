@@ -1,6 +1,6 @@
 # Luehrsen // Heinrich Theme Boilerplate for WordPress
 
-[![🏗 Build & Deploy](../../actions/workflows/main.yml/badge.svg)](./actions/workflows/main.yml)
+[![🏗 Build & Deploy](../../actions/workflows/main.yml/badge.svg)](../../actions/workflows/main.yml)
 
 There are probably more theme boilerplates than actual themes available for
 bootstrapping your work on an amazing WordPress theme. And that is very much

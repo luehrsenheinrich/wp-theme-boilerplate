@@ -1,11 +1,11 @@
 /*!
- * Theme Name: LH Theme Boilerplate
+ * Theme Name: <%= pkg.title %>
  * Theme URI: http://www.wp-munich.com
  * Description: <%= pkg.description %>
- * Author: WP Munich
- * Author URI: http://www.wp-munich.com
+ * Author: <%= pkg.author %>
+ * Author URI: <%= pkg.authorUrl %>
  * Version: <%= pkg.version %>
- * Text Domain: lhtbp
+ * Text Domain: <%= pkg.slug %>
  * Domain Path: /languages
  * License: GPL-2.0+
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt

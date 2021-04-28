@@ -11,7 +11,7 @@
   "minWpReq": "5.0",
   "testedWp": "5.2",
   "devDependencies": {
-    "@lodder/grunt-postcss": "^3.0.0",
+    "@lodder/grunt-postcss": "^3.0.1",
     "@wordpress/babel-plugin-import-jsx-pragma": "^3.0.1",
     "@wordpress/babel-preset-default": "^5.0.1",
     "@wordpress/browserslist-config": "^3.0.1",

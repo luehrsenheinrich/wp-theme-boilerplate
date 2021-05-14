@@ -21,12 +21,14 @@
 	--bp-sm: 48rem; /** 768px **/
 	--bp-md: 60rem; /** 960px **/
 	--bp-lg: 75rem; /** 1200px **/
+	--bp-xl: 96rem; /** 1536px **/
 
 	/** Content Widths **/
 	--content-xs: calc(100vw - var(--grid-gutter-width) * 2);
 	--content-sm: calc((var(--bp-sm) * 12 / 12));
 	--content-md: calc((var(--bp-md) * 10 / 12));
 	--content-lg: calc((var(--bp-lg) * 8 / 12));
+	--content-xl: calc((var(--bp-xl) * 8 / 12));
 
 	/** Typography **/
 	--global-font-size: 16;
@@ -100,5 +102,16 @@
 		--content-width: var(--content-lg);
 
 		--last-bp: var(--bp-lg);
+	}
+}
+
+@media (--xl-query) {
+
+	:root {
+
+		/* Content width */
+		--content-width: var(--content-xl);
+
+		--last-bp: var(--bp-xl);
 	}
 }

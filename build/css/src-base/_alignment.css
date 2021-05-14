@@ -85,3 +85,19 @@
 		max-width: calc(var(--content-lg) / 2);
 	}
 }
+
+@media (--xl-query) {
+
+	:root .alignwide {
+		max-width: var(--bp-xl);
+	}
+
+	:root .alignleft {
+		float: left;
+		max-width: calc(var(--content-xl) / 2);
+	}
+
+	:root .alignright {
+		max-width: calc(var(--content-xl) / 2);
+	}
+}

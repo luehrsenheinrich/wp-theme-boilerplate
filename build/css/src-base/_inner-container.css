@@ -37,6 +37,11 @@
 			max-width: var(--content-lg);
 		}
 
+
+		@media (--xl-query) {
+			max-width: var(--content-xl);
+		}
+
 		& + * {
 
 			/* The stack */

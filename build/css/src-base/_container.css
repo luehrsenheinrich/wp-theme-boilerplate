@@ -27,3 +27,10 @@
 		max-width: calc(var(--bp-lg) - var(--grid-gutter-width));
 	}
 }
+
+@media (--xl-query) {
+
+	.container {
+		max-width: calc(var(--bp-xl) - var(--grid-gutter-width));
+	}
+}

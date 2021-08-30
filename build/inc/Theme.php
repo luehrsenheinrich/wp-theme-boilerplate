@@ -129,13 +129,14 @@ class Theme {
 	 */
 	protected function get_default_components() {
 		$components = array(
+			new ACF\Component(),
 			new Content_Width\Component(),
-			new i18n\Component(),
+			new Editor\Component(),
 			new Nav_Menus\Component(),
 			new Scripts\Component(),
 			new Styles\Component(),
 			new Theme_Supports\Component(),
-			new ACF\Component(),
+			new i18n\Component(),
 		);
 
 		return $components;

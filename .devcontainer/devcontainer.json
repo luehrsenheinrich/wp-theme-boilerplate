@@ -1,8 +1,9 @@
 {
-	"name": "lhtbp",
+	"name": "${localWorkspaceFolderBasename}",
 	"image": "mcr.microsoft.com/vscode/devcontainers/universal:linux",
+	"forwardPorts": [ 8888, 8889 ],
 	"portsAttributes": {
-		"80": {
+		"8888": {
 			"label": "Development"
 		},
 		"8889": {

@@ -1,4 +1,12 @@
 {
 	"name": "lhtbp",
-	"image": "mcr.microsoft.com/vscode/devcontainers/javascript-node"
+	"image": "mcr.microsoft.com/vscode/devcontainers/universal:linux",
+	"portsAttributes": {
+		"80": {
+			"label": "Development"
+		},
+		"8889": {
+			"label": "Test"
+		}
+	}
 }

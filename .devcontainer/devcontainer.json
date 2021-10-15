@@ -1,0 +1,15 @@
+{
+	"name": "${localWorkspaceFolderBasename}",
+	"image": "mcr.microsoft.com/vscode/devcontainers/universal:linux",
+	"forwardPorts": [ 8888 ],
+	"portsAttributes": {
+		"8888": {
+			"label": "Development",
+			"onAutoForward": "notify"
+		}
+	},
+	"otherPortsAttributes": {
+		"onAutoForward": "silent"
+	},
+	"postCreateCommand": "sh ./.devcontainer/init-wp.sh"
+}

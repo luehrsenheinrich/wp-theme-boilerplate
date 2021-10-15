@@ -13,7 +13,6 @@
 	"env": {
 		"development": {
 			"config": {
-				"WP_DEBUG": true,
 				"WP_ENVIRONMENT_TYPE": "development",
 				"LH_CURRENTLY_EDITING": "lhtbp"
 			}

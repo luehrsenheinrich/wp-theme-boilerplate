@@ -1,20 +1,15 @@
 {
 	"name": "${localWorkspaceFolderBasename}",
 	"image": "mcr.microsoft.com/vscode/devcontainers/universal:linux",
-	"forwardPorts": [ 8888, 8889 ],
+	"forwardPorts": [ 8888 ],
 	"portsAttributes": {
 		"8888": {
-			"label": "Development"
-		},
-		"8889": {
-			"label": "Test"
+			"label": "Development",
+			"onAutoForward": "notify"
 		}
 	},
 	"otherPortsAttributes": {
 		"onAutoForward": "silent"
 	},
-	"containerEnv": {
-		"WP_SITEURL": "https://${CODESPACE_NAME}-8888.githubpreview.dev",
-		"WP_HOME": "https://${CODESPACE_NAME}-8888.githubpreview.dev",
-	}
+	"postCreateCommand": "sh ./.devcontainer/init-wp.sh"
 }

@@ -3,6 +3,6 @@
   "rules": {
     "no-descending-specificity": null,
     "selector-class-pattern": null,
-    "declaration-property-unit-whitelist": null,
+    "declaration-property-unit-whitelist": null
   }
 }

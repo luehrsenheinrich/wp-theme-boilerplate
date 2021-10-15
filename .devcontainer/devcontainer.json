@@ -9,5 +9,8 @@
 		"8889": {
 			"label": "Test"
 		}
-	}
+	},
+	"otherPortsAttributes": {
+		"onAutoForward": "silent"
+	},
 }

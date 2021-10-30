@@ -57,8 +57,5 @@
   "browserslist": [
     "extends @wordpress/browserslist-config"
   ],
-  "prettier": "@wordpress/prettier-config",
-  "dependencies": {
-    "npm-check-updates": "^11.8.5"
-  }
+  "prettier": "@wordpress/prettier-config"
 }

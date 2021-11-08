@@ -1,4 +1,4 @@
-:root .wp-block {
+.wp-block {
 	max-width: var(--content-xs);
 	margin-top: 0;
 	margin-bottom: 0;
@@ -36,6 +36,27 @@
 	& .alignfull {
 		margin-left: 0 !important;
 		margin-right: 0 !important;
+	}
+}
+
+@media (--sm-query) {
+
+	.wp-block[data-align="wide"] {
+		max-width: calc(var(--bp-sm) - var(--grid-gutter-width));
+	}
+}
+
+@media (--md-query) {
+
+	.wp-block[data-align="wide"] {
+		max-width: calc(var(--bp-md) - var(--grid-gutter-width));
+	}
+}
+
+@media (--lg-query) {
+
+	.wp-block[data-align="wide"] {
+		max-width: calc(var(--bp-lg) - var(--grid-gutter-width));
 	}
 }
 

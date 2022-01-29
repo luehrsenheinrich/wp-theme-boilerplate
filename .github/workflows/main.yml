@@ -61,7 +61,7 @@ jobs:
         run: composer install --prefer-dist
 
       - name: ⚙️ Install Node Packages
-        run: npm install
+        run: npm ci
 
       - name: 🏗 Build Release
         run: npx grunt release

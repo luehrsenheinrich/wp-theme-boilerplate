@@ -3,3 +3,7 @@
  *
  * Variables that control the spacing between elements.
  */
+:root {
+	--grid-gutter-width: 2rem;
+	--grid-gutter-height: 1.5rem;
+}

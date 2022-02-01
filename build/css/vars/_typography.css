@@ -1,30 +1,15 @@
-/*--------------------------------------------------------------
-# Variables
---------------------------------------------------------------*/
+/**
+ * The base variables for the typography in our theme.
+ */
 
 :root {
 
-	/** Colors **/
-	--primary-color: #26303d;
-	--secondary-color: #23ad7b;
-	--text-color: #333;
-
-	/** Typography **/
+	/** Font Family */
 	--font-family: "Fira Sans", "Arial", "Helvetica", sans-serif;
 	--font-family-headlines: "Fira Sans", "Arial", "Helvetica", sans-serif;
 
-	/** Spacing **/
-	--grid-gutter-width: 2rem;
-	--grid-gutter-height: 1.5rem;
-
-	/** Content Widths **/
-	--content-xs: calc(100vw - var(--grid-gutter-width) * 2);
-	--content-sm: calc((var(--bp-sm) * 12 / 12));
-	--content-md: calc((var(--bp-md) * 10 / 12));
-	--content-lg: calc((var(--bp-lg) * 8 / 12));
-
-	/** Typography **/
-	--global-font-size: 16;
+	/** Base sizes */
+	--global-font-size: 16; /* The base font size from the browser for calculations. */
 	--global-font-line-height: 1.5;
 	--global-headline-line-height: 1.3;
 	--global-letter-spacing: normal;
@@ -42,9 +27,6 @@
 	--font-size-regular: calc(16 / var(--global-font-size) * 1rem);
 	--font-size-large: var(--global-h4-font-size);
 	--font-size-larger: var(--global-h1-font-size);
-
-	/** Define a base variable, that is overwritten by responsive breakpoints **/
-	--content-width: var(--content-xs);
 }
 
 @media (--sm-query) {
@@ -65,32 +47,5 @@
 		/* Custom editor font sizes */
 		--font-size-small: calc(14 / var(--global-font-size) * 1rem);
 		--font-size-regular: calc(18 / var(--global-font-size) * 1rem);
-
-		/* Content width */
-		--content-width: var(--content-sm);
-
-		--last-bp: var(--bp-sm);
-	}
-}
-
-@media (--md-query) {
-
-	:root {
-
-		/* Content width */
-		--content-width: var(--content-md);
-
-		--last-bp: var(--bp-md);
-	}
-}
-
-@media (--lg-query) {
-
-	:root {
-
-		/* Content width */
-		--content-width: var(--content-lg);
-
-		--last-bp: var(--bp-lg);
 	}
 }

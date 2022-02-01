@@ -5,11 +5,11 @@ const postCssPresetEnvOptions = {
 	features: {
 		'custom-media-queries': {
 			preserve: false,
-			importFrom: './build/css/src/_custom-media.css',
+			importFrom: './build/css/vars/_media-queries.css',
 		},
 		'custom-properties': {
 			preserve: true,
-			importFrom: './build/css/src-base/_vars.css',
+			importFrom: './build/css/vars.css',
 		},
 		'nesting-rules': true,
 	},

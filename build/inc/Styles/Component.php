@@ -69,6 +69,10 @@ class Component implements Component_Interface, Templating_Component_Interface {
 		}
 
 		$css_files = array(
+			'lhtbp-vars' => array(
+				'file'   => 'vars.min.css',
+				'global' => true,
+			),
 			'lhtbp-base' => array(
 				'file'   => 'base.min.css',
 				'global' => true,

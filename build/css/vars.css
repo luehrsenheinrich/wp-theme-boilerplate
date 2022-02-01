@@ -1,0 +1,7 @@
+/**
+ * This file holds the base CSS variables, that control the
+ * basic look and feel of the theme.
+ */
+
+@import "vars/_breakpoints.css";
+@import "vars/_spacing.css";

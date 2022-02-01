@@ -15,5 +15,11 @@
 		"lint": "phpcs -d memory_limit=-1",
 		"fix": "phpcbf -d memory_limit=-1",
 		"post-install-cmd": "cd build && composer install"
+	},
+	"config": {
+		"allow-plugins": {
+			"dealerdirect/phpcodesniffer-composer-installer": true,
+			"composer/installers": true
+		}
 	}
 }

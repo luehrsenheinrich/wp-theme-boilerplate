@@ -17,11 +17,6 @@
 	--grid-gutter-width: 2rem;
 	--grid-gutter-height: 1.5rem;
 
-	/** Breakpoints **/
-	--bp-sm: 48rem; /** 768px **/
-	--bp-md: 60rem; /** 960px **/
-	--bp-lg: 75rem; /** 1200px **/
-
 	/** Content Widths **/
 	--content-xs: calc(100vw - var(--grid-gutter-width) * 2);
 	--content-sm: calc((var(--bp-sm) * 12 / 12));
@@ -50,9 +45,6 @@
 
 	/** Define a base variable, that is overwritten by responsive breakpoints **/
 	--content-width: var(--content-xs);
-
-	/** Define the variable for where the last breakpoint was. */
-	--last-bp: none;
 }
 
 @media (--sm-query) {

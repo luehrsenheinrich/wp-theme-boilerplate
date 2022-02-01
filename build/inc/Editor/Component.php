@@ -61,60 +61,110 @@ class Component implements Component_Interface {
 		add_theme_support(
 			'editor-color-palette',
 			array(
+				// Primary.
 				array(
-					'name'  => __( 'Primary', 'lhtbp' ),
-					'slug'  => 'theme-primary',
-					'color' => '#e36d60',
+					'name'  => __( 'Primary 300', 'lhtbp' ),
+					'slug'  => 'primary-300',
+					'color' => '#d05ce3',
 				),
 				array(
-					'name'  => __( 'Secondary', 'lhtbp' ),
-					'slug'  => 'theme-secondary',
-					'color' => '#41848f',
+					'name'  => __( 'Primary 500', 'lhtbp' ),
+					'slug'  => 'primary-500',
+					'color' => '#9c27b0',
 				),
 				array(
-					'name'  => __( 'Red', 'lhtbp' ),
-					'slug'  => 'theme-red',
-					'color' => '#C0392B',
+					'name'  => __( 'Primary 700', 'lhtbp' ),
+					'slug'  => 'primary-700',
+					'color' => '#6a0080',
+				),
+				// Secondary.
+				array(
+					'name'  => __( 'Secondary 300', 'lhtbp' ),
+					'slug'  => 'secondary-300',
+					'color' => '#ff8a50',
 				),
 				array(
-					'name'  => __( 'Green', 'lhtbp' ),
-					'slug'  => 'theme-green',
-					'color' => '#27AE60',
+					'name'  => __( 'Secondary 500', 'lhtbp' ),
+					'slug'  => 'secondary-500',
+					'color' => '#ff5722',
 				),
 				array(
-					'name'  => __( 'Blue', 'lhtbp' ),
-					'slug'  => 'theme-blue',
-					'color' => '#2980B9',
+					'name'  => __( 'Secondary 700', 'lhtbp' ),
+					'slug'  => 'secondary-700',
+					'color' => '#c41c00',
+				),
+				// Tertiary.
+				array(
+					'name'  => __( 'Tertiary 300', 'lhtbp' ),
+					'slug'  => 'tertiary-300',
+					'color' => '#80e27e',
 				),
 				array(
-					'name'  => __( 'Yellow', 'lhtbp' ),
-					'slug'  => 'theme-yellow',
-					'color' => '#F1C40F',
+					'name'  => __( 'Tertiary 500', 'lhtbp' ),
+					'slug'  => 'tertiary-500',
+					'color' => '#4caf50',
+				),
+				array(
+					'name'  => __( 'Tertiary 700', 'lhtbp' ),
+					'slug'  => 'tertiary-700',
+					'color' => '#087f23',
+				),
+				// Grayscale.
+				array(
+					'name'  => __( 'White', 'lhtbp' ),
+					'slug'  => 'white',
+					'color' => '#ffffff',
+				),
+				array(
+					'name'  => __( 'Gray 100', 'lhtbp' ),
+					'slug'  => 'gray-100',
+					'color' => '#f5f5f5',
+				),
+				array(
+					'name'  => __( 'Gray 300', 'lhtbp' ),
+					'slug'  => 'gray-300',
+					'color' => '#e5e5e5',
+				),
+				array(
+					'name'  => __( 'Gray 500', 'lhtbp' ),
+					'slug'  => 'gray-500',
+					'color' => '#9e9e9e',
+				),
+				array(
+					'name'  => __( 'Gray 700', 'lhtbp' ),
+					'slug'  => 'gray-700',
+					'color' => '#616161',
+				),
+				array(
+					'name'  => __( 'Gray 900', 'lhtbp' ),
+					'slug'  => 'gray-900',
+					'color' => '#212121',
 				),
 				array(
 					'name'  => __( 'Black', 'lhtbp' ),
-					'slug'  => 'theme-black',
-					'color' => '#1C2833',
+					'slug'  => 'black',
+					'color' => '#000000',
+				),
+				// System.
+				array(
+					'name'  => __( 'System Success', 'lhtbp' ),
+					'slug'  => 'system-success',
+					'color' => '#23ad7b',
 				),
 				array(
-					'name'  => __( 'Grey', 'lhtbp' ),
-					'slug'  => 'theme-grey',
-					'color' => '#95A5A6',
+					'name'  => __( 'System Warning', 'lhtbp' ),
+					'slug'  => 'system-warning',
+					'color' => '#ffc107',
 				),
 				array(
-					'name'  => __( 'White', 'lhtbp' ),
-					'slug'  => 'theme-white',
-					'color' => '#ECF0F1',
+					'name'  => __( 'System Error', 'lhtbp' ),
+					'slug'  => 'system-error',
+					'color' => '#f44336',
 				),
 				array(
-					'name'  => __( 'Dusty daylight', 'lhtbp' ),
-					'slug'  => 'custom-daylight',
-					'color' => '#97c0b7',
-				),
-				array(
-					'name'  => __( 'Dusty sun', 'lhtbp' ),
-					'slug'  => 'custom-sun',
-					'color' => '#eee9d1',
+					'name'  => __( 'System Info', 'lhtbp' ),
+					'slug'  => 'system-info',
+					'color' => '#00a0d2',
 				),
 			)
 		);

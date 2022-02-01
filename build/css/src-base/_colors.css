@@ -2,26 +2,246 @@
 # Color Classes
 --------------------------------------------------------------*/
 
-.has-primary-color {
-	color: var(--primary-color);
+/** Color: primary-300 */
+:root .has-primary-300-color {
+	color: var(--color-primary-300);
+	--current-color: var(--color-primary-300);
 }
 
-.has-primary-background-color {
-	background-color: var(--primary-color);
-
-	&.has-background-dim {
-		background-color: var(--primary-color);
-	}
+:root .has-primary-300-background-color {
+	background-color: var(--color-primary-300);
+	--current-background-color: var(--color-primary-300);
+	--contrast-color: var(--color-gray-900);
 }
 
-.has-secondary-color {
-	color: var(--secondary-color);
+/** Color: primary-500 */
+:root .has-primary-500-color {
+	color: var(--color-primary-500);
+	--current-color: var(--color-primary-500);
 }
 
-.has-secondary-background-color {
-	background-color: var(--secondary-color);
-
-	&.has-background-dim {
-		background-color: var(--secondary-color);
-	}
+:root .has-primary-500-background-color {
+	background-color: var(--color-primary-500);
+	--current-background-color: var(--color-primary-500);
+	--contrast-color: var(--color-gray-900);
 }
+
+/** Color: primary-700 */
+:root .has-primary-700-color {
+	color: var(--color-primary-700);
+	--current-color: var(--color-primary-700);
+}
+
+:root .has-primary-700-background-color {
+	background-color: var(--color-primary-700);
+	--current-background-color: var(--color-primary-700);
+	--contrast-color: var(--color-gray-100);
+}
+
+/** Color: secondary-300 */
+:root .has-secondary-300-color {
+	color: var(--color-secondary-300);
+	--current-color: var(--color-secondary-300);
+}
+
+:root .has-secondary-300-background-color {
+	background-color: var(--color-secondary-300);
+	--current-background-color: var(--color-secondary-300);
+	--contrast-color: var(--color-gray-900);
+}
+
+/** Color: secondary-500 */
+:root .has-secondary-500-color {
+	color: var(--color-secondary-500);
+	--current-color: var(--color-secondary-500);
+}
+
+:root .has-secondary-500-background-color {
+	background-color: var(--color-secondary-500);
+	--current-background-color: var(--color-secondary-500);
+	--contrast-color: var(--color-gray-900);
+}
+
+/** Color: secondary-700 */
+:root .has-secondary-700-color {
+	color: var(--color-secondary-700);
+	--current-color: var(--color-secondary-700);
+}
+
+:root .has-secondary-700-background-color {
+	background-color: var(--color-secondary-700);
+	--current-background-color: var(--color-secondary-700);
+	--contrast-color: var(--color-gray-100);
+}
+
+/** Color: tertiary-300 */
+:root .has-tertiary-300-color {
+	color: var(--color-tertiary-300);
+	--current-color: var(--color-tertiary-300);
+}
+
+:root .has-tertiary-300-background-color {
+	background-color: var(--color-tertiary-300);
+	--current-background-color: var(--color-tertiary-300);
+	--contrast-color: var(--color-gray-900);
+}
+
+/** Color: tertiary-500 */
+:root .has-tertiary-500-color {
+	color: var(--color-tertiary-500);
+	--current-color: var(--color-tertiary-500);
+}
+
+:root .has-tertiary-500-background-color {
+	background-color: var(--color-tertiary-500);
+	--current-background-color: var(--color-tertiary-500);
+	--contrast-color: var(--color-gray-900);
+}
+
+/** Color: tertiary-700 */
+:root .has-tertiary-700-color {
+	color: var(--color-tertiary-700);
+	--current-color: var(--color-tertiary-700);
+}
+
+:root .has-tertiary-700-background-color {
+	background-color: var(--color-tertiary-700);
+	--current-background-color: var(--color-tertiary-700);
+	--contrast-color: var(--color-gray-100);
+}
+
+/** Color: gray-0 */
+:root .has-gray-0-color {
+	color: var(--color-gray-0);
+	--current-color: var(--color-gray-0);
+}
+
+:root .has-gray-0-background-color {
+	background-color: var(--color-gray-0);
+	--current-background-color: var(--color-gray-0);
+	--contrast-color: var(--color-gray-900);
+}
+
+/** Color: gray-100 */
+:root .has-gray-100-color {
+	color: var(--color-gray-100);
+	--current-color: var(--color-gray-100);
+}
+
+:root .has-gray-100-background-color {
+	background-color: var(--color-gray-100);
+	--current-background-color: var(--color-gray-100);
+	--contrast-color: var(--color-gray-900);
+}
+
+/** Color: gray-300 */
+:root .has-gray-300-color {
+	color: var(--color-gray-300);
+	--current-color: var(--color-gray-300);
+}
+
+:root .has-gray-300-background-color {
+	background-color: var(--color-gray-300);
+	--current-background-color: var(--color-gray-300);
+	--contrast-color: var(--color-gray-900);
+}
+
+/** Color: gray-500 */
+:root .has-gray-500-color {
+	color: var(--color-gray-500);
+	--current-color: var(--color-gray-500);
+}
+
+:root .has-gray-500-background-color {
+	background-color: var(--color-gray-500);
+	--current-background-color: var(--color-gray-500);
+	--contrast-color: var(--color-gray-900);
+}
+
+/** Color: gray-700 */
+:root .has-gray-700-color {
+	color: var(--color-gray-700);
+	--current-color: var(--color-gray-700);
+}
+
+:root .has-gray-700-background-color {
+	background-color: var(--color-gray-700);
+	--current-background-color: var(--color-gray-700);
+	--contrast-color: var(--color-gray-100);
+}
+
+/** Color: gray-900 */
+:root .has-gray-900-color {
+	color: var(--color-gray-900);
+	--current-color: var(--color-gray-900);
+}
+
+:root .has-gray-900-background-color {
+	background-color: var(--color-gray-900);
+	--current-background-color: var(--color-gray-900);
+	--contrast-color: var(--color-gray-100);
+}
+
+/** Color: gray-1000 */
+:root .has-gray-1000-color {
+	color: var(--color-gray-1000);
+	--current-color: var(--color-gray-1000);
+}
+
+:root .has-gray-1000-background-color {
+	background-color: var(--color-gray-1000);
+	--current-background-color: var(--color-gray-1000);
+	--contrast-color: var(--color-gray-100);
+}
+
+/** Color: system-success */
+:root .has-system-success-color {
+	color: var(--color-system-success);
+	--current-color: var(--color-system-success);
+}
+
+:root .has-system-success-background-color {
+	background-color: var(--color-system-success);
+	--current-background-color: var(--color-system-success);
+	--contrast-color: var(--color-gray-900);
+}
+
+/** Color: system-warning */
+:root .has-system-warning-color {
+	color: var(--color-system-warning);
+	--current-color: var(--color-system-warning);
+}
+
+:root .has-system-warning-background-color {
+	background-color: var(--color-system-warning);
+	--current-background-color: var(--color-system-warning);
+	--contrast-color: var(--color-gray-900);
+}
+
+/** Color: system-error */
+:root .has-system-error-color {
+	color: var(--color-system-error);
+	--current-color: var(--color-system-error);
+}
+
+:root .has-system-error-background-color {
+	background-color: var(--color-system-error);
+	--current-background-color: var(--color-system-error);
+	--contrast-color: var(--color-gray-900);
+}
+
+/** Color: system-info */
+:root .has-system-info-color {
+	color: var(--color-system-info);
+	--current-color: var(--color-system-info);
+}
+
+:root .has-system-info-background-color {
+	background-color: var(--color-system-info);
+	--current-background-color: var(--color-system-info);
+	--contrast-color: var(--color-gray-900);
+}
+
+/*--------------------------------------------------------------
+# END Color Classes
+--------------------------------------------------------------*/

@@ -1,22 +1,9 @@
 .wp-block {
-	max-width: var(--content-xs);
-	margin-top: 0;
-	margin-bottom: 0;
+	max-width: var(--content-width);
+	margin: 0 auto;
 
 	& + * {
 		margin-top: var(--grid-gutter-height);
-	}
-
-	@media (--sm-query) {
-		max-width: var(--content-sm);
-	}
-
-	@media (--md-query) {
-		max-width: var(--content-md);
-	}
-
-	@media (--lg-query) {
-		max-width: var(--content-lg);
 	}
 }
 

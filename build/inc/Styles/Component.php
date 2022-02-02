@@ -42,6 +42,13 @@ class Component implements Component_Interface, Templating_Component_Interface {
 		add_action( 'wp_head', array( $this, 'action_preload_styles' ) );
 		add_action( 'wp_footer', array( $this, 'action_print_preloaded_styles' ) );
 		add_action( 'after_setup_theme', array( $this, 'action_add_editor_styles' ) );
+		add_action( 'enqueue_block_editor_assets', array( $this, 'enqueue_block_editor_assets' ) );
+
+		/** Remove global styles */
+		add_action( 'init', array( $this, 'remove_global_styles' ) );
+
+		/** Remove WP Emoji */
+		add_action( 'init', array( $this, 'remove_wp_emoji' ) );
 	}
 
 	/**
@@ -69,6 +76,10 @@ class Component implements Component_Interface, Templating_Component_Interface {
 		}
 
 		$css_files = array(
+			'lhtbp-vars' => array(
+				'file'   => 'vars.min.css',
+				'global' => true,
+			),
 			'lhtbp-base' => array(
 				'file'   => 'base.min.css',
 				'global' => true,
@@ -199,7 +210,6 @@ class Component implements Component_Interface, Templating_Component_Interface {
 
 
 		$css_uri = get_theme_file_uri( '/css/' );
-		$css_dir = get_theme_file_path( '/css/' );
 
 		$preloading_styles_enabled = $this->preloading_styles_enabled();
 
@@ -276,8 +286,6 @@ class Component implements Component_Interface, Templating_Component_Interface {
 
 		$css_uri = get_theme_file_uri( '/css/' );
 
-		$preloading_styles_enabled = $this->preloading_styles_enabled();
-
 		$css_files = $this->get_css_files();
 		foreach ( $css_files as $handle => $data ) {
 			$src = $css_uri . $data['file'];
@@ -295,5 +303,35 @@ class Component implements Component_Interface, Templating_Component_Interface {
 		// Enqueue block editor stylesheet.
 		add_editor_style( 'css/font-fira-sans.min.css' );
 		add_editor_style( 'css/editor-styles.min.css' );
+	}
+
+	/**
+	 * Enqueue assets directly for the editor.
+	 */
+	public function enqueue_block_editor_assets() {
+		wp_enqueue_style( 'lhtbp-editor-vars', get_theme_file_uri( '/css/vars.min.css' ), array(), LHTBP_VERSION );
+	}
+
+	/**
+	 * Remove global styles as we handle them ourselves.
+	 *
+	 * @return void
+	 */
+	public function remove_global_styles() {
+		remove_action( 'wp_enqueue_scripts', 'wp_enqueue_global_styles' );
+		remove_action( 'wp_footer', 'wp_enqueue_global_styles' );
+	}
+
+	/**
+	 * Remove WP Emojis.
+	 *
+	 * @return void
+	 */
+	public function remove_wp_emoji() {
+		remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+		remove_action( 'wp_print_styles', 'print_emoji_styles' );
+
+		remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
+		remove_action( 'admin_print_styles', 'print_emoji_styles' );
 	}
 }

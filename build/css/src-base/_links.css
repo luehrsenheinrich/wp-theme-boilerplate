@@ -3,17 +3,17 @@
 --------------------------------------------------------------*/
 
 a {
-	color: var(--primary-color);
+	color: var(--color-primary-500);
 }
 
 a:visited {
-	color: var(--primary-color);
+	color: var(--color-primary-500);
 }
 
 a:hover,
 a:focus,
 a:active {
-	color: var(--secondary-color);
+	color: var(--color-primary-700);
 }
 
 a:focus {

@@ -8,7 +8,7 @@ input,
 select,
 optgroup,
 textarea {
-	color: var(--text-color);
+	color: var(--main-text-color);
 	font-family: var(--font-family);
 	font-size: var(--font-size-regular);
 	line-height: var(--global-font-line-height);
@@ -27,7 +27,7 @@ h3,
 h4,
 h5,
 h6 {
-	color: var(--primary-color);
+	color: var(--color-primary-700);
 	font-family: var(--font-family-headlines);
 	line-height: var(--global-headline-line-height);
 	clear: both;

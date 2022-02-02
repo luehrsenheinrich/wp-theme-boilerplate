@@ -130,8 +130,6 @@ class Theme {
 	protected function get_default_components() {
 		$components = array(
 			new ACF\Component(),
-			new Content_Width\Component(),
-			new Editor\Component(),
 			new Nav_Menus\Component(),
 			new Scripts\Component(),
 			new Styles\Component(),

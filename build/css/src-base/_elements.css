@@ -3,13 +3,11 @@
 --------------------------------------------------------------*/
 
 body {
-	background: #fff;
-
-	/* Fallback for when there is no custom background color defined. */
+	background: var(--main-background-color);
 }
 
 hr {
-	background-color: #ccc;
+	background-color: var(--color-gray-500);
 	border: 0;
 	height: 1px;
 	margin-bottom: var(--grid-gutter-height);

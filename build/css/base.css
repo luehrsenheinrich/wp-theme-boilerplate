@@ -1,10 +1,8 @@
-@import "./src/_custom-media.css";
 @import "normalize.css";
-@import "./src-base/_vars.css";
 @import "./src-base/_reset.css";
 @import "./src-base/_a11y.css";
 @import "./src-base/_inner-container.css";
-@import "./src-base/_stack.css";
+@import "./src-base/_spacing.css";
 @import "./src-base/_alignment.css";
 @import "./src-base/_elements.css";
 @import "./src-base/_typography.css";

@@ -68,7 +68,7 @@ jobs:
 
 #      - name: 🚢 Deploy to Devserv
 #        if: ${{ github.event_name == 'push' && success() }}
-#        uses: SamKirkland/FTP-Deploy-Action@4.0.0
+#        uses: SamKirkland/FTP-Deploy-Action@4.2.0
 #        with:
 #          server: ${{ secrets.devservFtpHost }}
 #          username: ${{ secrets.devservFtpUser }}

@@ -53,4 +53,5 @@
 	 */
 	--main-background-color: var(--color-gray-100);
 	--main-text-color: var(--color-gray-900);
+	--contrast-color: var(--color-gray-900);
 }

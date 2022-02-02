@@ -102,5 +102,8 @@ class Component implements Component_Interface {
 		 * provide it for us.
 		 */
 		add_theme_support( 'title-tag' );
+
+		// Add support for editor styles.
+		add_theme_support( 'editor-styles' );
 	}
 }

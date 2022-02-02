@@ -4,8 +4,6 @@
 
 body {
 	background: var(--main-background-color);
-
-	/* Fallback for when there is no custom background color defined. */
 }
 
 hr {

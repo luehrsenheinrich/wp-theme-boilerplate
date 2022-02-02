@@ -14,3 +14,10 @@
 .stack > * + * {
 	margin-top: var(--space);
 }
+
+/*--------------------------------------------------------------
+# Has Background
+--------------------------------------------------------------*/
+:root .has-background {
+	padding: calc(var(--grid-gutter-height) / 2) calc(var(--grid-gutter-width) / 1);
+}

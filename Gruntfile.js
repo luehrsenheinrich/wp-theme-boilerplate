@@ -218,7 +218,7 @@ module.exports = function (grunt) {
 				options: { livereload: true },
 			},
 			static: {
-				files: ['build/**/*.html', 'build/**/*.txt'], // Watch all files
+				files: ['build/**/*.html', 'build/**/*.txt', 'build/**/*.json'], // Watch all files
 				tasks: ['newer_handle_static'],
 				options: { livereload: true },
 			},

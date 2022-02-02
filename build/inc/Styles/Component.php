@@ -42,6 +42,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 		add_action( 'wp_head', array( $this, 'action_preload_styles' ) );
 		add_action( 'wp_footer', array( $this, 'action_print_preloaded_styles' ) );
 		add_action( 'after_setup_theme', array( $this, 'action_add_editor_styles' ) );
+		add_action( 'enqueue_block_editor_assets', array( $this, 'enqueue_block_editor_assets' ) );
 	}
 
 	/**
@@ -299,5 +300,12 @@ class Component implements Component_Interface, Templating_Component_Interface {
 		// Enqueue block editor stylesheet.
 		add_editor_style( 'css/font-fira-sans.min.css' );
 		add_editor_style( 'css/editor-styles.min.css' );
+	}
+
+	/**
+	 * Enqueue assets directly for the editor.
+	 */
+	public function enqueue_block_editor_assets() {
+		wp_enqueue_style( 'lhtbp-editor-vars', get_theme_file_uri( '/css/vars.min.css' ), array(), LHTBP_VERSION );
 	}
 }
